@@ -1,0 +1,29 @@
+▲ Next.js 16.3.4 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://21.0.16.55:3000
+- Environments: .env
+✓ Ready in 326ms
+✓ Running next.config.ts took 34ms
+
+ GET / 200 in 403ms (next.js: 201ms, application-code: 203ms)
+ GET /nonexistent 404 in 488ms (next.js: 419ms, application-code: 69ms)
+prisma:query SELECT `main`.`BookingRequest`.`id`, `main`.`BookingRequest`.`name`, `main`.`BookingRequest`.`phone`, `main`.`BookingRequest`.`service`, `main`.`BookingRequest`.`master`, `main`.`BookingRequest`.`date`, `main`.`BookingRequest`.`time`, `main`.`BookingRequest`.`notes`, `main`.`BookingRequest`.`status`, `main`.`BookingRequest`.`createdAt` FROM `main`.`BookingRequest` WHERE 1=1 ORDER BY `main`.`BookingRequest`.`createdAt` DESC LIMIT ? OFFSET ?
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `main`.`BookingRequest`.`id` FROM `main`.`BookingRequest` WHERE 1=1 LIMIT ? OFFSET ?) AS `sub`
+ GET /api/booking 200 in 573ms (next.js: 499ms, application-code: 74ms)
+prisma:query SELECT `main`.`Review`.`id`, `main`.`Review`.`name`, `main`.`Review`.`role`, `main`.`Review`.`rating`, `main`.`Review`.`text`, `main`.`Review`.`status`, `main`.`Review`.`createdAt` FROM `main`.`Review` WHERE `main`.`Review`.`status` = ? ORDER BY `main`.`Review`.`createdAt` DESC LIMIT ? OFFSET ?
+ GET /api/reviews 200 in 114ms (next.js: 106ms, application-code: 8ms)
+ GET /api/reviews/moderate 401 in 143ms (next.js: 138ms, application-code: 5ms)
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `main`.`Subscriber`.`id` FROM `main`.`Subscriber` WHERE `main`.`Subscriber`.`status` = ? LIMIT ? OFFSET ?) AS `sub`
+ GET /api/subscribe 200 in 127ms (next.js: 117ms, application-code: 10ms)
+ GET /sitemap.xml 200 in 161ms (next.js: 156ms, application-code: 6ms)
+prisma:query INSERT INTO `main`.`BookingRequest` (`id`, `name`, `phone`, `service`, `master`, `date`, `time`, `notes`, `status`, `createdAt`) VALUES (?,?,?,?,?,?,?,?,?,?) RETURNING `id` AS `id`, `name` AS `name`, `phone` AS `phone`, `service` AS `service`, `master` AS `master`, `date` AS `date`, `time` AS `time`, `notes` AS `notes`, `status` AS `status`, `createdAt` AS `createdAt`
+ POST /api/booking 200 in 11ms (next.js: 2ms, application-code: 9ms)
+prisma:query INSERT INTO `main`.`Review` (`id`, `name`, `role`, `rating`, `text`, `status`, `createdAt`) VALUES (?,?,?,?,?,?,?) RETURNING `id` AS `id`, `name` AS `name`, `role` AS `role`, `rating` AS `rating`, `text` AS `text`, `status` AS `status`, `createdAt` AS `createdAt`
+ POST /api/reviews 200 in 8ms (next.js: 2ms, application-code: 6ms)
+prisma:query INSERT INTO `main`.`Subscriber` (`id`, `email`, `source`, `status`, `createdAt`) VALUES (?,?,?,?,?) ON CONFLICT  (`email`) DO UPDATE SET `status` = ?, `source` = ? WHERE (`main`.`Subscriber`.`email` = ? AND 1=1) RETURNING `id` AS `id`, `email` AS `email`, `source` AS `source`, `status` AS `status`, `createdAt` AS `createdAt`
+ POST /api/subscribe 200 in 7ms (next.js: 2ms, application-code: 5ms)
+ GET / 200 in 53ms (next.js: 2ms, application-code: 51ms)
+ GET / 200 in 46ms (next.js: 2ms, application-code: 43ms)
+ GET / 200 in 46ms (next.js: 2ms, application-code: 44ms)
+ GET / 200 in 269ms (next.js: 7ms, application-code: 262ms)
+ GET / 200 in 69ms (next.js: 6ms, application-code: 63ms)

@@ -1,0 +1,102 @@
+import { ScissorsIcon, BeardIcon, ClipperIcon, CombIcon, RazorIcon, MustacheIcon, BulbIcon } from "./icons";
+
+export const site = {
+  name: "IRON & OAK",
+  tagline: "Cuts with character.",
+  city: "Moscow",
+  address: "12 Krasnogvardeyskaya Passage, bld 3, Moscow",
+  addressShort: "Krasnogvardeyskaya Passage, 12/3",
+  phone: "+7 (495) 234-56-78",
+  phoneHref: "tel:+74952345678",
+  hours: "Mon — Sun · 10:00 — 22:00",
+  hoursShort: "10:00 — 22:00",
+  email: "chair@ironandoak.barbershop",
+  socials: [
+    { label: "Instagram", href: "https://instagram.com", handle: "@iron.oak" },
+    { label: "Telegram", href: "https://t.me", handle: "@ironandoak" },
+    { label: "VK", href: "https://vk.com", handle: "vk.com/ironandoak" },
+  ],
+  mapHref: "https://yandex.ru/maps/?text=Moscow%20Krasnogvardeyskaya%20Passage",
+  rating: "4.9",
+  reviewsCount: "312",
+} as const;
+
+export const nav = [
+  { label: "About", href: "#about" },
+  { label: "Services", href: "#services" },
+  { label: "Masters", href: "#masters" },
+  { label: "Work", href: "#work" },
+  { label: "Reviews", href: "#reviews" },
+  { label: "FAQ", href: "#faq" },
+  { label: "Contacts", href: "#contacts" },
+] as const;
+
+export const heroStats = [
+  { value: "12", label: "Years sharp" },
+  { value: "4", label: "Master barbers" },
+  { value: "8", label: "Services on the board" },
+  { value: "4.9", label: "Avg. rating · 312 reviews" },
+] as const;
+
+export const tickerItems = ["WALK-INS WELCOME","MON–SUN 10:00–22:00","STRAIGHT-RAZOR SHAVES","BOOK ONLINE — FIRST CHAIR 10:00","HOT TOWEL · LEATHER · BRASS","+7 495 234-56-78"] as const;
+
+export type Service = { no: string; name: string; desc: string; duration: string; price: string; icon: typeof ScissorsIcon; popular?: boolean };
+
+export const services: Service[] = [
+  { no: "01", name: "Scissor & Clipper Cut", desc: "Full wash, cut, and finish. Built around your hair, not a Pinterest board.", duration: "45 min", price: "2 200 ₽", icon: ScissorsIcon },
+  { no: "02", name: "Beard Sculpting", desc: "Line-up, shape, and trim. We follow the grain, not the trend.", duration: "30 min", price: "1 500 ₽", icon: BeardIcon },
+  { no: "03", name: "Cut & Beard", desc: "The full reset. Cut, beard, and a finish that holds for weeks.", duration: "70 min", price: "3 200 ₽", icon: ClipperIcon, popular: true },
+  { no: "04", name: "Grey Camouflage", desc: "Blend the silver, keep the dignity. Subtle, never dyed-looking.", duration: "30 min", price: "1 800 ₽", icon: CombIcon },
+  { no: "05", name: "Kids' Cut · under 12", desc: "Patient hands for the small ones. No screens, no tears — mostly.", duration: "30 min", price: "1 400 ₽", icon: ClipperIcon },
+  { no: "06", name: "Royal Straight-Razor Shave", desc: "Hot towels, badger brush, and a real blade. The way it was meant to be.", duration: "45 min", price: "2 400 ₽", icon: RazorIcon, popular: true },
+  { no: "07", name: "Styling & Finish", desc: "Wash, towel, and a hold that survives the metro and the weather.", duration: "20 min", price: "900 ₽", icon: CombIcon },
+  { no: "08", name: "Mustache Trim & Shape", desc: "Wax, shape, and a clean line above the lip. Small detail, big difference.", duration: "20 min", price: "800 ₽", icon: MustacheIcon },
+];
+
+export type Master = { name: string; nickname: string; specialty: string; experience: string; image: string; alt: string; social: { label: string; href: string; handle: string }; bio: string; quote: string; signatureCuts: string[]; stats: { label: string; value: string }[] };
+
+export const masters: Master[] = [
+  { name: "Dmitri Volkov", nickname: "Iron", specialty: "Master Barber · Owner", experience: "12 yrs behind the chair", image: "/images/master-1.png", alt: "Portrait of master barber Dmitri Iron Volkov", social: { label: "Instagram", href: "https://instagram.com", handle: "@iron_volkov" }, bio: "Opened IRON & OAK in 2013 after seven years cutting in London and St. Petersburg. Trained on classic scissor work, built his name on skin fades. Runs the shop the way he runs his chair — no shortcuts, no small talk.", quote: "A cut either holds for three weeks or it doesn't. Mine hold.", signatureCuts: ["Skin fade", "Scissor cut", "Grey camouflage"], stats: [{ label: "Cuts given", value: "18 400+" }, { label: "Years", value: "12" }, { label: "Signature", value: "Skin fade" }] },
+  { name: "Alexey Sorokin", nickname: "Sorokin", specialty: "Fade & Texture", experience: "8 yrs · skin-fade specialist", image: "/images/master-2.png", alt: "Portrait of barber Alexey Sorokin", social: { label: "Instagram", href: "https://instagram.com", handle: "@sorokin.cuts" }, bio: "Came up in a chain shop, left to do real work. Specialises in texture crops and mid-fades. The guy you book when you want it to look effortless — and stay that way past Friday.", quote: "Effortless is the hardest thing to cut.", signatureCuts: ["Textured crop", "Mid fade", "Buzz style"], stats: [{ label: "Cuts given", value: "9 200+" }, { label: "Years", value: "8" }, { label: "Signature", value: "Textured crop" }] },
+  { name: "Mark Levin", nickname: "Levin", specialty: "Straight-Razor Shave", experience: "15 yrs with the blade", image: "/images/master-3.png", alt: "Portrait of master barber Mark Levin", social: { label: "Instagram", href: "https://instagram.com", handle: "@levin.shaves" }, bio: "Fifteen years with a straight razor and zero nicks worth remembering. Trained under an old Moscow master. Handles the Royal Shave — hot towels, badger brush, the whole ritual. Sit still, breathe.", quote: "The blade tells you everything. You just have to listen.", signatureCuts: ["Royal shave", "Beard sculpt", "Hot towel"], stats: [{ label: "Shaves given", value: "6 800+" }, { label: "Years", value: "15" }, { label: "Signature", value: "Royal shave" }] },
+  { name: "Yan Kovalsky", nickname: "Kovalsky", specialty: "Classic & Kids' Cuts", experience: "4 yrs · new school, old trade", image: "/images/master-4.png", alt: "Portrait of barber Yan Kovalsky", social: { label: "Instagram", href: "https://instagram.com", handle: "@kovalsky.fade" }, bio: "The new hand on the floor. Trained in-house, sharp on classic side-parts and patient with the kids' chair. Brings a calm energy and a steady comb — the chair you send your son to.", quote: "Classic doesn't mean old. It means it still works.", signatureCuts: ["Classic side part", "Kids' cut", "Pompadour"], stats: [{ label: "Cuts given", value: "3 600+" }, { label: "Years", value: "4" }, { label: "Signature", value: "Side part" }] },
+];
+
+export type Work = { image: string; title: string; category: "Cuts" | "Beards" | "Shaves"; alt: string };
+export const works: Work[] = [
+  { image: "/images/work-1.png", title: "Skin Fade Undercut", category: "Cuts", alt: "Skin fade undercut haircut, side profile" },
+  { image: "/images/work-2.png", title: "Sculpted Full Beard", category: "Beards", alt: "Sculpted full beard trim, side profile" },
+  { image: "/images/work-3.png", title: "Slicked Pompadour", category: "Cuts", alt: "Slicked-back pompadour hairstyle, back view" },
+  { image: "/images/work-4.png", title: "Straight-Razor Shave", category: "Shaves", alt: "Clean straight-razor shave result" },
+  { image: "/images/work-5.png", title: "Textured Crop + Beard", category: "Cuts", alt: "Modern textured crop haircut with beard" },
+  { image: "/images/work-6.png", title: "Gentleman's Side Part", category: "Cuts", alt: "Sharp side-part gentleman's haircut with mustache" },
+];
+export const workFilters = ["All", "Cuts", "Beards", "Shaves"] as const;
+
+export type Review = { name: string; role: string; rating: number; text: string; date: string };
+export const reviews: Review[] = [
+  { name: "Andrey K.", role: "Regular · 2 yrs", rating: 5, text: "Best fade I've had in Moscow. Dmitri doesn't talk unless you talk first. Respect. Walk out, line still clean three weeks later.", date: "March 2025" },
+  { name: "Sergei M.", role: "Straight-razor regular", rating: 5, text: "Straight-razor shave with hot towels. Walked out feeling like a new man. Worth every ruble. Levin knows his blade.", date: "February 2025" },
+  { name: "Ivan P.", role: "First visit", rating: 5, text: "The room alone is worth the trip. Concrete, leather, old-school chairs. Cuts are razor-sharp. Booked my next one on the way out.", date: "February 2025" },
+  { name: "Nikolay R.", role: "Regular · 1 yr", rating: 4, text: "Solid work, cool atmosphere. Online booking was painless. Took one star for the wait once — scheduling's been tighter since.", date: "January 2025" },
+  { name: "Dmitry V.", role: "Beard sculpting", rating: 5, text: "Mark is a wizard with the blade. Three weeks and the line still holds. I'm not going anywhere else. The coffee's not bad either.", date: "December 2024" },
+];
+
+export type Faq = { q: string; a: string; category: "Booking" | "The chair" | "Payment" };
+export const faqs: Faq[] = [
+  { q: "Do I need to book, or can I walk in?", a: "Walk-ins are welcome, but the chair fills fast — especially evenings and weekends. Booking ahead means you pick your master and your slot. No waiting, no guessing.", category: "Booking" },
+  { q: "How early should I arrive?", a: "Five minutes is plenty. Ten if it's your first visit — we'll get your details down and talk through what you want. Late is fine up to 10 minutes; after that we may need to shorten the service.", category: "Booking" },
+  { q: "What if I'm running late or need to cancel?", a: "Text or call us. We hold the chair for 10 minutes. Cancellations are free up to 4 hours before your slot — after that we ask for half the service value. We're reasonable people, talk to us.", category: "Booking" },
+  { q: "How long does a cut take?", a: "A scissor cut is 45 minutes. Cut and beard together, 70. The Royal straight-razor shave needs the full 45 — you don't rush a blade. Add 15 if you want a wash and a coffee first.", category: "The chair" },
+  { q: "Can I bring a photo of what I want?", a: "Yes — and we'd rather you did. A photo beats ten minutes of describing. But we'll also tell you straight if the cut won't work with your hair. That's our job.", category: "The chair" },
+  { q: "Do you cut kids' hair?", a: "We do — under 12s, 30 minutes. Yan handles most of them. Bring a phone or a juice, we bring the patience. First cut's always a little slow, that's normal.", category: "The chair" },
+  { q: "What payment do you take?", a: "Card, cash, Apple/Google Pay, and QR transfers. We don't do crypto. Tips are welcome but never expected — cash or card, your call.", category: "Payment" },
+  { q: "Do you sell product?", a: "A short rack — pomades, beard oil, sea salt spray. The stuff we actually use. We'll tell you which one fits your hair, not the most expensive one.", category: "Payment" },
+];
+
+export const messengers = [
+  { label: "WhatsApp", href: "https://wa.me/74952345678?text=Hi%20IRON%20%26%20OAK%2C%20I%27d%20like%20to%20book%20a%20chair.", handle: "+7 495 234-56-78" },
+  { label: "Telegram", href: "https://t.me/ironandoak?text=Hi%20IRON%20%26%20OAK%2C%20I%27d%20like%20to%20book%20a%20chair.", handle: "@ironandoak" },
+] as const;
+
+export { BulbIcon };
