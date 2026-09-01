@@ -74,3 +74,41 @@ Unresolved / next-phase priorities:
 - **404 page**: not-found.tsx not rebuilt.
 - **Premium features from prior rounds**: command palette, scroll-spy side dots, master bio modals, before/after slider, testimonials carousel, today's-slots widget, hours status, gift cards, journal, newsletter, loading state — not yet rebuilt.
 - **Dev server stability**: process gets killed between bash calls — run server + QA in a single session.
+
+---
+Task ID: 12 (i18n — Russian primary + EN toggle)
+Agent: main (user request)
+Task: Make Russian the primary language with a language toggle button (RU/EN).
+
+Work Log:
+- Created `src/components/barbershop/translations.ts` — full bilingual dictionary (RU + EN) covering every text string: nav, hero, ticker, about, services (8 items), masters (4 items with bios/quotes/stats), portfolio (6 items + filters), booking, booking form (all labels/placeholders/states), reviews (5 items), FAQ (8 items), contacts, footer, UI buttons.
+- Created `src/components/barbershop/i18n.tsx` — React Context i18n system:
+  - `I18nProvider` wraps the app, manages `lang` state (RU default).
+  - Saves language choice to `localStorage` (`ironoak_lang` key).
+  - Updates `<html lang>` attribute on language change.
+  - `useI18n()` hook returns `{ lang, t, setLang, toggle }`.
+- Updated `src/app/layout.tsx`:
+  - `<html lang="ru">` (Russian primary).
+  - Wrapped body in `<I18nProvider>`.
+  - SEO metadata in Russian (title, description, keywords, Open Graph locale `ru_RU`).
+  - JSON-LD schema in Russian (address in Cyrillic).
+  - Font subsets: added `"cyrillic"` to Oswald and Inter (Anton doesn't support Cyrillic — browser falls back to Oswald for Cyrillic chars automatically).
+- Rewrote `src/app/page.tsx` — all 10 sections now use `useI18n()` for text:
+  - Added `LangToggle` component (RU/EN button in header, active language in rust).
+  - All section headings, descriptions, labels, button text, form fields, FAQ items, reviews, footer — pulled from translations.
+  - Services/masters/works: icons and images from `data.ts`, text from translations (mapped by index).
+  - Ticker, nav, mobile menu — fully translated.
+  - Booking form: all labels, placeholders, select options, success/error states translated.
+- Verified via agent-browser:
+  - Default language: RU — `<html lang="ru">`, hero shows «Стрижки с характером.», ticker shows «ВОЗЬМЁМ БЕЗ ЗАПИСИ», nav shows «О нас / Услуги / Мастера / Работы / Отзывы / Вопросы / Контакты».
+  - Toggle to EN: hero changes to «Cuts with character.», all text switches to English.
+  - Toggle back to RU: text returns to Russian.
+  - No console errors. Lint clean. All 10 sections present.
+  - Language choice persists in localStorage.
+
+Stage Summary:
+- Site is now bilingual: Russian (primary) + English (toggle).
+- Language toggle button (RU/EN) in the header, active language highlighted in rust.
+- Selection persists across sessions via localStorage.
+- All text content, SEO metadata, and JSON-LD schema are fully translated.
+- Cyrillic rendering: Oswald + Inter fonts include Cyrillic subsets; Anton falls back to Oswald for Cyrillic chars (per-character browser fallback).
