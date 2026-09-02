@@ -49,26 +49,6 @@ function LangToggle() {
 }
 
 /* ============ HEADER ============ */
-function Ticker() {
-  const { t } = useI18n();
-  const items = [...t.ticker, ...t.ticker];
-  return (
-    <div className="relative overflow-hidden border-b border-rust/30 bg-rust/10">
-      <div className="marquee py-1.5">
-        {[0, 1].map((track) => (
-          <div key={track} className="marquee__track" aria-hidden={track === 1}>
-            {items.map((it, i) => (
-              <span key={i} className="flex items-center gap-3 font-display text-[0.68rem] uppercase tracking-[0.25em] text-cream/70">
-                <span className="bulb-dot" aria-hidden="true" />{it}
-              </span>
-            ))}
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
-
 function Header() {
   const { t } = useI18n();
   const [open, setOpen] = React.useState(false);
@@ -96,13 +76,12 @@ function Header() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50">
-      <Ticker />
       <div className={`border-b transition-all duration-300 ${scrolled ? "border-ash/20 bg-ink/90 backdrop-blur-md" : "border-transparent bg-ink/40 backdrop-blur-sm"}`}>
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 sm:px-8 md:px-12 lg:px-20">
-          <a href="#top" className="group flex items-center gap-3" aria-label={`${site.name} — home`}>
+          <a href="#top" className="group flex items-center gap-3" aria-label={`${t.brandName} — home`}>
             <BrandMark className="h-9 w-9 text-rust transition-transform duration-300 group-hover:rotate-6" />
             <span className="flex flex-col leading-none">
-              <span className="font-anton text-xl tracking-[0.06em] text-cream">IRON &amp; OAK</span>
+              <span className="font-anton text-xl tracking-[0.06em] text-cream">{t.brandName}</span>
               <span className="font-display text-[0.6rem] uppercase tracking-[0.3em] text-brass/80">{t.footer.tagline}</span>
             </span>
           </a>
@@ -129,7 +108,7 @@ function Header() {
       {open && (
         <div className="fixed inset-0 z-50 bg-ink/98 backdrop-blur-sm lg:hidden">
           <div className="flex h-16 items-center justify-between border-b border-ash/20 px-5">
-            <span className="font-anton text-lg tracking-[0.06em] text-cream">IRON &amp; OAK</span>
+            <span className="font-anton text-lg tracking-[0.06em] text-cream">{t.brandName}</span>
             <button type="button" onClick={() => setOpen(false)} className="flex h-10 w-10 items-center justify-center border border-ash/30 text-cream hover:border-brass hover:text-brass" aria-label={t.ui.closeMenu}><CloseIcon className="h-5 w-5" /></button>
           </div>
           <nav className="flex flex-col gap-1 px-5 py-8" aria-label="Mobile" onClick={() => setOpen(false)}>
@@ -171,14 +150,7 @@ function Hero() {
             <a href="#booking" className="btn-rust text-sm">{t.hero.ctaBook}<ArrowIcon className="h-4 w-4" /></a>
             <a href="#services" className="btn-outline text-sm">{t.hero.ctaBoard}</a>
           </div>
-          <dl className="reveal reveal-delay-4 mt-14 grid grid-cols-2 gap-px overflow-hidden border border-ash/20 bg-ash/10 sm:grid-cols-4">
-            {t.hero.stats.map((s) => (
-              <div key={s.label} className="bg-ink/60 px-4 py-5 backdrop-blur-sm">
-                <dt className="font-anton text-3xl text-cream sm:text-4xl">{s.value}</dt>
-                <dd className="mt-1 font-display text-[0.62rem] uppercase tracking-[0.2em] text-cream-dim">{s.label}</dd>
-              </div>
-            ))}
-          </dl>
+
         </div>
       </div>
     </section>
@@ -198,10 +170,7 @@ function About() {
             </div>
             <div className="absolute inset-0 bg-gradient-to-t from-ink/60 to-transparent" />
           </div>
-          <div className="absolute -bottom-6 -right-4 z-10 border border-brass/40 bg-ink-2 px-6 py-4 sm:-right-6">
-            <div className="font-anton text-4xl text-rust">{t.about.badgeValue}</div>
-            <div className="font-display text-[0.6rem] uppercase tracking-[0.25em] text-cream-dim whitespace-pre-line">{t.about.badgeLabel}</div>
-          </div>
+
         </div>
         <div>
           <Eyebrow>{t.about.eyebrow}</Eyebrow>
@@ -278,7 +247,7 @@ function Masters() {
     <SectionShell id="masters" className="bg-concrete" watermark="03">
       <SectionHeading eyebrow={t.masters.eyebrow} title={<>{t.masters.title1}<br />{t.masters.title2}.</>} desc={t.masters.desc} />
       <RivetDivider className="my-12" />
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {t.masters.items.map((m, i) => {
           const data = masterData[i];
           return (
@@ -487,10 +456,7 @@ function Reviews() {
     <SectionShell id="reviews" className="bg-concrete">
       <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
         <SectionHeading eyebrow={t.reviews.eyebrow} title={<>{t.reviews.title1}<br />{t.reviews.title2}.</>} />
-        <div className="reveal reveal-delay-2 flex items-center gap-4 border border-ash/25 bg-ink-2/60 px-6 py-4">
-          <span className="font-anton text-5xl text-rust">{site.rating}</span>
-          <div className="flex flex-col"><Stars rating={5} /><span className="mt-1 font-display text-[0.62rem] uppercase tracking-[0.2em] text-cream-dim">{site.reviewsCount} {t.reviews.reviewsCount}</span></div>
-        </div>
+
       </div>
       <RivetDivider className="my-12" />
       <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
@@ -604,12 +570,12 @@ function Footer() {
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 md:flex-row">
           <div className="flex items-center gap-4">
             <BrandMark className="h-12 w-12 text-rust" />
-            <div className="leading-none"><div className="font-anton text-3xl tracking-[0.06em] text-cream sm:text-4xl">IRON &amp; OAK</div><div className="mt-1 font-display text-[0.62rem] uppercase tracking-[0.3em] text-brass">{t.footer.tagline}</div></div>
+            <div className="leading-none"><div className="font-anton text-3xl tracking-[0.06em] text-cream sm:text-4xl">{t.brandName}</div><div className="mt-1 font-display text-[0.62rem] uppercase tracking-[0.3em] text-brass">{t.footer.tagline}</div></div>
           </div>
           <div className="flex flex-wrap items-center justify-center gap-3">
             {site.socials.map((s) => {
               const Icon = s.label === "Instagram" ? InstagramIcon : s.label === "Telegram" ? TelegramIcon : VkIcon;
-              return <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" className="flex h-11 w-11 items-center justify-center border border-ash/30 text-cream-dim hover:border-brass hover:text-brass" aria-label={`${site.name} on ${s.label}`}><Icon className="h-4 w-4" /></a>;
+              return <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" className="flex h-11 w-11 items-center justify-center border border-ash/30 text-cream-dim hover:border-brass hover:text-brass" aria-label={`${t.brandName} on ${s.label}`}><Icon className="h-4 w-4" /></a>;
             })}
           </div>
         </div>

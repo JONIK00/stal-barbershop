@@ -1,24 +1,22 @@
 import { ScissorsIcon, BeardIcon, ClipperIcon, CombIcon, RazorIcon, MustacheIcon, BulbIcon } from "./icons";
 
 export const site = {
-  name: "IRON & OAK",
-  tagline: "Cuts with character.",
-  city: "Moscow",
-  address: "12 Krasnogvardeyskaya Passage, bld 3, Moscow",
-  addressShort: "Krasnogvardeyskaya Passage, 12/3",
+  name: "СТАЛЬ",
+  tagline: "Стрижки с характером.",
+  city: "Москва",
+  address: "Красногвардейский проезд, 12, стр 3, Москва",
+  addressShort: "Красногвардейский пр., 12/3",
   phone: "+7 (495) 234-56-78",
   phoneHref: "tel:+74952345678",
-  hours: "Mon — Sun · 10:00 — 22:00",
+  hours: "Пн — Вс · 10:00 — 22:00",
   hoursShort: "10:00 — 22:00",
-  email: "chair@ironandoak.barbershop",
+  email: "chair@stal.barbershop",
   socials: [
-    { label: "Instagram", href: "https://instagram.com", handle: "@iron.oak" },
-    { label: "Telegram", href: "https://t.me", handle: "@ironandoak" },
-    { label: "VK", href: "https://vk.com", handle: "vk.com/ironandoak" },
+    { label: "Instagram", href: "https://instagram.com", handle: "@stal.barber" },
+    { label: "Telegram", href: "https://t.me", handle: "@stal_barber" },
+    { label: "VK", href: "https://vk.com", handle: "vk.com/stal_barber" },
   ],
-  mapHref: "https://yandex.ru/maps/?text=Moscow%20Krasnogvardeyskaya%20Passage",
-  rating: "4.9",
-  reviewsCount: "312",
+  mapHref: "https://yandex.ru/maps/?text=Москва%20Красногвардейский%20проезд",
 } as const;
 
 export const nav = [
@@ -56,10 +54,7 @@ export const services: Service[] = [
 export type Master = { name: string; nickname: string; specialty: string; experience: string; image: string; alt: string; social: { label: string; href: string; handle: string }; bio: string; quote: string; signatureCuts: string[]; stats: { label: string; value: string }[] };
 
 export const masters: Master[] = [
-  { name: "Dmitri Volkov", nickname: "Iron", specialty: "Master Barber · Owner", experience: "12 yrs behind the chair", image: "/images/master-1.png", alt: "Portrait of master barber Dmitri Iron Volkov", social: { label: "Instagram", href: "https://instagram.com", handle: "@iron_volkov" }, bio: "Opened IRON & OAK in 2013 after seven years cutting in London and St. Petersburg. Trained on classic scissor work, built his name on skin fades. Runs the shop the way he runs his chair — no shortcuts, no small talk.", quote: "A cut either holds for three weeks or it doesn't. Mine hold.", signatureCuts: ["Skin fade", "Scissor cut", "Grey camouflage"], stats: [{ label: "Cuts given", value: "18 400+" }, { label: "Years", value: "12" }, { label: "Signature", value: "Skin fade" }] },
-  { name: "Alexey Sorokin", nickname: "Sorokin", specialty: "Fade & Texture", experience: "8 yrs · skin-fade specialist", image: "/images/master-2.png", alt: "Portrait of barber Alexey Sorokin", social: { label: "Instagram", href: "https://instagram.com", handle: "@sorokin.cuts" }, bio: "Came up in a chain shop, left to do real work. Specialises in texture crops and mid-fades. The guy you book when you want it to look effortless — and stay that way past Friday.", quote: "Effortless is the hardest thing to cut.", signatureCuts: ["Textured crop", "Mid fade", "Buzz style"], stats: [{ label: "Cuts given", value: "9 200+" }, { label: "Years", value: "8" }, { label: "Signature", value: "Textured crop" }] },
-  { name: "Mark Levin", nickname: "Levin", specialty: "Straight-Razor Shave", experience: "15 yrs with the blade", image: "/images/master-3.png", alt: "Portrait of master barber Mark Levin", social: { label: "Instagram", href: "https://instagram.com", handle: "@levin.shaves" }, bio: "Fifteen years with a straight razor and zero nicks worth remembering. Trained under an old Moscow master. Handles the Royal Shave — hot towels, badger brush, the whole ritual. Sit still, breathe.", quote: "The blade tells you everything. You just have to listen.", signatureCuts: ["Royal shave", "Beard sculpt", "Hot towel"], stats: [{ label: "Shaves given", value: "6 800+" }, { label: "Years", value: "15" }, { label: "Signature", value: "Royal shave" }] },
-  { name: "Yan Kovalsky", nickname: "Kovalsky", specialty: "Classic & Kids' Cuts", experience: "4 yrs · new school, old trade", image: "/images/master-4.png", alt: "Portrait of barber Yan Kovalsky", social: { label: "Instagram", href: "https://instagram.com", handle: "@kovalsky.fade" }, bio: "The new hand on the floor. Trained in-house, sharp on classic side-parts and patient with the kids' chair. Brings a calm energy and a steady comb — the chair you send your son to.", quote: "Classic doesn't mean old. It means it still works.", signatureCuts: ["Classic side part", "Kids' cut", "Pompadour"], stats: [{ label: "Cuts given", value: "3 600+" }, { label: "Years", value: "4" }, { label: "Signature", value: "Side part" }] },
+  { name: "Шах", nickname: "Шах", specialty: "Мастер-барбер", experience: "", image: "/images/master-1.png", alt: "Портрет мастера-барбера Шаха", social: { label: "Instagram", href: "https://instagram.com", handle: "@shah.barber" }, bio: "", quote: "", signatureCuts: [], stats: [] },
 ];
 
 export type Work = { image: string; title: string; category: "Cuts" | "Beards" | "Shaves"; alt: string };

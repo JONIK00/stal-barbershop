@@ -110,37 +110,36 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$barbers
 ;
 ;
 const metadata = {
-    title: "IRON & OAK | Барбершоп — Стрижки. Бороды. Опасная бритва.",
-    description: "IRON & OAK — лофт-барбершоп в Москве. Чёткие стрижки, оформление бороды, бритьё опасной бритвой с горячим полотенцем. Запишись онлайн.",
+    title: "СТАЛЬ | Барбершоп — Стрижки. Бороды. Опасная бритва.",
+    description: "СТАЛЬ — барбершоп в Москве. Мужские стрижки, оформление бороды, бритьё опасной бритвой. Запишись онлайн.",
     keywords: [
         "барбершоп",
         "барбершоп Москва",
         "мужская стрижка",
         "стрижка бороды",
         "бритьё опасной бритвой",
-        "лофт барбершоп",
-        "IRON & OAK"
+        "СТАЛЬ"
     ],
     openGraph: {
-        title: "IRON & OAK | Барбершоп",
-        description: "Стрижки с характером. Оформление бороды. Бритьё опасной бритвой. Лофт-барбершоп для мужчин с характером.",
-        url: "https://ironandoak.barbershop",
-        siteName: "IRON & OAK Барбершоп",
+        title: "СТАЛЬ | Барбершоп",
+        description: "Стрижки с характером. Оформление бороды. Бритьё опасной бритвой.",
+        url: "https://stal.barbershop",
+        siteName: "СТАЛЬ Барбершоп",
         type: "website",
         locale: "ru_RU"
     },
     twitter: {
         card: "summary_large_image",
-        title: "IRON & OAK | Барбершоп",
+        title: "СТАЛЬ | Барбершоп",
         description: "Стрижки с характером. Бороды. Бритьё опасной бритвой."
     }
 };
 const jsonLd = {
     "@context": "https://schema.org",
     "@type": "HairSalon",
-    name: "IRON & OAK",
-    description: "Лофт-барбершоп в Москве. Чёткие стрижки, оформление бороды, бритьё опасной бритвой с горячим полотенцем.",
-    url: "https://ironandoak.barbershop",
+    name: "СТАЛЬ",
+    description: "Барбершоп в Москве. Мужские стрижки, оформление бороды, бритьё опасной бритвой.",
+    url: "https://stal.barbershop",
     telephone: "+7-495-234-56-78",
     priceRange: "₽₽₽",
     address: {
@@ -164,12 +163,7 @@ const jsonLd = {
             opens: "10:00",
             closes: "22:00"
         }
-    ],
-    aggregateRating: {
-        "@type": "AggregateRating",
-        ratingValue: "4.9",
-        reviewCount: "312"
-    }
+    ]
 };
 function RootLayout({ children }) {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("html", {
@@ -184,12 +178,12 @@ function RootLayout({ children }) {
                     }
                 }, void 0, false, {
                     fileName: "[project]/src/app/layout.tsx",
-                    lineNumber: 39,
+                    lineNumber: 38,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/layout.tsx",
-                lineNumber: 38,
+                lineNumber: 37,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("body", {
@@ -198,18 +192,18 @@ function RootLayout({ children }) {
                     children: children
                 }, void 0, false, {
                     fileName: "[project]/src/app/layout.tsx",
-                    lineNumber: 42,
+                    lineNumber: 41,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/layout.tsx",
-                lineNumber: 41,
+                lineNumber: 40,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/layout.tsx",
-        lineNumber: 37,
+        lineNumber: 36,
         columnNumber: 5
     }, this);
 }

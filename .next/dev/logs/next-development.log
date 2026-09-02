@@ -1,2 +1,16 @@
-{"timestamp":"00:00:00.970","source":"Server","level":"LOG","message":""}
-{"timestamp":"00:46:43.289","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:00:01.001","source":"Server","level":"LOG","message":""}
+{"timestamp":"00:13:59.105","source":"Server","level":"LOG","message":"✓ Compiled in 236ms"}
+{"timestamp":"00:14:40.139","source":"Server","level":"LOG","message":"✓ Compiled in 188ms"}
+{"timestamp":"00:14:40.248","source":"Server","level":"LOG","message":"✓ Compiled in 75ms"}
+{"timestamp":"00:14:40.372","source":"Server","level":"LOG","message":"✓ Compiled in 81ms"}
+{"timestamp":"00:14:41.321","source":"Server","level":"WARN","message":"⚠ Fast Refresh had to perform a full reload when ./src/components/barbershop/translations.ts changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload"}
+{"timestamp":"00:14:41.576","source":"Server","level":"WARN","message":"⚠ Fast Refresh had to perform a full reload when ./src/components/barbershop/translations.ts changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload"}
+{"timestamp":"00:14:41.610","source":"Server","level":"WARN","message":"⚠ Fast Refresh had to perform a full reload when ./src/components/barbershop/translations.ts changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload"}
+{"timestamp":"00:14:41.700","source":"Server","level":"WARN","message":"⚠ Fast Refresh had to perform a full reload when ./src/components/barbershop/translations.ts changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload"}
+{"timestamp":"00:15:14.122","source":"Server","level":"LOG","message":"✓ Compiled in 241ms"}
+{"timestamp":"00:15:15.780","source":"Server","level":"WARN","message":"⚠ Fast Refresh had to perform a full reload when ./src/components/barbershop/translations.ts changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload"}
+{"timestamp":"00:16:38.344","source":"Server","level":"LOG","message":"✓ Compiled in 376ms"}
+{"timestamp":"00:16:39.096","source":"Server","level":"LOG","message":"✓ Compiled in 611ms"}
+{"timestamp":"00:16:39.201","source":"Server","level":"LOG","message":"✓ Compiled in 198ms"}
+{"timestamp":"00:16:39.639","source":"Server","level":"WARN","message":"⚠ Blocked cross-origin request to Next.js dev resource /__nextjs_font/geist-latin.woff2 from \"preview-chat-48d9382d-c97c-4584-83e3-73cd5c706e30.space-z.ai\".\nCross-origin access to Next.js dev resources is blocked by default for safety.\n\nTo allow this host in development, add it to \"allowedDevOrigins\" in next.config.js and restart the dev server:\n\n// next.config.js\nmodule.exports = {\n  allowedDevOrigins: ['preview-chat-48d9382d-c97c-4584-83e3-73cd5c706e30.space-z.ai'],\n}\n\nRead more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins"}
+{"timestamp":"00:17:18.582","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}

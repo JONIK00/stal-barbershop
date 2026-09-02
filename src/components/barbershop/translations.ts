@@ -6,6 +6,7 @@
 export type Lang = "ru" | "en";
 
 export type Dict = {
+  brandName: string;
   nav: { about: string; services: string; masters: string; work: string; reviews: string; faq: string; contacts: string };
   hero: {
     badge: string;
@@ -149,31 +150,27 @@ export type Dict = {
 
 export const translations: Record<Lang, Dict> = {
   ru: {
-    nav: { about: "О нас", services: "Услуги", masters: "Мастера", work: "Работы", reviews: "Отзывы", faq: "Вопросы", contacts: "Контакты" },
+    brandName: "СТАЛЬ",
+    nav: { about: "О нас", services: "Услуги", masters: "Мастер", work: "Работы", reviews: "Отзывы", faq: "Вопросы", contacts: "Контакты" },
     hero: {
-      badge: "Москва · Лофт-барбершоп",
+      badge: "Москва · Барбершоп",
       title1: "Стрижки с",
       title2: "характером.",
-      desc: "Чёткие стрижки, оформленные бороды и бритьё опасной бритвой в помещении, где пахнет кожей, латунью и горячим полотенцем. Никаких трендов. Никакой болтовни. Только ремесло — сделанное как надо.",
+      desc: "Чёткие стрижки, оформленные бороды и бритьё опасной бритвой. Никаких трендов. Никакой болтовни. Только ремесло — сделанное как надо.",
       ctaBook: "Записаться онлайн",
       ctaBoard: "Прайс",
-      stats: [
-        { value: "12", label: "Лет в деле" },
-        { value: "4", label: "Мастера" },
-        { value: "8", label: "Услуг в прайсе" },
-        { value: "4.9", label: "Рейтинг · 312 отзывов" },
-      ],
+      stats: [],
     },
     ticker: ["ВОЗЬМЁМ БЕЗ ЗАПИСИ","ПН–ВС 10:00–22:00","БРИТЬЁ ОПАСНОЙ БРИТВОЙ","ОНЛАЙН-ЗАПИСЬ — ПЕРВЫЙ СТУЛ 10:00","ГОРЯЧЕЕ ПОЛОТЕНЦЕ · КОЖА · ЛАТУНЬ","+7 495 234-56-78"],
     about: {
-      eyebrow: "Наша история",
+      eyebrow: "О нас",
       title1: "Не тренд.",
       title2: "Ремесло.",
-      p1: "Мы не гонимся за картинками из ленты. Мы делаем стрижки, которые держатся до понедельника, и бритьё, ради которого стоит заказать второй кофе.",
-      p2: "IRON & OAK открылся в бывшем гараже на Красногвардейской. Мы оставили бетон, сталь и характер — добавили три кресла, горячее полотенце и барсучью кисть для каждого, кто садится.",
-      p3: "Ты садишься. Мы работаем.",
-      badgeValue: "12",
-      badgeLabel: "Лет за\nкреслом",
+      p1: "Мужские стрижки, оформление бороды и бритьё опасной бритвой. Без лишних слов и суеты — только работа, сделанная как надо.",
+      p2: "Каждый клиент получает полное внимание мастера. От консультации до укладки — никаких конвейеров и заготовок.",
+      p3: "Садись в кресло. Дальше — наша работа.",
+      badgeValue: "",
+      badgeLabel: "",
       pillars: [{ label: "Настоящие лезвия" }, { label: "Ручная работа" }, { label: "Чёткие линии" }],
     },
     services: {
@@ -198,15 +195,12 @@ export const translations: Record<Lang, Dict> = {
       ],
     },
     masters: {
-      eyebrow: "Руки",
+      eyebrow: "Мастер",
       title1: "За",
       title2: "креслом.",
-      desc: "Четыре барбера, один стандарт. Каждый заслужил своё кресло — и держит его.",
+      desc: "Единственный мастер и хозяин кресла. Стрижёт, бреёт, оформляет — всё лично.",
       items: [
-        { name: "Дмитрий Волков", nickname: "Iron", specialty: "Мастер-барбер · Владелец", experience: "12 лет за креслом", bio: "Открыл IRON & OAK в 2013 после семи лет работы в Лондоне и Петербурге. Классическая работа ножницами, имя — на фейдах. Держит мастерскую как кресло — без сокращений, без пустой болтовни.", quote: "Стрижка либо держится три недели, либо нет. Моя держится.", signatureCuts: ["Фейд под ноль", "Ножницами", "Камуфляж седины"], stats: [{ label: "Стрижек", value: "18 400+" }, { label: "Лет", value: "12" }, { label: "Фирменное", value: "Фейд" }] },
-        { name: "Алексей Сорокин", nickname: "Сорокин", specialty: "Фейд и текстура", experience: "8 лет · фейд-специалист", bio: "Начал в сетевом барбершопе, ушёл делать настоящее. Специализация — текстурные кропы и средние фейды. Тот, кого бронишь, когда хочется «небрежно» — и чтобы держалось до пятницы.", quote: "«Небрежно» — сложнее всего подстричь.", signatureCuts: ["Текстурный кроп", "Средний фейд", "Базз"], stats: [{ label: "Стрижек", value: "9 200+" }, { label: "Лет", value: "8" }, { label: "Фирменное", value: "Кроп" }] },
-        { name: "Марк Левин", nickname: "Левин", specialty: "Бритьё опасной бритвой", experience: "15 лет с лезвием", bio: "Пятнадцать лет с опасной бритвой и ноль порезов, о которых стоит помнить. Учился у старого московского мастера. Держит королевское бритьё — горячие полотенца, барсучья кисть, весь ритуал. Сиди тихо, дыши.", quote: "Лезвие всё подскажет. Надо только слушать.", signatureCuts: ["Королевское бритьё", "Борода", "Горячее полотенце"], stats: [{ label: "Бритьёв", value: "6 800+" }, { label: "Лет", value: "15" }, { label: "Фирменное", value: "Бритьё" }] },
-        { name: "Ян Ковальский", nickname: "Ковальский", specialty: "Классика и детские", experience: "4 года · новая школа, старый метод", bio: "Новая рука на площадке. Учился у нас, силён в классических проборах и терпелив с детским креслом. Спокойная энергия и твёрдая расчёска — кресло, куда отправляешь сына.", quote: "Классика — не значит старое. Значит, всё ещё работает.", signatureCuts: ["Классический пробор", "Детская", "Помпадур"], stats: [{ label: "Стрижек", value: "3 600+" }, { label: "Лет", value: "4" }, { label: "Фирменное", value: "Пробор" }] },
+        { name: "Шах", nickname: "Шах", specialty: "Мастер-барбер", experience: "", bio: "", quote: "", signatureCuts: [], stats: [] },
       ],
     },
     portfolio: {
@@ -309,7 +303,7 @@ export const translations: Record<Lang, Dict> = {
       openMap: "Открыть в Яндекс.Картах",
     },
     footer: {
-      tagline: "Барбершоп · Москва · с 2013",
+      tagline: "Барбершоп · Москва",
       navigate: "Навигация",
       servicesCol: "Услуги",
       contactCol: "Контакты",
@@ -317,7 +311,7 @@ export const translations: Record<Lang, Dict> = {
       bookDesc: "Забронируй слот онлайн или позвони. Первый стул — в 10:00.",
       bookCta: "Записаться",
       copyright: "Все стрижки защищены.",
-      motto: "Лофт · Бетон · Латунь",
+      motto: "Бетон · Сталь · Латунь",
     },
     ui: {
       book: "Запись",
@@ -331,31 +325,27 @@ export const translations: Record<Lang, Dict> = {
     },
   },
   en: {
-    nav: { about: "About", services: "Services", masters: "Masters", work: "Work", reviews: "Reviews", faq: "FAQ", contacts: "Contacts" },
+    brandName: "STEEL",
+    nav: { about: "About", services: "Services", masters: "Master", work: "Work", reviews: "Reviews", faq: "FAQ", contacts: "Contacts" },
     hero: {
-      badge: "Moscow · Loft Barbershop",
+      badge: "Moscow · Barbershop",
       title1: "Cuts with",
       title2: "character.",
-      desc: "Sharp cuts, sculpted beards, and straight-razor shaves in a room that smells of leather, brass, and hot towels. No trends. No small talk. Just the trade, done right.",
+      desc: "Sharp cuts, sculpted beards, and straight-razor shaves. No trends. No small talk. Just the trade, done right.",
       ctaBook: "Book online",
       ctaBoard: "See the board",
-      stats: [
-        { value: "12", label: "Years sharp" },
-        { value: "4", label: "Master barbers" },
-        { value: "8", label: "Services on the board" },
-        { value: "4.9", label: "Avg. rating · 312 reviews" },
-      ],
+      stats: [],
     },
     ticker: ["WALK-INS WELCOME","MON–SUN 10:00–22:00","STRAIGHT-RAZOR SHAVES","BOOK ONLINE — FIRST CHAIR 10:00","HOT TOWEL · LEATHER · BRASS","+7 495 234-56-78"],
     about: {
-      eyebrow: "Our story",
+      eyebrow: "About us",
       title1: "Not a trend.",
       title2: "A trade.",
-      p1: "We don't chase looks off a feed. We cut hair that holds up on Monday morning and shaves that earn a second coffee.",
-      p2: "IRON & OAK started in a former mechanic's garage on Krasnogvardeyskaya. We kept the concrete, the steel, and the attitude — added three chairs, a hot-towel cabinet, and a badger brush for every man who sits down.",
-      p3: "You take the chair. We shut up and work.",
-      badgeValue: "12",
-      badgeLabel: "Years behind\nthe chair",
+      p1: "Men's cuts, beard sculpting, and straight-razor shaves. No extra talk, no fuss — just the work, done right.",
+      p2: "Every client gets the master's full attention. From consultation to finish — no conveyor, no templates.",
+      p3: "Take the chair. The rest is our job.",
+      badgeValue: "",
+      badgeLabel: "",
       pillars: [{ label: "Real blades" }, { label: "Hand work" }, { label: "Sharp lines" }],
     },
     services: {
@@ -380,15 +370,12 @@ export const translations: Record<Lang, Dict> = {
       ],
     },
     masters: {
-      eyebrow: "The hands",
+      eyebrow: "Master",
       title1: "Behind the",
       title2: "chair.",
-      desc: "Four barbers, one standard. Each one earned the chair — and keeps it.",
+      desc: "The sole master and owner of the chair. Cuts, shaves, sculpts — all personally.",
       items: [
-        { name: "Dmitri Volkov", nickname: "Iron", specialty: "Master Barber · Owner", experience: "12 yrs behind the chair", bio: "Opened IRON & OAK in 2013 after seven years cutting in London and St. Petersburg. Trained on classic scissor work, built his name on skin fades.", quote: "A cut either holds for three weeks or it doesn't. Mine hold.", signatureCuts: ["Skin fade", "Scissor cut", "Grey camouflage"], stats: [{ label: "Cuts given", value: "18 400+" }, { label: "Years", value: "12" }, { label: "Signature", value: "Skin fade" }] },
-        { name: "Alexey Sorokin", nickname: "Sorokin", specialty: "Fade & Texture", experience: "8 yrs · skin-fade specialist", bio: "Came up in a chain shop, left to do real work. Specialises in texture crops and mid-fades.", quote: "Effortless is the hardest thing to cut.", signatureCuts: ["Textured crop", "Mid fade", "Buzz style"], stats: [{ label: "Cuts given", value: "9 200+" }, { label: "Years", value: "8" }, { label: "Signature", value: "Textured crop" }] },
-        { name: "Mark Levin", nickname: "Levin", specialty: "Straight-Razor Shave", experience: "15 yrs with the blade", bio: "Fifteen years with a straight razor and zero nicks worth remembering. Handles the Royal Shave.", quote: "The blade tells you everything. You just have to listen.", signatureCuts: ["Royal shave", "Beard sculpt", "Hot towel"], stats: [{ label: "Shaves given", value: "6 800+" }, { label: "Years", value: "15" }, { label: "Signature", value: "Royal shave" }] },
-        { name: "Yan Kovalsky", nickname: "Kovalsky", specialty: "Classic & Kids' Cuts", experience: "4 yrs · new school, old trade", bio: "The new hand on the floor. Sharp on classic side-parts and patient with the kids' chair.", quote: "Classic doesn't mean old. It means it still works.", signatureCuts: ["Classic side part", "Kids' cut", "Pompadour"], stats: [{ label: "Cuts given", value: "3 600+" }, { label: "Years", value: "4" }, { label: "Signature", value: "Side part" }] },
+        { name: "Shah", nickname: "Shah", specialty: "Master Barber", experience: "", bio: "", quote: "", signatureCuts: [], stats: [] },
       ],
     },
     portfolio: {
@@ -491,7 +478,7 @@ export const translations: Record<Lang, Dict> = {
       openMap: "Open in Yandex Maps",
     },
     footer: {
-      tagline: "Barbershop · Moscow · Est. 2013",
+      tagline: "Barbershop · Moscow",
       navigate: "Navigate",
       servicesCol: "Services",
       contactCol: "Contact",
@@ -499,7 +486,7 @@ export const translations: Record<Lang, Dict> = {
       bookDesc: "Reserve a slot online or call ahead. First chair opens at 10:00.",
       bookCta: "Book your chair",
       copyright: "All cuts reserved.",
-      motto: "Loft · Concrete · Brass",
+      motto: "Concrete · Steel · Brass",
     },
     ui: {
       book: "Book",
