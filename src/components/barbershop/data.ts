@@ -41,14 +41,10 @@ export const tickerItems = ["WALK-INS WELCOME","MON–SUN 10:00–22:00","STRAIG
 export type Service = { no: string; name: string; desc: string; duration: string; price: string; icon: typeof ScissorsIcon; popular?: boolean };
 
 export const services: Service[] = [
-  { no: "01", name: "Scissor & Clipper Cut", desc: "Full wash, cut, and finish. Built around your hair, not a Pinterest board.", duration: "45 min", price: "2 200 ₽", icon: ScissorsIcon },
-  { no: "02", name: "Beard Sculpting", desc: "Line-up, shape, and trim. We follow the grain, not the trend.", duration: "30 min", price: "1 500 ₽", icon: BeardIcon },
-  { no: "03", name: "Cut & Beard", desc: "The full reset. Cut, beard, and a finish that holds for weeks.", duration: "70 min", price: "3 200 ₽", icon: ClipperIcon, popular: true },
-  { no: "04", name: "Grey Camouflage", desc: "Blend the silver, keep the dignity. Subtle, never dyed-looking.", duration: "30 min", price: "1 800 ₽", icon: CombIcon },
-  { no: "05", name: "Kids' Cut · under 12", desc: "Patient hands for the small ones. No screens, no tears — mostly.", duration: "30 min", price: "1 400 ₽", icon: ClipperIcon },
-  { no: "06", name: "Royal Straight-Razor Shave", desc: "Hot towels, badger brush, and a real blade. The way it was meant to be.", duration: "45 min", price: "2 400 ₽", icon: RazorIcon, popular: true },
-  { no: "07", name: "Styling & Finish", desc: "Wash, towel, and a hold that survives the metro and the weather.", duration: "20 min", price: "900 ₽", icon: CombIcon },
-  { no: "08", name: "Mustache Trim & Shape", desc: "Wax, shape, and a clean line above the lip. Small detail, big difference.", duration: "20 min", price: "800 ₽", icon: MustacheIcon },
+  { no: "01", name: "Стрижка Под Насадку (одна Насадка)", desc: "", duration: "15 мин", price: "500 ₽", icon: ClipperIcon },
+  { no: "02", name: "Моделирование Бороды", desc: "", duration: "30 мин", price: "800 ₽", icon: BeardIcon },
+  { no: "03", name: "Опасное Бритьё", desc: "", duration: "30 мин", price: "800 ₽", icon: RazorIcon, popular: true },
+  { no: "04", name: "Бритьё Шейвером", desc: "", duration: "15 мин", price: "700 ₽", icon: RazorIcon },
 ];
 
 export type Master = { name: string; nickname: string; specialty: string; experience: string; image: string; alt: string; social: { label: string; href: string; handle: string }; bio: string; quote: string; signatureCuts: string[]; stats: { label: string; value: string }[] };
