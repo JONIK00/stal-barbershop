@@ -35,8 +35,8 @@
   --color-ink: #121212;
   --color-ink-2: #1a1a1a;
   --color-ink-3: #202020;
-  --color-rust: #b5502e;
-  --color-rust-dark: #8f3f22;
+  --color-rust: #2d6a4f;
+  --color-rust-dark: #1b4332;
   --color-brass: #a9793a;
   --color-brass-light: #c7954c;
   --color-cream: #e8e4dc;
@@ -52,7 +52,7 @@
   --card-foreground: #e8e4dc;
   --popover: #1a1a1a;
   --popover-foreground: #e8e4dc;
-  --primary: #b5502e;
+  --primary: #2d6a4f;
   --primary-foreground: #e8e4dc;
   --secondary: #202020;
   --secondary-foreground: #e8e4dc;
@@ -60,10 +60,10 @@
   --muted-foreground: #b8b3a8;
   --accent: #a9793a;
   --accent-foreground: #121212;
-  --destructive: #b5502e;
+  --destructive: #2d6a4f;
   --border: #2a2a2a;
   --input: #2a2a2a;
-  --ring: #b5502e;
+  --ring: #2d6a4f;
 }
 
 @layer base {
@@ -79,11 +79,11 @@
     color: #e8e4dc;
   }
   ::selection {
-    background-color: #b5502e;
+    background-color: #2d6a4f;
     color: #e8e4dc;
   }
   :focus-visible {
-    outline: 2px solid #b5502e;
+    outline: 2px solid #2d6a4f;
     outline-offset: 2px;
   }
 }
@@ -115,10 +115,10 @@
   .bg-brick {
     background-color: #181818;
     background-image:
-      linear-gradient(335deg, rgba(181,80,46,0.05) 23%, transparent 23%),
-      linear-gradient(155deg, rgba(181,80,46,0.05) 23%, transparent 23%),
-      linear-gradient(335deg, rgba(181,80,46,0.05) 50%, transparent 50%),
-      linear-gradient(155deg, rgba(181,80,46,0.05) 50%, transparent 50%);
+      linear-gradient(335deg, rgba(45,106,79,0.05) 23%, transparent 23%),
+      linear-gradient(155deg, rgba(45,106,79,0.05) 23%, transparent 23%),
+      linear-gradient(335deg, rgba(45,106,79,0.05) 50%, transparent 50%),
+      linear-gradient(155deg, rgba(45,106,79,0.05) 50%, transparent 50%);
     background-size: 50px 50px;
     background-position: 0 0, 25px 25px, 0 0, 25px 25px;
   }
@@ -131,14 +131,14 @@
 
   .btn-rust {
     display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
-    background: #b5502e; color: #e8e4dc;
+    background: #2d6a4f; color: #e8e4dc;
     font-family: var(--font-oswald), sans-serif;
     text-transform: uppercase; letter-spacing: 0.14em; font-weight: 600;
-    padding: 0.95rem 2rem; border: 1px solid #b5502e;
+    padding: 0.95rem 2rem; border: 1px solid #2d6a4f;
     transition: all 0.25s ease; cursor: pointer;
     clip-path: polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px);
   }
-  .btn-rust:hover { background: #c75e38; box-shadow: 0 0 0 1px #a9793a, 0 8px 24px -8px rgba(181,80,46,0.6); transform: translateY(-1px); }
+  .btn-rust:hover { background: #40916c; box-shadow: 0 0 0 1px #a9793a, 0 8px 24px -8px rgba(45,106,79,0.6); transform: translateY(-1px); }
   .btn-rust:active { transform: translateY(0); }
 
   .btn-outline {
