@@ -3941,10 +3941,10 @@ const site = {
     name: "СТАЛЬ",
     tagline: "Стрижки с характером.",
     city: "Москва",
-    address: "Красногвардейский проезд, 12, стр 3, Москва",
-    addressShort: "Красногвардейский пр., 12/3",
-    phone: "+7 (495) 234-56-78",
-    phoneHref: "tel:+74952345678",
+    address: "Москва, улица Михайлова, 39",
+    addressShort: "ул. Михайлова, 39",
+    phone: "+7 925 038-75-74",
+    phoneHref: "tel:+79250387574",
     hours: "Пн — Вс · 10:00 — 22:00",
     hoursShort: "10:00 — 22:00",
     email: "chair@stal.barbershop",
@@ -3965,7 +3965,7 @@ const site = {
             handle: "vk.com/stal_barber"
         }
     ],
-    mapHref: "https://yandex.ru/maps/?text=Москва%20Красногвардейский%20проезд"
+    mapHref: "https://yandex.ru/maps/?text=Москва%20улица%20Михайлова%2039"
 };
 const nav = [
     {
@@ -4203,13 +4203,13 @@ const faqs = [
 const messengers = [
     {
         label: "WhatsApp",
-        href: "https://wa.me/74952345678?text=Hi%20IRON%20%26%20OAK%2C%20I%27d%20like%20to%20book%20a%20chair.",
-        handle: "+7 495 234-56-78"
+        href: "https://wa.me/79250387574?text=Здравствуйте!%20Хочу%20записаться.",
+        handle: "+7 925 038-75-74"
     },
     {
         label: "Telegram",
-        href: "https://t.me/ironandoak?text=Hi%20IRON%20%26%20OAK%2C%20I%27d%20like%20to%20book%20a%20chair.",
-        handle: "@ironandoak"
+        href: "https://t.me/stal_barber?text=Здравствуйте!%20Хочу%20записаться.",
+        handle: "@stal_barber"
     }
 ];
 ;

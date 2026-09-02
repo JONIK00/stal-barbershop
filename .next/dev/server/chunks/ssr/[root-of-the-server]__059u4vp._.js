@@ -160,7 +160,7 @@ const translations = {
             "БРИТЬЁ ОПАСНОЙ БРИТВОЙ",
             "ОНЛАЙН-ЗАПИСЬ — ПЕРВЫЙ СТУЛ 10:00",
             "ГОРЯЧЕЕ ПОЛОТЕНЦЕ · КОЖА · ЛАТУНЬ",
-            "+7 495 234-56-78"
+            "+7 925 038-75-74"
         ],
         about: {
             eyebrow: "О нас",
@@ -288,7 +288,7 @@ const translations = {
             desc: "Выбери мастера, выбери время, приходи. Онлайн-запись идёт через Sonline — тот же календарь, что и за креслом.",
             phoneLabel: "Лучше по телефону? Позвони",
             hoursLabel: "Пн — Вс · 10:00 — 22:00",
-            addressLabel: "Красногвардейский пр., 12/3",
+            addressLabel: "ул. Михайлова, 39",
             messengerLabel: "Или напиши нам",
             widgetTitle: "Выбери время",
             widgetDesc: "Виджет онлайн-записи появится здесь, как только вставите код Sonline. Пока — по старинке:",
@@ -470,7 +470,7 @@ const translations = {
             "STRAIGHT-RAZOR SHAVES",
             "BOOK ONLINE — FIRST CHAIR 10:00",
             "HOT TOWEL · LEATHER · BRASS",
-            "+7 495 234-56-78"
+            "+7 925 038-75-74"
         ],
         about: {
             eyebrow: "About us",

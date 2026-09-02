@@ -22,3 +22,12 @@ module.exports = {
 Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
  GET / 200 in 51ms (next.js: 3ms, application-code: 49ms)
  GET / 200 in 54ms (next.js: 2ms, application-code: 51ms)
+ GET / 200 in 61ms (next.js: 7ms, application-code: 54ms)
+ GET / 200 in 55ms (next.js: 4ms, application-code: 51ms)
+ GET / 200 in 53ms (next.js: 3ms, application-code: 50ms)
+ GET / 200 in 58ms (next.js: 2ms, application-code: 56ms)
+ GET / 200 in 58ms (next.js: 3ms, application-code: 55ms)
+ GET / 200 in 58ms (next.js: 2ms, application-code: 56ms)
+✓ Compiled in 200ms
+✓ Compiled in 272ms
+ GET / 200 in 67ms (next.js: 7ms, application-code: 60ms)
