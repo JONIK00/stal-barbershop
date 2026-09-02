@@ -26,7 +26,7 @@ function ScrollProgress() {
   }, []);
   return (
     <div className="pointer-events-none fixed inset-x-0 top-0 z-[55] h-[3px]" aria-hidden="true">
-      <div className="h-full bg-gradient-to-r from-rust via-brass to-rust shadow-[0_0_8px_rgba(45,106,79,0.6)] transition-[width] duration-75" style={{ width: `${pct}%` }} />
+      <div className="h-full bg-gradient-to-r from-rust via-brass to-rust shadow-[0_0_8px_rgba(181,80,46,0.6)] transition-[width] duration-75" style={{ width: `${pct}%` }} />
     </div>
   );
 }
@@ -134,7 +134,7 @@ function Hero() {
         <div className="ken-burns h-full w-full bg-concrete" />
         <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/85 to-ink/40" />
         <div className="absolute inset-0 bg-gradient-to-t from-ink via-transparent to-ink/70" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_40%,rgba(45,106,79,0.18),transparent_55%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_40%,rgba(181,80,46,0.18),transparent_55%)]" />
       </div>
       <div className="mx-auto w-full max-w-7xl px-5 sm:px-8 md:px-12 lg:px-20">
         <div className="max-w-3xl">
@@ -617,7 +617,7 @@ function MobileStickyBar() {
     <div className="fixed inset-x-0 bottom-0 z-40 border-t border-brass/30 bg-ink/95 backdrop-blur-md lg:hidden" style={{ paddingBottom: "env(safe-area-inset-bottom)" }}>
       <div className="flex items-stretch gap-px bg-ash/20">
         <a href={site.phoneHref} className="flex flex-1 items-center justify-center gap-2 bg-ink-2 py-3.5 font-display text-sm uppercase tracking-[0.16em] text-cream hover:bg-ink-3"><PhoneIcon className="h-4 w-4 text-brass" />{t.ui.call}</a>
-        <a href="#booking" className="flex flex-[1.3] items-center justify-center gap-2 bg-rust py-3.5 font-display text-sm font-semibold uppercase tracking-[0.16em] text-cream hover:bg-[#40916c]">{t.ui.bookChair}<ArrowIcon className="h-4 w-4" /></a>
+        <a href="#booking" className="flex flex-[1.3] items-center justify-center gap-2 bg-rust py-3.5 font-display text-sm font-semibold uppercase tracking-[0.16em] text-cream hover:bg-[#c75e38]">{t.ui.bookChair}<ArrowIcon className="h-4 w-4" /></a>
       </div>
     </div>
   );
