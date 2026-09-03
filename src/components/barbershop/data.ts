@@ -41,10 +41,15 @@ export const tickerItems = ["WALK-INS WELCOME","MON–SUN 10:00–22:00","STRAIG
 export type Service = { no: string; name: string; desc: string; duration: string; price: string; icon: typeof ScissorsIcon; popular?: boolean };
 
 export const services: Service[] = [
-  { no: "01", name: "Стрижка Под Насадку (одна Насадка)", desc: "", duration: "15 мин", price: "500 ₽", icon: ClipperIcon },
-  { no: "02", name: "Моделирование Бороды", desc: "", duration: "30 мин", price: "800 ₽", icon: BeardIcon },
-  { no: "03", name: "Опасное Бритьё", desc: "", duration: "30 мин", price: "800 ₽", icon: RazorIcon, popular: true },
-  { no: "04", name: "Бритьё Шейвером", desc: "", duration: "15 мин", price: "700 ₽", icon: RazorIcon },
+  { no: "01", name: "Мужская стрижка", desc: "", duration: "30 мин", price: "1000 ₽", icon: ScissorsIcon },
+  { no: "02", name: "Стрижка под одну насадку", desc: "", duration: "15 мин", price: "500 ₽", icon: ClipperIcon },
+  { no: "03", name: "Моделирование бороды", desc: "", duration: "30 мин", price: "800 ₽", icon: BeardIcon, popular: true },
+  { no: "04", name: "Опасное бритьё", desc: "", duration: "30 мин", price: "900 ₽", icon: RazorIcon },
+  { no: "05", name: "Детская стрижка", desc: "", duration: "30 мин", price: "800 ₽", icon: ClipperIcon },
+  { no: "06", name: "Тонировка бороды", desc: "", duration: "15 мин", price: "700 ₽", icon: BeardIcon },
+  { no: "07", name: "Тонировка головы", desc: "", duration: "15 мин", price: "1100 ₽", icon: CombIcon },
+  { no: "08", name: "Черная маска", desc: "", duration: "15 мин", price: "700 ₽", icon: BulbIcon },
+  { no: "09", name: "Восковая эпиляция", desc: "", duration: "5 мин", price: "400 ₽", icon: RazorIcon },
 ];
 
 export type Master = { name: string; nickname: string; specialty: string; experience: string; image: string; alt: string; social: { label: string; href: string; handle: string }; bio: string; quote: string; signatureCuts: string[]; stats: { label: string; value: string }[] };

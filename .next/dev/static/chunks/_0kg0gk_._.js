@@ -1831,32 +1831,67 @@ const translations = {
             items: [
                 {
                     no: "01",
-                    name: "Стрижка Под Насадку (одна Насадка)",
+                    name: "Мужская стрижка",
+                    desc: "Полный цикл: консультация, стрижка, укладка. Под твои волосы и форму лица.",
+                    duration: "30 мин",
+                    price: "1000 ₽"
+                },
+                {
+                    no: "02",
+                    name: "Стрижка под одну насадку (одна насадка)",
                     desc: "Минимум движений — максимум порядка. Ровно, быстро, без компромиссов.",
                     duration: "15 мин",
                     price: "500 ₽"
                 },
                 {
-                    no: "02",
-                    name: "Моделирование Бороды",
-                    desc: "Чёткие линии, нужная форма. Борода, которая подчёркивает твой характер.",
-                    duration: "30 мин",
-                    price: "800 ₽"
-                },
-                {
                     no: "03",
-                    name: "Опасное Бритьё",
-                    desc: "Классика, проверенная временем. Бритва, горячее полотенце и чистый результат с уважением к традициям.",
+                    name: "Моделирование бороды",
+                    desc: "Чёткие линии, нужная форма. Борода, которая подчёркивает твой характер.",
                     duration: "30 мин",
                     price: "800 ₽",
                     popular: true
                 },
                 {
                     no: "04",
-                    name: "Бритьё Шейвером",
-                    desc: "Максимум чистоты — без лишней суеты. Точно по форме: убираем щетину, освежаем образ, не раздражая кожу. Гладко, аккуратно, как надо.",
+                    name: "Опасное бритьё",
+                    desc: "Классика, проверенная временем. Бритва, горячее полотенце и чистый результат с уважением к традициям.",
+                    duration: "30 мин",
+                    price: "900 ₽"
+                },
+                {
+                    no: "05",
+                    name: "Детская стрижка (до 10 лет включительно)",
+                    desc: "Терпеливые руки для маленьких. Без экранов, без слёз — обычно.",
+                    duration: "30 мин",
+                    price: "800 ₽"
+                },
+                {
+                    no: "06",
+                    name: "Тонировка бороды (American Crew)",
+                    desc: "Профессиональная краска для бороды. Закрашивает седину, сохраняет естественный оттенок.",
                     duration: "15 мин",
                     price: "700 ₽"
+                },
+                {
+                    no: "07",
+                    name: "Тонировка головы (American Crew)",
+                    desc: "Профессиональная краска для волос. Равномерный тон, закрашивание седины.",
+                    duration: "15 мин",
+                    price: "1100 ₽"
+                },
+                {
+                    no: "08",
+                    name: "Черная маска (American Crew)",
+                    desc: "Очищающая маска для лица. Убирает чёрные точки, освежает кожу.",
+                    duration: "15 мин",
+                    price: "700 ₽"
+                },
+                {
+                    no: "09",
+                    name: "Восковая эпиляция",
+                    desc: "Удаление нежелательных волос воском. Чисто, аккуратно, надолго.",
+                    duration: "5 мин",
+                    price: "400 ₽"
                 }
             ]
         },
@@ -2141,32 +2176,67 @@ const translations = {
             items: [
                 {
                     no: "01",
+                    name: "Men's Haircut",
+                    desc: "Full cycle: consultation, cut, styling. Tailored to your hair and face shape.",
+                    duration: "30 min",
+                    price: "1000 ₽"
+                },
+                {
+                    no: "02",
                     name: "Clipper Cut (one guard)",
                     desc: "Minimum moves — maximum order. Even, fast, no compromises.",
                     duration: "15 min",
                     price: "500 ₽"
                 },
                 {
-                    no: "02",
+                    no: "03",
                     name: "Beard Sculpting",
                     desc: "Sharp lines, the right shape. A beard that highlights your character.",
-                    duration: "30 min",
-                    price: "800 ₽"
-                },
-                {
-                    no: "03",
-                    name: "Straight-Razor Shave",
-                    desc: "A classic, proven by time. Razor, hot towel, and a clean result with respect for tradition.",
                     duration: "30 min",
                     price: "800 ₽",
                     popular: true
                 },
                 {
                     no: "04",
-                    name: "Shaver Shave",
-                    desc: "Maximum cleanliness — no fuss. Precisely along the shape: remove stubble, refresh the look, without irritating the skin. Smooth, neat, done right.",
+                    name: "Straight-Razor Shave",
+                    desc: "A classic, proven by time. Razor, hot towel, and a clean result with respect for tradition.",
+                    duration: "30 min",
+                    price: "900 ₽"
+                },
+                {
+                    no: "05",
+                    name: "Kids' Cut (up to 10 years)",
+                    desc: "Patient hands for the little ones. No screens, no tears — mostly.",
+                    duration: "30 min",
+                    price: "800 ₽"
+                },
+                {
+                    no: "06",
+                    name: "Beard Tinting (American Crew)",
+                    desc: "Professional beard dye. Covers grey, keeps a natural shade.",
                     duration: "15 min",
                     price: "700 ₽"
+                },
+                {
+                    no: "07",
+                    name: "Hair Tinting (American Crew)",
+                    desc: "Professional hair dye. Even tone, grey coverage.",
+                    duration: "15 min",
+                    price: "1100 ₽"
+                },
+                {
+                    no: "08",
+                    name: "Black Mask (American Crew)",
+                    desc: "Purifying face mask. Removes blackheads, refreshes the skin.",
+                    duration: "15 min",
+                    price: "700 ₽"
+                },
+                {
+                    no: "09",
+                    name: "Wax Epilation",
+                    desc: "Wax hair removal. Clean, neat, long-lasting.",
+                    duration: "5 min",
+                    price: "400 ₽"
                 }
             ]
         },

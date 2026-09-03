@@ -16,3 +16,9 @@
 {"timestamp":"03:22:00.846","source":"Server","level":"LOG","message":"✓ Compiled in 165ms"}
 {"timestamp":"03:22:13.819","source":"Server","level":"LOG","message":"✓ Compiled in 148ms"}
 {"timestamp":"03:22:48.379","source":"Server","level":"LOG","message":"✓ Compiled in 141ms"}
+{"timestamp":"03:36:39.412","source":"Server","level":"LOG","message":"✓ Compiled in 190ms"}
+{"timestamp":"03:36:41.522","source":"Server","level":"WARN","message":"⚠ Fast Refresh had to perform a full reload when ./src/components/barbershop/translations.ts changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload"}
+{"timestamp":"03:36:55.275","source":"Server","level":"LOG","message":"✓ Compiled in 236ms"}
+{"timestamp":"03:36:57.304","source":"Server","level":"WARN","message":"⚠ Fast Refresh had to perform a full reload when ./src/components/barbershop/translations.ts changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload"}
+{"timestamp":"03:36:57.504","source":"Server","level":"WARN","message":"⚠ Fast Refresh had to perform a full reload when ./src/components/barbershop/translations.ts changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload"}
+{"timestamp":"03:37:10.067","source":"Server","level":"LOG","message":"✓ Compiled in 232ms"}

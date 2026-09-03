@@ -3842,35 +3842,75 @@ const tickerItems = [
 const services = [
     {
         no: "01",
-        name: "Стрижка Под Насадку (одна Насадка)",
+        name: "Мужская стрижка",
+        desc: "",
+        duration: "30 мин",
+        price: "1000 ₽",
+        icon: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$barbershop$2f$icons$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ScissorsIcon"]
+    },
+    {
+        no: "02",
+        name: "Стрижка под одну насадку",
         desc: "",
         duration: "15 мин",
         price: "500 ₽",
         icon: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$barbershop$2f$icons$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ClipperIcon"]
     },
     {
-        no: "02",
-        name: "Моделирование Бороды",
-        desc: "",
-        duration: "30 мин",
-        price: "800 ₽",
-        icon: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$barbershop$2f$icons$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["BeardIcon"]
-    },
-    {
         no: "03",
-        name: "Опасное Бритьё",
+        name: "Моделирование бороды",
         desc: "",
         duration: "30 мин",
         price: "800 ₽",
-        icon: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$barbershop$2f$icons$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["RazorIcon"],
+        icon: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$barbershop$2f$icons$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["BeardIcon"],
         popular: true
     },
     {
         no: "04",
-        name: "Бритьё Шейвером",
+        name: "Опасное бритьё",
+        desc: "",
+        duration: "30 мин",
+        price: "900 ₽",
+        icon: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$barbershop$2f$icons$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["RazorIcon"]
+    },
+    {
+        no: "05",
+        name: "Детская стрижка",
+        desc: "",
+        duration: "30 мин",
+        price: "800 ₽",
+        icon: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$barbershop$2f$icons$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ClipperIcon"]
+    },
+    {
+        no: "06",
+        name: "Тонировка бороды",
         desc: "",
         duration: "15 мин",
         price: "700 ₽",
+        icon: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$barbershop$2f$icons$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["BeardIcon"]
+    },
+    {
+        no: "07",
+        name: "Тонировка головы",
+        desc: "",
+        duration: "15 мин",
+        price: "1100 ₽",
+        icon: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$barbershop$2f$icons$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CombIcon"]
+    },
+    {
+        no: "08",
+        name: "Черная маска",
+        desc: "",
+        duration: "15 мин",
+        price: "700 ₽",
+        icon: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$barbershop$2f$icons$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["BulbIcon"]
+    },
+    {
+        no: "09",
+        name: "Восковая эпиляция",
+        desc: "",
+        duration: "5 мин",
+        price: "400 ₽",
         icon: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$barbershop$2f$icons$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["RazorIcon"]
     }
 ];
