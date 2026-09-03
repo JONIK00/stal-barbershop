@@ -245,8 +245,10 @@ function Masters() {
           const data = masterData[i];
           return (
             <article key={m.name} className={`reveal reveal-delay-${(i % 4) + 1} card-industrial group flex flex-col`}>
-              <div className="relative aspect-[4/5] overflow-hidden">
-                <img src="/images/master-shah.png" alt={m.name} className="h-full w-full object-cover" />
+              <div className="relative aspect-[4/5] overflow-hidden bg-concrete">
+                <div className="flex h-full w-full items-center justify-center">
+                  <BrandMark className="h-16 w-16 text-ash/30" />
+                </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/10 to-transparent" />
                 <div className="absolute left-0 top-4 bg-rust px-3 py-1 font-display text-[0.6rem] uppercase tracking-[0.25em] text-cream">“{m.nickname}”</div>
               </div>

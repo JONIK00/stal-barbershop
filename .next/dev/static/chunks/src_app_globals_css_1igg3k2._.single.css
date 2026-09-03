@@ -1073,6 +1073,10 @@
     width: calc(var(--spacing) * 14);
   }
 
+  .w-16 {
+    width: calc(var(--spacing) * 16);
+  }
+
   .w-full {
     width: 100%;
   }
@@ -2016,6 +2020,16 @@
 
   .text-ash {
     color: var(--color-ash);
+  }
+
+  .text-ash\/30 {
+    color: #6b66604d;
+  }
+
+  @supports (color: color-mix(in lab, red, red)) {
+    .text-ash\/30 {
+      color: color-mix(in oklab, var(--color-ash) 30%, transparent);
+    }
   }
 
   .text-ash\/40 {
