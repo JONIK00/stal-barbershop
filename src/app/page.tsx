@@ -70,7 +70,6 @@ function Header() {
     { label: t.nav.masters, href: "#masters" },
     { label: t.nav.work, href: "#work" },
     { label: t.nav.reviews, href: "#reviews" },
-    { label: t.nav.faq, href: "#faq" },
     { label: t.nav.contacts, href: "#contacts" },
   ];
 
@@ -529,7 +528,7 @@ function Contacts() {
           })}
         </div>
         <div className="reveal reveal-delay-1 relative min-h-[360px] overflow-hidden border border-ash/25 bg-ink-2">
-          <iframe src="https://yandex.ru/map-widget/v1/?text=Moscow%20Krasnogvardeyskaya%20Passage&z=16&l=map" title="Map" className="absolute inset-0 h-full w-full" style={{ border: 0, filter: "invert(0.92) hue-rotate(180deg) saturate(0.6) brightness(0.95)" }} loading="lazy" allowFullScreen />
+          <iframe src="https://yandex.ru/map-widget/v1/?text=Москва%20улица%20Михайлова%2039&z=16&l=map" title="Map" className="absolute inset-0 h-full w-full" style={{ border: 0, filter: "invert(0.92) hue-rotate(180deg) saturate(0.6) brightness(0.95)" }} loading="lazy" allowFullScreen />
           <span className="pointer-events-none absolute left-2 top-2 z-20 h-3 w-3 border-l border-t border-brass/60" />
           <span className="pointer-events-none absolute right-2 top-2 z-20 h-3 w-3 border-r border-t border-brass/60" />
           <span className="pointer-events-none absolute bottom-2 left-2 z-20 h-3 w-3 border-b border-l border-brass/60" />
@@ -560,7 +559,6 @@ function Footer() {
     { label: t.nav.masters, href: "#masters" },
     { label: t.nav.work, href: "#work" },
     { label: t.nav.reviews, href: "#reviews" },
-    { label: t.nav.faq, href: "#faq" },
     { label: t.nav.contacts, href: "#contacts" },
   ];
   const serviceNames = t.services.items.slice(0, 5).map((s) => s.name);
