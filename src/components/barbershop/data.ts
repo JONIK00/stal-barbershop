@@ -13,7 +13,7 @@ export const site = {
   email: "chair@stal.barbershop",
   socials: [
     { label: "Instagram", href: "https://instagram.com", handle: "@stal.barber" },
-    { label: "Telegram", href: "https://t.me", handle: "@stal_barber" },
+    { label: "Telegram", href: "https://t.me/+79250387574", handle: "+7 925 038-75-74" },
     { label: "VK", href: "https://vk.com", handle: "vk.com/stal_barber" },
   ],
   mapHref: "https://yandex.ru/maps/?text=Москва%20улица%20Михайлова%2039",
@@ -56,7 +56,7 @@ export const services: Service[] = [
 export type Master = { name: string; nickname: string; specialty: string; experience: string; image: string; alt: string; social: { label: string; href: string; handle: string }; bio: string; quote: string; signatureCuts: string[]; stats: { label: string; value: string }[] };
 
 export const masters: Master[] = [
-  { name: "Шах", nickname: "Шах", specialty: "Мастер-барбер", experience: "", image: "/images/master-1.png", alt: "Портрет мастера-барбера Шаха", social: { label: "Instagram", href: "https://instagram.com", handle: "@shah.barber" }, bio: "", quote: "", signatureCuts: [], stats: [] },
+  { name: "Шах", nickname: "Шах", specialty: "Мастер-барбер", experience: "", image: "/images/master-shah.png", alt: "Портрет мастера-барбера Шаха", social: { label: "Instagram", href: "https://instagram.com", handle: "@shah.barber" }, bio: "", quote: "", signatureCuts: [], stats: [] },
 ];
 
 export type Work = { image: string; title: string; category: "Cuts" | "Beards" | "Shaves"; alt: string };
@@ -93,7 +93,7 @@ export const faqs: Faq[] = [
 
 export const messengers = [
   { label: "WhatsApp", href: "https://wa.me/79250387574?text=Здравствуйте!%20Хочу%20записаться.", handle: "+7 925 038-75-74" },
-  { label: "Telegram", href: "https://t.me/stal_barber?text=Здравствуйте!%20Хочу%20записаться.", handle: "@stal_barber" },
+  { label: "Telegram", href: "https://t.me/+79250387574", handle: "+7 925 038-75-74" },
 ] as const;
 
 export { BulbIcon };

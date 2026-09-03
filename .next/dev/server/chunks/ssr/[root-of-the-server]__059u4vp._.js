@@ -298,27 +298,27 @@ const translations = {
             },
             items: [
                 {
-                    title: "Фейд под ноль",
+                    title: "Мужская стрижка",
                     category: "cuts"
                 },
                 {
-                    title: "Оформление бороды",
+                    title: "Моделирование бороды",
                     category: "beards"
                 },
                 {
-                    title: "Помпадур назад",
-                    category: "cuts"
-                },
-                {
-                    title: "Бритьё бритвой",
+                    title: "Опасное бритьё",
                     category: "shaves"
                 },
                 {
-                    title: "Текстурный кроп + борода",
-                    category: "cuts"
+                    title: "Бритьё шейвером",
+                    category: "shaves"
                 },
                 {
-                    title: "Классический пробор",
+                    title: "Тонировка бороды",
+                    category: "beards"
+                },
+                {
+                    title: "Детская стрижка",
                     category: "cuts"
                 }
             ]
@@ -650,27 +650,27 @@ const translations = {
             },
             items: [
                 {
-                    title: "Skin Fade Undercut",
+                    title: "Men's Haircut",
                     category: "cuts"
                 },
                 {
-                    title: "Sculpted Full Beard",
+                    title: "Beard Sculpting",
                     category: "beards"
-                },
-                {
-                    title: "Slicked Pompadour",
-                    category: "cuts"
                 },
                 {
                     title: "Straight-Razor Shave",
                     category: "shaves"
                 },
                 {
-                    title: "Textured Crop + Beard",
-                    category: "cuts"
+                    title: "Shaver Shave",
+                    category: "shaves"
                 },
                 {
-                    title: "Gentleman's Side Part",
+                    title: "Beard Tinting",
+                    category: "beards"
+                },
+                {
+                    title: "Kids' Cut",
                     category: "cuts"
                 }
             ]

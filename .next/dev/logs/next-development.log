@@ -27,3 +27,17 @@
 {"timestamp":"03:57:33.389","source":"Server","level":"LOG","message":"✓ Compiled in 119ms"}
 {"timestamp":"03:57:35.107","source":"Server","level":"WARN","message":"⚠ Fast Refresh had to perform a full reload when ./src/components/barbershop/translations.ts changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload"}
 {"timestamp":"03:58:34.120","source":"Server","level":"LOG","message":"✓ Compiled in 223ms"}
+{"timestamp":"04:06:39.073","source":"Server","level":"LOG","message":"✓ Compiled in 171ms"}
+{"timestamp":"04:10:52.841","source":"Server","level":"LOG","message":"✓ Compiled in 127ms"}
+{"timestamp":"04:11:02.510","source":"Server","level":"LOG","message":"✓ Compiled in 167ms"}
+{"timestamp":"04:11:02.964","source":"Server","level":"WARN","message":"⚠ Fast Refresh had to perform a full reload when ./src/components/barbershop/translations.ts changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload"}
+{"timestamp":"04:11:03.210","source":"Server","level":"WARN","message":"⚠ Fast Refresh had to perform a full reload when ./src/components/barbershop/translations.ts changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload"}
+{"timestamp":"04:11:03.241","source":"Server","level":"WARN","message":"⚠ Fast Refresh had to perform a full reload when ./src/components/barbershop/translations.ts changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload"}
+{"timestamp":"04:11:11.812","source":"Server","level":"LOG","message":"✓ Compiled in 191ms"}
+{"timestamp":"04:11:13.337","source":"Server","level":"WARN","message":"⚠ Fast Refresh had to perform a full reload when ./src/components/barbershop/translations.ts changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload"}
+{"timestamp":"04:11:13.376","source":"Server","level":"WARN","message":"⚠ Fast Refresh had to perform a full reload when ./src/components/barbershop/translations.ts changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload"}
+{"timestamp":"04:19:12.902","source":"Server","level":"LOG","message":"✓ Compiled in 194ms"}
+{"timestamp":"04:19:21.003","source":"Server","level":"LOG","message":"✓ Compiled in 152ms"}
+{"timestamp":"04:19:28.567","source":"Server","level":"LOG","message":"✓ Compiled in 145ms"}
+{"timestamp":"04:19:36.257","source":"Server","level":"LOG","message":"✓ Compiled in 177ms"}
+{"timestamp":"04:20:05.420","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}

@@ -128,7 +128,7 @@ function Hero() {
   return (
     <section id="top" className="relative flex min-h-[100svh] items-center overflow-hidden pt-28 pb-16">
       <div className="absolute inset-0 -z-10 overflow-hidden">
-        <div className="ken-burns h-full w-full bg-concrete" />
+        <img src="/images/hero-bg.png" alt="" className="ken-burns h-full w-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/85 to-ink/40" />
         <div className="absolute inset-0 bg-gradient-to-t from-ink via-transparent to-ink/70" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_40%,rgba(181,80,46,0.18),transparent_55%)]" />
@@ -160,10 +160,8 @@ function About() {
     <SectionShell id="about" className="bg-concrete">
       <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
         <div className="reveal relative">
-          <div className="card-industrial relative aspect-[4/3] overflow-hidden bg-concrete">
-            <div className="flex h-full w-full items-center justify-center">
-              <span className="text-center font-display text-xs uppercase tracking-[0.3em] text-ash px-4">{t.about.eyebrow}</span>
-            </div>
+          <div className="card-industrial relative aspect-[4/3] overflow-hidden">
+            <img src="/images/about-bg.png" alt="Барбер за работой" className="h-full w-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-ink/60 to-transparent" />
           </div>
 
@@ -247,8 +245,8 @@ function Masters() {
           const data = masterData[i];
           return (
             <article key={m.name} className={`reveal reveal-delay-${(i % 4) + 1} card-industrial group flex flex-col`}>
-              <div className="relative aspect-[4/5] overflow-hidden bg-concrete">
-                <div className="flex h-full w-full items-center justify-center"><span className="font-display text-xs uppercase tracking-[0.3em] text-ash">{m.name}</span></div>
+              <div className="relative aspect-[4/5] overflow-hidden">
+                <img src="/images/master-shah.png" alt={m.name} className="h-full w-full object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/10 to-transparent" />
                 <div className="absolute left-0 top-4 bg-rust px-3 py-1 font-display text-[0.6rem] uppercase tracking-[0.25em] text-cream">“{m.nickname}”</div>
               </div>
