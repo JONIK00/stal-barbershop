@@ -140,11 +140,11 @@ const jsonLd = {
     name: "СТАЛЬ",
     description: "Барбершоп в Москве. Мужские стрижки, оформление бороды, бритьё опасной бритвой.",
     url: "https://stal.barbershop",
-    telephone: "+7-495-234-56-78",
+    telephone: "+7-925-038-75-74",
     priceRange: "₽₽₽",
     address: {
         "@type": "PostalAddress",
-        streetAddress: "Красногвардейский проезд, 12, стр 3",
+        streetAddress: "улица Михайлова, 39",
         addressLocality: "Москва",
         addressCountry: "RU"
     },

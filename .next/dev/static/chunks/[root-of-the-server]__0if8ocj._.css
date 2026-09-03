@@ -1364,6 +1364,10 @@
     bottom: calc(var(--spacing) * 3);
   }
 
+  .bottom-5 {
+    bottom: calc(var(--spacing) * 5);
+  }
+
   .bottom-20 {
     bottom: calc(var(--spacing) * 20);
   }

@@ -588,10 +588,10 @@ function Footer() {
           <div><h3 className="font-display text-[0.62rem] uppercase tracking-[0.3em] text-brass">{t.footer.bookCol}</h3><p className="mt-4 text-sm text-cream-dim">{t.footer.bookDesc}</p><a href="#booking" className="btn-rust mt-5 text-xs">{t.footer.bookCta}</a></div>
         </div>
       </div>
-      <div className="border-t border-ash/15 px-5 py-6 pb-24 sm:px-8 md:px-12 lg:px-20 lg:pb-6">
+      <div className="border-t border-ash/15 px-5 py-6 sm:px-8 md:px-12 lg:px-20">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 text-center sm:flex-row sm:text-left">
           <p className="font-display text-[0.65rem] uppercase tracking-[0.18em] text-ash">© {year} {site.name}. {t.footer.copyright}</p>
-          <div className="flex items-center gap-4 font-display text-[0.65rem] uppercase tracking-[0.18em] text-ash"><span>{t.footer.motto}</span><span className="hidden h-3 w-px bg-ash/40 sm:inline-block" /><span>{t.hero.title1} {t.hero.title2}</span></div>
+          <div className="flex items-center gap-4 font-display text-[0.65rem] uppercase tracking-[0.18em] text-ash"><span>{t.hero.title1} {t.hero.title2}</span></div>
         </div>
       </div>
     </footer>
@@ -607,7 +607,7 @@ function BackToTop() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
   return (
-    <button type="button" onClick={() => window.scrollTo({top:0,behavior:"smooth"})} className={`fixed bottom-20 right-5 z-40 flex h-12 w-12 items-center justify-center border border-brass/50 bg-ink/90 text-brass backdrop-blur-sm transition-all duration-300 hover:border-rust hover:bg-rust hover:text-cream lg:bottom-5 ${show?"translate-y-0 opacity-100":"pointer-events-none translate-y-4 opacity-0"}`} aria-label={t.ui.backToTop}><ArrowUpIcon className="h-5 w-5" /></button>
+    <button type="button" onClick={() => window.scrollTo({top:0,behavior:"smooth"})} className={`fixed bottom-5 right-5 z-40 flex h-12 w-12 items-center justify-center border border-brass/50 bg-ink/90 text-brass backdrop-blur-sm transition-all duration-300 hover:border-rust hover:bg-rust hover:text-cream ${show?"translate-y-0 opacity-100":"pointer-events-none translate-y-4 opacity-0"}`} aria-label={t.ui.backToTop}><ArrowUpIcon className="h-5 w-5" /></button>
   );
 }
 
@@ -639,14 +639,11 @@ export default function Home() {
         <Masters />
         <Portfolio />
         <Booking />
-        <BookingForm />
         <Reviews />
-        <Faq />
         <Contacts />
       </main>
       <Footer />
       <BackToTop />
-      <MobileStickyBar />
     </div>
   );
 }

@@ -1,4 +1,8 @@
-{"timestamp":"00:00:00.859","source":"Server","level":"LOG","message":""}
-{"timestamp":"00:00:22.448","source":"Server","level":"WARN","message":"⚠ Blocked cross-origin request to Next.js dev resource /__nextjs_font/geist-latin.woff2 from \"preview-chat-48d9382d-c97c-4584-83e3-73cd5c706e30.space-z.ai\".\nCross-origin access to Next.js dev resources is blocked by default for safety.\n\nTo allow this host in development, add it to \"allowedDevOrigins\" in next.config.js and restart the dev server:\n\n// next.config.js\nmodule.exports = {\n  allowedDevOrigins: ['preview-chat-48d9382d-c97c-4584-83e3-73cd5c706e30.space-z.ai'],\n}\n\nRead more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins"}
-{"timestamp":"01:48:09.977","source":"Server","level":"LOG","message":"✓ Compiled in 200ms"}
-{"timestamp":"01:49:55.457","source":"Server","level":"LOG","message":"✓ Compiled in 272ms"}
+{"timestamp":"00:00:00.921","source":"Server","level":"LOG","message":""}
+{"timestamp":"02:32:02.760","source":"Server","level":"LOG","message":"✓ Compiled in 251ms"}
+{"timestamp":"02:32:07.822","source":"Server","level":"LOG","message":"✓ Compiled in 128ms"}
+{"timestamp":"02:32:14.816","source":"Server","level":"LOG","message":"✓ Compiled in 151ms"}
+{"timestamp":"02:32:15.211","source":"Server","level":"WARN","message":"⚠ Blocked cross-origin request to Next.js dev resource /__nextjs_font/geist-latin.woff2 from \"preview-chat-48d9382d-c97c-4584-83e3-73cd5c706e30.space-z.ai\".\nCross-origin access to Next.js dev resources is blocked by default for safety.\n\nTo allow this host in development, add it to \"allowedDevOrigins\" in next.config.js and restart the dev server:\n\n// next.config.js\nmodule.exports = {\n  allowedDevOrigins: ['preview-chat-48d9382d-c97c-4584-83e3-73cd5c706e30.space-z.ai'],\n}\n\nRead more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins"}
+{"timestamp":"02:32:20.659","source":"Server","level":"LOG","message":"✓ Compiled in 169ms"}
+{"timestamp":"02:32:28.789","source":"Server","level":"LOG","message":"✓ Compiled in 231ms"}
+{"timestamp":"02:33:08.529","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}

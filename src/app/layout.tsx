@@ -26,8 +26,8 @@ const jsonLd = {
   "@context": "https://schema.org", "@type": "HairSalon",
   name: "СТАЛЬ",
   description: "Барбершоп в Москве. Мужские стрижки, оформление бороды, бритьё опасной бритвой.",
-  url: "https://stal.barbershop", telephone: "+7-495-234-56-78", priceRange: "₽₽₽",
-  address: { "@type": "PostalAddress", streetAddress: "Красногвардейский проезд, 12, стр 3", addressLocality: "Москва", addressCountry: "RU" },
+  url: "https://stal.barbershop", telephone: "+7-925-038-75-74", priceRange: "₽₽₽",
+  address: { "@type": "PostalAddress", streetAddress: "улица Михайлова, 39", addressLocality: "Москва", addressCountry: "RU" },
   openingHoursSpecification: [{ "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], opens: "10:00", closes: "22:00" }],
 };
 
