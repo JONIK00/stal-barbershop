@@ -97,7 +97,6 @@ function Header() {
             <a href={site.phoneHref} className="hidden items-center gap-2 font-display text-sm uppercase tracking-[0.14em] text-cream/80 transition-colors hover:text-brass md:flex" aria-label={`Call ${site.phone}`}>
               <PhoneIcon className="h-4 w-4" /><span className="hidden xl:inline">{site.phone}</span>
             </a>
-            <a href="#booking" className="btn-rust hidden sm:inline-flex text-xs">{t.ui.book}<ArrowIcon className="h-3.5 w-3.5" /></a>
             <button type="button" onClick={() => setOpen(true)} className="flex h-10 w-10 items-center justify-center border border-ash/30 text-cream transition-colors hover:border-brass hover:text-brass lg:hidden" aria-label={t.ui.openMenu} aria-expanded={open}>
               <MenuIcon className="h-5 w-5" />
             </button>
@@ -117,7 +116,6 @@ function Header() {
               </a>
             ))}
           </nav>
-          <div className="px-5 pt-4"><a href="#booking" onClick={() => setOpen(false)} className="btn-rust w-full text-sm">{t.ui.bookChair}<ArrowIcon className="h-4 w-4" /></a></div>
         </div>
       )}
     </header>
@@ -146,7 +144,6 @@ function Hero() {
           </h1>
           <p className="reveal reveal-delay-2 mt-7 max-w-xl text-base leading-relaxed text-cream-dim sm:text-lg">{t.hero.desc}</p>
           <div className="reveal reveal-delay-3 mt-9 flex flex-col gap-4 sm:flex-row sm:items-center">
-            <a href="#booking" className="btn-rust text-sm">{t.hero.ctaBook}<ArrowIcon className="h-4 w-4" /></a>
             <a href="#services" className="btn-outline text-sm">{t.hero.ctaBoard}</a>
           </div>
 
@@ -233,7 +230,6 @@ function Services() {
       </div>
       <div className="reveal mt-10 flex flex-col items-start justify-between gap-4 border border-ash/20 bg-ink-2/50 p-6 sm:flex-row sm:items-center">
         <p className="text-sm text-cream-dim">{t.services.footnote}</p>
-        <a href="#booking" className="btn-rust text-xs">{t.services.cta}<ArrowIcon className="h-3.5 w-3.5" /></a>
       </div>
     </SectionShell>
   );
@@ -363,8 +359,6 @@ function Booking() {
             <div className="flex items-center gap-2 text-brass"><span className="bulb-dot" /><span className="font-display text-[0.6rem] uppercase tracking-[0.3em]">Sonline · online booking</span></div>
             <h3 className="mt-5 font-anton text-3xl text-cream sm:text-4xl">{t.booking.widgetTitle}</h3>
             <p className="mt-3 max-w-sm text-sm text-cream-dim">{t.booking.widgetDesc}</p>
-            <a href={site.phoneHref} className="btn-rust mt-7 text-sm"><PhoneIcon className="h-4 w-4" />{t.booking.widgetCta} · {site.phone}</a>
-            <p className="mt-5 font-display text-[0.6rem] uppercase tracking-[0.2em] text-ash">{t.booking.widgetNote}</p>
           </div>
         </div>
       </div>
@@ -579,11 +573,10 @@ function Footer() {
         </div>
       </div>
       <div className="px-5 py-12 sm:px-8 md:px-12 lg:px-20">
-        <div className="mx-auto grid max-w-7xl gap-10 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mx-auto grid max-w-7xl gap-10 sm:grid-cols-2 lg:grid-cols-3">
           <div><h3 className="font-display text-[0.62rem] uppercase tracking-[0.3em] text-brass">{t.footer.navigate}</h3><ul className="mt-4 space-y-2.5">{navItems.map((item)=><li key={item.href}><a href={item.href} className="font-display text-sm uppercase tracking-[0.12em] text-cream-dim hover:text-rust">{item.label}</a></li>)}</ul></div>
           <div><h3 className="font-display text-[0.62rem] uppercase tracking-[0.3em] text-brass">{t.footer.servicesCol}</h3><ul className="mt-4 space-y-2.5">{serviceNames.map((s)=><li key={s}><a href="#services" className="font-display text-sm text-cream-dim hover:text-rust">{s}</a></li>)}</ul></div>
           <div><h3 className="font-display text-[0.62rem] uppercase tracking-[0.3em] text-brass">{t.footer.contactCol}</h3><ul className="mt-4 space-y-3"><li className="flex items-start gap-2.5 text-sm text-cream-dim"><PinIcon className="mt-0.5 h-4 w-4 shrink-0 text-brass" />{site.address}</li><li><a href={site.phoneHref} className="flex items-center gap-2.5 text-sm text-cream-dim hover:text-rust"><PhoneIcon className="h-4 w-4 shrink-0 text-brass" />{site.phone}</a></li><li className="text-sm text-cream-dim">{t.booking.hoursLabel}</li></ul></div>
-          <div><h3 className="font-display text-[0.62rem] uppercase tracking-[0.3em] text-brass">{t.footer.bookCol}</h3><p className="mt-4 text-sm text-cream-dim">{t.footer.bookDesc}</p></div>
         </div>
       </div>
       <div className="border-t border-ash/15 px-5 py-6 sm:px-8 md:px-12 lg:px-20">
