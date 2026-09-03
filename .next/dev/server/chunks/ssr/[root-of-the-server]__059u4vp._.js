@@ -225,34 +225,41 @@ const translations = {
                 },
                 {
                     no: "05",
+                    name: "Бритьё шейвером",
+                    desc: "Максимум чистоты — без лишней суеты. Точно по форме: убираем щетину, освежаем образ, не раздражая кожу. Гладко, аккуратно, как надо.",
+                    duration: "15 мин",
+                    price: "700 ₽"
+                },
+                {
+                    no: "06",
                     name: "Детская стрижка (до 10 лет включительно)",
                     desc: "Терпеливые руки для маленьких. Без экранов, без слёз — обычно.",
                     duration: "30 мин",
                     price: "800 ₽"
                 },
                 {
-                    no: "06",
+                    no: "07",
                     name: "Тонировка бороды (American Crew)",
                     desc: "Профессиональная краска для бороды. Закрашивает седину, сохраняет естественный оттенок.",
                     duration: "15 мин",
                     price: "700 ₽"
                 },
                 {
-                    no: "07",
+                    no: "08",
                     name: "Тонировка головы (American Crew)",
                     desc: "Профессиональная краска для волос. Равномерный тон, закрашивание седины.",
                     duration: "15 мин",
                     price: "1100 ₽"
                 },
                 {
-                    no: "08",
+                    no: "09",
                     name: "Черная маска (American Crew)",
                     desc: "Очищающая маска для лица. Убирает чёрные точки, освежает кожу.",
                     duration: "15 мин",
                     price: "700 ₽"
                 },
                 {
-                    no: "09",
+                    no: "10",
                     name: "Восковая эпиляция",
                     desc: "Удаление нежелательных волос воском. Чисто, аккуратно, надолго.",
                     duration: "5 мин",
@@ -570,34 +577,41 @@ const translations = {
                 },
                 {
                     no: "05",
+                    name: "Shaver Shave",
+                    desc: "Maximum cleanliness — no fuss. Precisely along the shape: remove stubble, refresh the look, without irritating the skin. Smooth, neat, done right.",
+                    duration: "15 min",
+                    price: "700 ₽"
+                },
+                {
+                    no: "06",
                     name: "Kids' Cut (up to 10 years)",
                     desc: "Patient hands for the little ones. No screens, no tears — mostly.",
                     duration: "30 min",
                     price: "800 ₽"
                 },
                 {
-                    no: "06",
+                    no: "07",
                     name: "Beard Tinting (American Crew)",
                     desc: "Professional beard dye. Covers grey, keeps a natural shade.",
                     duration: "15 min",
                     price: "700 ₽"
                 },
                 {
-                    no: "07",
+                    no: "08",
                     name: "Hair Tinting (American Crew)",
                     desc: "Professional hair dye. Even tone, grey coverage.",
                     duration: "15 min",
                     price: "1100 ₽"
                 },
                 {
-                    no: "08",
+                    no: "09",
                     name: "Black Mask (American Crew)",
                     desc: "Purifying face mask. Removes blackheads, refreshes the skin.",
                     duration: "15 min",
                     price: "700 ₽"
                 },
                 {
-                    no: "09",
+                    no: "10",
                     name: "Wax Epilation",
                     desc: "Wax hair removal. Clean, neat, long-lasting.",
                     duration: "5 min",
