@@ -1,6 +1,4 @@
-// @ts-expect-error — direct import of the generated Prisma client to bypass
-// any Turbopack module cache on the @prisma/client re-export wrapper.
-import { PrismaClient } from '../../node_modules/.prisma/client/index.js'
+import { PrismaClient } from '@prisma/client'
 
 const PRISMA_CACHE_VERSION = 'v1-init'
 
