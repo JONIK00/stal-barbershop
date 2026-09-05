@@ -743,10 +743,6 @@
     bottom: calc(var(--spacing) * 5);
   }
 
-  .bottom-20 {
-    bottom: calc(var(--spacing) * 20);
-  }
-
   .left-0 {
     left: 0;
   }
@@ -1079,10 +1075,6 @@
 
   .w-full {
     width: 100%;
-  }
-
-  .w-px {
-    width: 1px;
   }
 
   .max-w-2xl {
@@ -1443,16 +1435,6 @@
   @supports (color: color-mix(in lab, red, red)) {
     .bg-ash\/20 {
       background-color: color-mix(in oklab, var(--color-ash) 20%, transparent);
-    }
-  }
-
-  .bg-ash\/40 {
-    background-color: #6b666066;
-  }
-
-  @supports (color: color-mix(in lab, red, red)) {
-    .bg-ash\/40 {
-      background-color: color-mix(in oklab, var(--color-ash) 40%, transparent);
     }
   }
 
@@ -1839,10 +1821,6 @@
 
   .pb-16 {
     padding-bottom: calc(var(--spacing) * 16);
-  }
-
-  .pb-24 {
-    padding-bottom: calc(var(--spacing) * 24);
   }
 
   .pl-11 {
@@ -2448,14 +2426,6 @@
   }
 
   @media (min-width: 40rem) {
-    .sm\:inline-block {
-      display: inline-block;
-    }
-
-    .sm\:inline-flex {
-      display: inline-flex;
-    }
-
     .sm\:grid-cols-2 {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
@@ -2580,10 +2550,6 @@
       top: calc(var(--spacing) * 32);
     }
 
-    .lg\:bottom-5 {
-      bottom: calc(var(--spacing) * 5);
-    }
-
     .lg\:flex {
       display: flex;
     }
@@ -2630,10 +2596,6 @@
 
     .lg\:px-20 {
       padding-inline: calc(var(--spacing) * 20);
-    }
-
-    .lg\:pb-6 {
-      padding-bottom: calc(var(--spacing) * 6);
     }
 
     .lg\:text-\[7\.5rem\] {
