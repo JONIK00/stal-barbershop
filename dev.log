@@ -1,10 +1,125 @@
 ▲ Next.js 16.3.4 (Turbopack)
 - Local:         http://localhost:3000
-- Network:       http://21.0.12.178:3000
+- Network:       http://21.0.1.119:3000
 - Environments: .env
-✓ Ready in 495ms
-✓ Running next.config.ts took 71ms
+✓ Ready in 522ms
+✓ Running next.config.ts took 67ms
 
- GET / 200 in 1752ms (next.js: 1564ms, application-code: 187ms)
- GET / 200 in 53ms (next.js: 10ms, application-code: 43ms)
- GET / 200 in 44ms (next.js: 3ms, application-code: 41ms)
+ GET / 200 in 2.5s (next.js: 2.3s, application-code: 205ms)
+ GET / 200 in 45ms (next.js: 3ms, application-code: 42ms)
+ GET / 200 in 103ms (next.js: 11ms, application-code: 92ms)
+✓ Compiled in 192ms
+⨯ ./src/components/barbershop/translations.ts:228:7
+Error: Expected ',', got 'ident'
+  [90m226 |[0m       title2: [32m"кресло."[0m,
+  [90m227 |[0m       desc: [32m"Выбери услугу, выбери время, приходи. Просто и без звонков."[0m
+[31m[1m>[0m [90m228 |[0m       phoneLabel: [32m"Лучше по телефону? Позвони"[0m,
+  [90m    |[0m       [31m[1m^^^^^^^^^^[0m
+  [90m229 |[0m       hoursLabel: [32m"Пн — Вс · 10:00 — 22:00"[0m,
+  [90m230 |[0m       addressLabel: [32m"ул. Михайлова, 39"[0m,
+  [90m231 |[0m       messengerLabel: [32m"Или напиши нам"[0m,
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/barbershop/translations.ts [Client Component Browser]
+    ./src/components/barbershop/i18n.tsx [Client Component Browser]
+    ./src/components/barbershop/i18n.tsx [Server Component]
+    ./src/app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/barbershop/translations.ts [Client Component SSR]
+    ./src/components/barbershop/i18n.tsx [Client Component SSR]
+    ./src/components/barbershop/i18n.tsx [Server Component]
+    ./src/app/layout.tsx [Server Component]
+
+
+ GET / 500 in 1314ms (next.js: 1209ms, application-code: 104ms)
+⚠ Blocked cross-origin request to Next.js dev resource /__nextjs_original-stack-frames from "preview-chat-48d9382d-c97c-4584-83e3-73cd5c706e30.space-z.ai".
+Cross-origin access to Next.js dev resources is blocked by default for safety.
+
+To allow this host in development, add it to "allowedDevOrigins" in next.config.js and restart the dev server:
+
+// next.config.js
+module.exports = {
+  allowedDevOrigins: ['preview-chat-48d9382d-c97c-4584-83e3-73cd5c706e30.space-z.ai'],
+}
+
+Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+[browser] Uncaught Error: ./src/components/barbershop/translations.ts:228:7
+Error: Expected ',', got 'ident'
+  226 |       title2: "кресло.",
+  227 |       desc: "Выбери услугу, выбери время, приходи. Просто и без звонков."
+> 228 |       phoneLabel: "Лучше по телефону? Позвони",
+      |       ^^^^^^^^^^
+  229 |       hoursLabel: "Пн — Вс · 10:00 — 22:00",
+  230 |       addressLabel: "ул. Михайлова, 39",
+  231 |       messengerLabel: "Или напиши нам",
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/barbershop/translations.ts [Client Component Browser]
+    ./src/components/barbershop/i18n.tsx [Client Component Browser]
+    ./src/components/barbershop/i18n.tsx [Server Component]
+    ./src/app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/barbershop/translations.ts [Client Component SSR]
+    ./src/components/barbershop/i18n.tsx [Client Component SSR]
+    ./src/components/barbershop/i18n.tsx [Server Component]
+    ./src/app/layout.tsx [Server Component]
+
+
+    at <unknown> (Error: ./src/components/barbershop/translations.ts:228:7)
+    at <unknown> (Error: (./src/components/barbershop/translations.ts:228:7)
+⚠ Blocked cross-origin request to Next.js dev resource /__nextjs_font/geist-mono-latin.woff2 from "preview-chat-48d9382d-c97c-4584-83e3-73cd5c706e30.space-z.ai".
+Cross-origin access to Next.js dev resources is blocked by default for safety.
+
+To allow this host in development, add it to "allowedDevOrigins" in next.config.js and restart the dev server:
+
+// next.config.js
+module.exports = {
+  allowedDevOrigins: ['preview-chat-48d9382d-c97c-4584-83e3-73cd5c706e30.space-z.ai'],
+}
+
+Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+⚠ Blocked cross-origin request to Next.js dev resource /__nextjs_font/geist-latin.woff2 from "preview-chat-48d9382d-c97c-4584-83e3-73cd5c706e30.space-z.ai".
+Cross-origin access to Next.js dev resources is blocked by default for safety.
+
+To allow this host in development, add it to "allowedDevOrigins" in next.config.js and restart the dev server:
+
+// next.config.js
+module.exports = {
+  allowedDevOrigins: ['preview-chat-48d9382d-c97c-4584-83e3-73cd5c706e30.space-z.ai'],
+}
+
+Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+✓ Compiled in 146ms
+✓ Compiled in 134ms
+⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ GET / 200 in 55ms (next.js: 5ms, application-code: 50ms)
+ GET / 200 in 49ms (next.js: 3ms, application-code: 46ms)
+✓ Compiled in 141ms
+ GET / 200 in 31ms (next.js: 14ms, application-code: 18ms)
+ GET / 200 in 61ms (next.js: 3ms, application-code: 58ms)
+ GET / 200 in 52ms (next.js: 3ms, application-code: 49ms)
+ GET / 200 in 56ms (next.js: 4ms, application-code: 53ms)
+ GET / 200 in 91ms (next.js: 3ms, application-code: 89ms)
+ GET / 200 in 55ms (next.js: 3ms, application-code: 52ms)
+ GET / 200 in 53ms (next.js: 3ms, application-code: 50ms)
+ GET / 200 in 50ms (next.js: 2ms, application-code: 48ms)
+ GET / 200 in 53ms (next.js: 4ms, application-code: 49ms)
+ GET / 200 in 51ms (next.js: 3ms, application-code: 48ms)
+ GET / 200 in 45ms (next.js: 3ms, application-code: 42ms)
+ GET / 200 in 59ms (next.js: 4ms, application-code: 55ms)
+ GET / 200 in 49ms (next.js: 3ms, application-code: 46ms)
+ GET / 200 in 47ms (next.js: 3ms, application-code: 45ms)
+ GET / 200 in 79ms (next.js: 4ms, application-code: 75ms)
+ GET / 200 in 52ms (next.js: 3ms, application-code: 50ms)
+ GET / 200 in 55ms (next.js: 3ms, application-code: 53ms)
+ GET / 200 in 54ms (next.js: 3ms, application-code: 52ms)
+ GET / 200 in 24ms (next.js: 4ms, application-code: 19ms)
+ GET / 200 in 49ms (next.js: 2ms, application-code: 46ms)

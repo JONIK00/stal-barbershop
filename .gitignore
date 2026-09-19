@@ -1,2 +1,10 @@
-skills/
 node_modules/
+.next/
+dev.log
+*.log
+.env.local
+db/
+screenshots/
+upload/
+skills/
+download/
