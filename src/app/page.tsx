@@ -142,7 +142,7 @@ function Hero() {
           <h1 className="reveal reveal-delay-1 heading-xl mt-6 text-[3.2rem] leading-[0.9] sm:text-7xl md:text-8xl lg:text-[7.5rem]">
             {t.hero.title1}<br /><span className="text-rust">{t.hero.title2}</span>
           </h1>
-          <p className="reveal reveal-delay-2 mt-7 max-w-xl text-base leading-relaxed text-cream-dim sm:text-lg">{t.hero.desc}</p>
+          {t.hero.desc && <p className="reveal reveal-delay-2 mt-7 max-w-xl text-base leading-relaxed text-cream-dim sm:text-lg">{t.hero.desc}</p>}
           <div className="reveal reveal-delay-3 mt-9 flex flex-col gap-4 sm:flex-row sm:items-center">
             <a href="#services" className="btn-outline text-sm">{t.hero.ctaBoard}</a>
           </div>

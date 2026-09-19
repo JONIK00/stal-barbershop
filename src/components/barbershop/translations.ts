@@ -153,10 +153,10 @@ export const translations: Record<Lang, Dict> = {
     brandName: "СТАЛЬ",
     nav: { about: "О нас", services: "Услуги", masters: "Мастер", work: "Работы", reviews: "Отзывы", faq: "Вопросы", contacts: "Контакты" },
     hero: {
-      badge: "Москва · Барбершоп",
+      badge: "Москва — Стрижем, бреем",
       title1: "Стрижки с",
       title2: "характером.",
-      desc: "Чёткие стрижки, оформленные бороды и бритьё опасной бритвой. Никаких трендов. Никакой болтовни. Только ремесло — сделанное как надо.",
+      desc: "",
       ctaBook: "Записаться онлайн",
       ctaBoard: "Прайс",
       stats: [],
@@ -305,7 +305,7 @@ export const translations: Record<Lang, Dict> = {
       openMap: "Открыть в Яндекс.Картах",
     },
     footer: {
-      tagline: "Барбершоп · Москва",
+      tagline: "Не барбершоп",
       navigate: "Навигация",
       servicesCol: "Услуги",
       contactCol: "Контакты",
@@ -330,10 +330,10 @@ export const translations: Record<Lang, Dict> = {
     brandName: "STEEL",
     nav: { about: "About", services: "Services", masters: "Master", work: "Work", reviews: "Reviews", faq: "FAQ", contacts: "Contacts" },
     hero: {
-      badge: "Moscow · Barbershop",
+      badge: "Moscow — We cut, we shave",
       title1: "Cuts with",
       title2: "character.",
-      desc: "Sharp cuts, sculpted beards, and straight-razor shaves. No trends. No small talk. Just the trade, done right.",
+      desc: "",
       ctaBook: "Book online",
       ctaBoard: "See the board",
       stats: [],
@@ -482,7 +482,7 @@ export const translations: Record<Lang, Dict> = {
       openMap: "Open in Yandex Maps",
     },
     footer: {
-      tagline: "Barbershop · Moscow",
+      tagline: "Not a barbershop",
       navigate: "Navigate",
       servicesCol: "Services",
       contactCol: "Contact",
