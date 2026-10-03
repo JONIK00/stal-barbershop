@@ -23,3 +23,81 @@
 ⚠ Fast Refresh had to perform a full reload when ./src/components/barbershop/translations.ts changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
 ✓ Compiled in 185ms
  GET / 200 in 18ms (next.js: 5ms, application-code: 14ms)
+ GET / 200 in 50ms (next.js: 2ms, application-code: 48ms)
+ GET / 200 in 49ms (next.js: 2ms, application-code: 47ms)
+✓ Compiled in 205ms
+⚠ Blocked cross-origin request to Next.js dev resource /__nextjs_font/geist-latin.woff2 from "preview-chat-48d9382d-c97c-4584-83e3-73cd5c706e30.space-z.ai".
+Cross-origin access to Next.js dev resources is blocked by default for safety.
+
+To allow this host in development, add it to "allowedDevOrigins" in next.config.js and restart the dev server:
+
+// next.config.js
+module.exports = {
+  allowedDevOrigins: ['preview-chat-48d9382d-c97c-4584-83e3-73cd5c706e30.space-z.ai'],
+}
+
+Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+ GET / 200 in 20ms (next.js: 6ms, application-code: 14ms)
+✓ Compiled in 171ms
+ GET / 200 in 20ms (next.js: 5ms, application-code: 15ms)
+✓ Compiled in 0ms
+✓ Compiled in 237ms
+[browser] ./src/app/page.tsx:101:22
+Error: Expected '</', got 'jsx text'
+   99 |             <a href="https://widget.sonline.su/ru/services/?placeid=999974132" target="_b...
+  100 |               <MenuIcon className="h-5 w-5" />
+> 101 |             </button>
+      |                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 102 |           </div>
+      | ^^^^^^^^^^
+  103 |         </div>
+  104 |       </div>
+  105 |       {open && (
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component] 
+⚠ Blocked cross-origin request to Next.js dev resource /__nextjs_font/geist-mono-latin.woff2 from "preview-chat-48d9382d-c97c-4584-83e3-73cd5c706e30.space-z.ai".
+Cross-origin access to Next.js dev resources is blocked by default for safety.
+
+To allow this host in development, add it to "allowedDevOrigins" in next.config.js and restart the dev server:
+
+// next.config.js
+module.exports = {
+  allowedDevOrigins: ['preview-chat-48d9382d-c97c-4584-83e3-73cd5c706e30.space-z.ai'],
+}
+
+Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+[browser] ./src/app/page.tsx:101:22
+Error: Expected '</', got 'jsx text'
+   99 |             <a href="https://widget.sonline.su/ru/services/?placeid=999974132" target="_b...
+  100 |               <MenuIcon className="h-5 w-5" />
+> 101 |             </button>
+      |                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 102 |           </div>
+      | ^^^^^^^^^^
+  103 |         </div>
+  104 |       </div>
+  105 |       {open && (
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component] 
+✓ Compiled in 169ms
+ GET / 200 in 23ms (next.js: 6ms, application-code: 16ms)
+✓ Compiled in 179ms
+ GET / 200 in 20ms (next.js: 5ms, application-code: 15ms)
