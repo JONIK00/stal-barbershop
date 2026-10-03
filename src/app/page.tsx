@@ -68,7 +68,6 @@ function Header() {
     { label: t.nav.about, href: "#about" },
     { label: t.nav.services, href: "#services" },
     { label: t.nav.masters, href: "#masters" },
-    { label: t.nav.work, href: "#work" },
     { label: t.nav.reviews, href: "#reviews" },
     { label: t.nav.contacts, href: "#contacts" },
   ];
@@ -205,21 +204,27 @@ function Services() {
         </div>
       </div>
       <RivetDivider className="my-12" />
-      <div className="grid gap-px overflow-hidden border border-ash/20 bg-ash/15 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
         {t.services.items.map((s, i) => {
           const Icon = serviceIcons[i]?.icon ?? ScissorsIcon;
+          const img = `/images/svc-${String(i + 1).padStart(2, "0")}.png`;
           return (
-            <article key={s.no} className={`reveal reveal-delay-${(i % 4) + 1} group relative flex flex-col bg-ink-2 p-6 transition-colors duration-300 hover:bg-ink-3 ${s.popular ? "ring-1 ring-inset ring-rust/30" : ""}`}>
-              {s.popular && <span className="absolute right-4 top-4 flex items-center gap-1 border border-rust/50 bg-rust/10 px-2 py-0.5 font-display text-[0.52rem] uppercase tracking-[0.2em] text-rust">★ {t.services.popular}</span>}
-              <div className="flex items-start justify-between">
-                <span className="font-anton text-3xl text-ash/50 transition-colors group-hover:text-rust">{s.no}</span>
-                {!s.popular && <Icon className="h-8 w-8 text-brass/70 transition-colors group-hover:text-brass" />}
+            <article key={s.no} className={`reveal reveal-delay-${(i % 4) + 1} group relative flex flex-col border border-ash/20 bg-ink-2 overflow-hidden transition-all duration-300 hover:border-brass/50 ${s.popular ? "ring-1 ring-inset ring-rust/30" : ""}`}>
+              {/* Photo */}
+              <div className="relative aspect-[4/3] overflow-hidden">
+                <img src={img} alt={s.name} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                <div className="absolute inset-0 bg-gradient-to-t from-ink-2 via-transparent to-transparent" />
+                {s.popular && <span className="absolute right-3 top-3 flex items-center gap-1 border border-rust/50 bg-ink/80 px-2 py-0.5 font-display text-[0.52rem] uppercase tracking-[0.2em] text-rust backdrop-blur-sm">★ {t.services.popular}</span>}
+                <span className="absolute left-3 top-3 font-anton text-2xl text-cream/40">{s.no}</span>
               </div>
-              <h3 className="mt-6 font-display text-xl font-semibold uppercase tracking-wide text-cream">{s.name}</h3>
-              <p className="mt-2 flex-1 text-sm leading-relaxed text-cream-dim">{s.desc}</p>
-              <div className="mt-6 flex items-center justify-between border-t border-ash/15 pt-4">
-                <span className="flex items-center gap-1.5 font-display text-xs uppercase tracking-[0.15em] text-cream-dim"><ClockIcon className="h-3.5 w-3.5 text-brass/70" />{s.duration}</span>
-                <span className="font-anton text-xl text-cream transition-colors group-hover:text-rust">{s.price}</span>
+              {/* Body */}
+              <div className="flex flex-1 flex-col p-4">
+                <h3 className="font-display text-base font-semibold uppercase tracking-wide text-cream">{s.name}</h3>
+                <p className="mt-2 flex-1 text-xs leading-relaxed text-cream-dim line-clamp-2">{s.desc}</p>
+                <div className="mt-4 flex items-center justify-between border-t border-ash/15 pt-3">
+                  <span className="flex items-center gap-1 font-display text-xs uppercase tracking-[0.15em] text-cream-dim"><ClockIcon className="h-3.5 w-3.5 text-brass/70" />{s.duration}</span>
+                  <span className="font-anton text-lg text-cream transition-colors group-hover:text-rust">{s.price}</span>
+                </div>
               </div>
               <span className="absolute inset-x-0 bottom-0 h-0.5 origin-left scale-x-0 bg-rust transition-transform duration-300 group-hover:scale-x-100" />
             </article>
@@ -551,7 +556,6 @@ function Footer() {
     { label: t.nav.about, href: "#about" },
     { label: t.nav.services, href: "#services" },
     { label: t.nav.masters, href: "#masters" },
-    { label: t.nav.work, href: "#work" },
     { label: t.nav.reviews, href: "#reviews" },
     { label: t.nav.contacts, href: "#contacts" },
   ];
@@ -628,7 +632,6 @@ export default function Home() {
         <About />
         <Services />
         <Masters />
-        <Portfolio />
         <Booking />
         <Reviews />
         <Contacts />
