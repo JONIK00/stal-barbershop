@@ -377,13 +377,13 @@ const translations = {
                 {
                     name: "Андрей К.",
                     role: "Постоянный · 2 года",
-                    text: "Лучший фейд в Москве. Дмитрий не разговаривает, пока ты не начнёшь. Уважение. Выхожу — линия чистая три недели.",
+                    text: "Лучший фейд в Москве. Шах не разговаривает, пока ты не начнёшь. Уважение. Выхожу — линия чистая три недели.",
                     date: "Март 2025"
                 },
                 {
                     name: "Сергей М.",
                     role: "Бритьё регулярно",
-                    text: "Бритьё опасной бритвой с горячими полотенцами. Вышел новым человеком. Стоит каждого рубля. Левин знает своё лезвие.",
+                    text: "Бритьё опасной бритвой с горячими полотенцами. Вышел новым человеком. Стоит каждого рубля. Шах знает своё лезвие.",
                     date: "Февраль 2025"
                 },
                 {
@@ -401,7 +401,7 @@ const translations = {
                 {
                     name: "Дмитрий В.",
                     role: "Борода",
-                    text: "Марк — волшебник с лезвием. Три недели — линия держится. Никуда больше не хожу. И кофе неплохой.",
+                    text: "Шах — волшебник с лезвием. Три недели — линия держится. Никуда больше не хожу. И кофе неплохой.",
                     date: "Декабрь 2024"
                 }
             ]
@@ -729,13 +729,13 @@ const translations = {
                 {
                     name: "Andrey K.",
                     role: "Regular · 2 yrs",
-                    text: "Best fade I've had in Moscow. Dmitri doesn't talk unless you talk first. Respect. Walk out, line still clean three weeks later.",
+                    text: "Best fade in Moscow. Shah doesn't talk unless you talk first. Respect. Walk out, line still clean three weeks later.",
                     date: "March 2025"
                 },
                 {
                     name: "Sergei M.",
                     role: "Straight-razor regular",
-                    text: "Straight-razor shave with hot towels. Walked out feeling like a new man. Worth every ruble. Levin knows his blade.",
+                    text: "Straight-razor shave with hot towels. Walked out feeling like a new man. Worth every ruble. Shah knows his blade.",
                     date: "February 2025"
                 },
                 {
@@ -753,7 +753,7 @@ const translations = {
                 {
                     name: "Dmitry V.",
                     role: "Beard sculpting",
-                    text: "Mark is a wizard with the blade. Three weeks and the line still holds. I'm not going anywhere else. The coffee's not bad either.",
+                    text: "Shah is a wizard with the blade. Three weeks and the line still holds. I'm not going anywhere else. The coffee's not bad either.",
                     date: "December 2024"
                 }
             ]

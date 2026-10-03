@@ -271,11 +271,11 @@ export const translations: Record<Lang, Dict> = {
       title2: "постоянных.",
       reviewsCount: "отзывов",
       items: [
-        { name: "Андрей К.", role: "Постоянный · 2 года", text: "Лучший фейд в Москве. Дмитрий не разговаривает, пока ты не начнёшь. Уважение. Выхожу — линия чистая три недели.", date: "Март 2025" },
-        { name: "Сергей М.", role: "Бритьё регулярно", text: "Бритьё опасной бритвой с горячими полотенцами. Вышел новым человеком. Стоит каждого рубля. Левин знает своё лезвие.", date: "Февраль 2025" },
+        { name: "Андрей К.", role: "Постоянный · 2 года", text: "Лучший фейд в Москве. Шах не разговаривает, пока ты не начнёшь. Уважение. Выхожу — линия чистая три недели.", date: "Март 2025" },
+        { name: "Сергей М.", role: "Бритьё регулярно", text: "Бритьё опасной бритвой с горячими полотенцами. Вышел новым человеком. Стоит каждого рубля. Шах знает своё лезвие.", date: "Февраль 2025" },
         { name: "Иван П.", role: "Первый визит", text: "Одно помещение стоит визита. Бетон, кожа, старые кресла. Стрижки острые как бритва. Записался на следующий ещё по дороге.", date: "Февраль 2025" },
         { name: "Николай Р.", role: "Постоянный · 1 год", text: "Добротная работа, атмосфера. Онлайн-запись без проблем. Снял звезду за ожидание один раз — теперь плотнее.", date: "Январь 2025" },
-        { name: "Дмитрий В.", role: "Борода", text: "Марк — волшебник с лезвием. Три недели — линия держится. Никуда больше не хожу. И кофе неплохой.", date: "Декабрь 2024" },
+        { name: "Дмитрий В.", role: "Борода", text: "Шах — волшебник с лезвием. Три недели — линия держится. Никуда больше не хожу. И кофе неплохой.", date: "Декабрь 2024" },
       ],
     },
     faq: {
@@ -448,11 +448,11 @@ export const translations: Record<Lang, Dict> = {
       title2: "regulars.",
       reviewsCount: "reviews",
       items: [
-        { name: "Andrey K.", role: "Regular · 2 yrs", text: "Best fade I've had in Moscow. Dmitri doesn't talk unless you talk first. Respect. Walk out, line still clean three weeks later.", date: "March 2025" },
-        { name: "Sergei M.", role: "Straight-razor regular", text: "Straight-razor shave with hot towels. Walked out feeling like a new man. Worth every ruble. Levin knows his blade.", date: "February 2025" },
+        { name: "Andrey K.", role: "Regular · 2 yrs", text: "Best fade in Moscow. Shah doesn't talk unless you talk first. Respect. Walk out, line still clean three weeks later.", date: "March 2025" },
+        { name: "Sergei M.", role: "Straight-razor regular", text: "Straight-razor shave with hot towels. Walked out feeling like a new man. Worth every ruble. Shah knows his blade.", date: "February 2025" },
         { name: "Ivan P.", role: "First visit", text: "The room alone is worth the trip. Concrete, leather, old-school chairs. Cuts are razor-sharp. Booked my next one on the way out.", date: "February 2025" },
         { name: "Nikolay R.", role: "Regular · 1 yr", text: "Solid work, cool atmosphere. Online booking was painless. Took one star for the wait once — scheduling's been tighter since.", date: "January 2025" },
-        { name: "Dmitry V.", role: "Beard sculpting", text: "Mark is a wizard with the blade. Three weeks and the line still holds. I'm not going anywhere else. The coffee's not bad either.", date: "December 2024" },
+        { name: "Dmitry V.", role: "Beard sculpting", text: "Shah is a wizard with the blade. Three weeks and the line still holds. I'm not going anywhere else. The coffee's not bad either.", date: "December 2024" },
       ],
     },
     faq: {

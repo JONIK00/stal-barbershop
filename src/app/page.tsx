@@ -359,11 +359,16 @@ function Booking() {
         </div>
         <div className="reveal reveal-delay-1">
           <HtmlComment>Вставить embed-код виджета из личного кабинета Sonline: Настройки → Виджет для сайта</HtmlComment>
-          <div id="sonline-widget" className="relative flex min-h-[420px] flex-col items-center justify-center border border-ash/25 bg-ink-2 p-8 text-center">
-            <span className="absolute left-2 top-2 h-2 w-2 rounded-full bg-brass/60" /><span className="absolute right-2 top-2 h-2 w-2 rounded-full bg-brass/60" /><span className="absolute left-2 bottom-2 h-2 w-2 rounded-full bg-brass/60" /><span className="absolute right-2 bottom-2 h-2 w-2 rounded-full bg-brass/60" />
-            <div className="flex items-center gap-2 text-brass"><span className="bulb-dot" /><span className="font-display text-[0.6rem] uppercase tracking-[0.3em]">Онлайн-запись</span></div>
-            <h3 className="mt-5 font-anton text-3xl text-cream sm:text-4xl">{t.booking.widgetTitle}</h3>
-            <p className="mt-3 max-w-sm text-sm text-cream-dim">{t.booking.widgetDesc}</p>
+          <div id="sonline-widget" className="relative overflow-hidden border border-ash/25 bg-ink-2">
+            <span className="absolute left-2 top-2 z-20 h-2 w-2 rounded-full bg-brass/60" /><span className="absolute right-2 top-2 z-20 h-2 w-2 rounded-full bg-brass/60" /><span className="absolute left-2 bottom-2 z-20 h-2 w-2 rounded-full bg-brass/60" /><span className="absolute right-2 bottom-2 z-20 h-2 w-2 rounded-full bg-brass/60" />
+            <iframe
+              src="https://widget.sonline.su/ru/services/?placeid=999974132"
+              title="Онлайн-запись"
+              className="h-[600px] w-full"
+              style={{ border: 0 }}
+              loading="lazy"
+              allowFullScreen
+            />
           </div>
         </div>
       </div>

@@ -8,3 +8,18 @@
  GET / 200 in 2.1s (next.js: 1908ms, application-code: 185ms)
  GET / 200 in 40ms (next.js: 2ms, application-code: 38ms)
  GET / 200 in 45ms (next.js: 3ms, application-code: 42ms)
+ GET / 200 in 51ms (next.js: 4ms, application-code: 47ms)
+ GET / 200 in 47ms (next.js: 3ms, application-code: 44ms)
+ GET / 200 in 51ms (next.js: 2ms, application-code: 49ms)
+✓ Compiled in 150ms
+ GET / 200 in 30ms (next.js: 6ms, application-code: 24ms)
+⚠ Fast Refresh had to perform a full reload when ./src/components/barbershop/translations.ts changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ GET / 200 in 46ms (next.js: 3ms, application-code: 43ms)
+⚠ Fast Refresh had to perform a full reload when ./src/components/barbershop/translations.ts changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+✓ Compiled in 146ms
+ GET / 200 in 27ms (next.js: 5ms, application-code: 23ms)
+⚠ Fast Refresh had to perform a full reload when ./src/components/barbershop/translations.ts changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ GET / 200 in 44ms (next.js: 3ms, application-code: 41ms)
+⚠ Fast Refresh had to perform a full reload when ./src/components/barbershop/translations.ts changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+✓ Compiled in 185ms
+ GET / 200 in 18ms (next.js: 5ms, application-code: 14ms)
