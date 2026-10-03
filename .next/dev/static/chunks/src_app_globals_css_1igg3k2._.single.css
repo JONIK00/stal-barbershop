@@ -920,6 +920,10 @@
     display: inline;
   }
 
+  .inline-block {
+    display: inline-block;
+  }
+
   .inline-flex {
     display: inline-flex;
   }
@@ -994,10 +998,6 @@
 
   .h-\[88px\] {
     height: 88px;
-  }
-
-  .h-\[600px\] {
-    height: 600px;
   }
 
   .h-full {
