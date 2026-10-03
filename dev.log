@@ -1,37 +1,10 @@
 ▲ Next.js 16.3.4 (Turbopack)
 - Local:         http://localhost:3000
-- Network:       http://21.0.2.43:3000
+- Network:       http://21.0.20.33:3000
 - Environments: .env
-✓ Ready in 467ms
-✓ Running next.config.ts took 25ms
+✓ Ready in 485ms
+✓ Running next.config.ts took 29ms
 
- GET / 200 in 1606ms (next.js: 1417ms, application-code: 189ms)
- GET / 200 in 50ms (next.js: 4ms, application-code: 46ms)
- GET / 200 in 45ms (next.js: 4ms, application-code: 41ms)
- GET / 200 in 52ms (next.js: 3ms, application-code: 49ms)
- GET / 200 in 56ms (next.js: 6ms, application-code: 50ms)
- GET / 200 in 54ms (next.js: 3ms, application-code: 51ms)
- GET / 200 in 48ms (next.js: 3ms, application-code: 45ms)
- GET / 200 in 46ms (next.js: 2ms, application-code: 43ms)
- GET / 200 in 47ms (next.js: 2ms, application-code: 45ms)
- GET / 200 in 53ms (next.js: 3ms, application-code: 51ms)
-✓ Compiled in 434ms
- GET / 200 in 27ms (next.js: 7ms, application-code: 20ms)
- GET / 200 in 54ms (next.js: 2ms, application-code: 52ms)
-✓ Compiled in 140ms
- GET / 200 in 18ms (next.js: 4ms, application-code: 14ms)
-⚠ Blocked cross-origin request to Next.js dev resource /__nextjs_font/geist-latin.woff2 from "preview-chat-48d9382d-c97c-4584-83e3-73cd5c706e30.space-z.ai".
-Cross-origin access to Next.js dev resources is blocked by default for safety.
-
-To allow this host in development, add it to "allowedDevOrigins" in next.config.js and restart the dev server:
-
-// next.config.js
-module.exports = {
-  allowedDevOrigins: ['preview-chat-48d9382d-c97c-4584-83e3-73cd5c706e30.space-z.ai'],
-}
-
-Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
-✓ Compiled in 167ms
- GET / 200 in 23ms (next.js: 4ms, application-code: 19ms)
- GET / 200 in 48ms (next.js: 3ms, application-code: 45ms)
- GET / 200 in 55ms (next.js: 3ms, application-code: 52ms)
+ GET / 200 in 2.1s (next.js: 1908ms, application-code: 185ms)
+ GET / 200 in 40ms (next.js: 2ms, application-code: 38ms)
+ GET / 200 in 45ms (next.js: 3ms, application-code: 42ms)
