@@ -275,7 +275,7 @@ _c1 = LangToggle;
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                    href: "https://widget.sonline.su/ru/services/?placeid=999974132",
+                                    href: "https://xn--k1agajh.xn--p1ai/book.html?m=sah744",
                                     target: "_blank",
                                     rel: "noopener noreferrer",
                                     className: "btn-rust hidden sm:inline-flex text-xs",
@@ -286,7 +286,7 @@ _c1 = LangToggle;
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/page.tsx",
                                             lineNumber: 99,
-                                            columnNumber: 184
+                                            columnNumber: 175
                                         }, this)
                                     ]
                                 }, void 0, true, {
@@ -406,7 +406,7 @@ _c1 = LangToggle;
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "px-5 pt-4",
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                            href: "https://widget.sonline.su/ru/services/?placeid=999974132",
+                            href: "https://xn--k1agajh.xn--p1ai/book.html?m=sah744",
                             target: "_blank",
                             rel: "noopener noreferrer",
                             onClick: ()=>setOpen(false),
@@ -418,7 +418,7 @@ _c1 = LangToggle;
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/page.tsx",
                                     lineNumber: 119,
-                                    columnNumber: 230
+                                    columnNumber: 221
                                 }, this)
                             ]
                         }, void 0, true, {
@@ -561,7 +561,7 @@ _c2 = Header;
                             className: "reveal reveal-delay-3 mt-9 flex flex-col gap-4 sm:flex-row sm:items-center",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                    href: "https://widget.sonline.su/ru/services/?placeid=999974132",
+                                    href: "https://xn--k1agajh.xn--p1ai/book.html?m=sah744",
                                     target: "_blank",
                                     rel: "noopener noreferrer",
                                     className: "btn-rust text-sm",
@@ -572,7 +572,7 @@ _c2 = Header;
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/page.tsx",
                                             lineNumber: 148,
-                                            columnNumber: 167
+                                            columnNumber: 158
                                         }, this)
                                     ]
                                 }, void 0, true, {
@@ -1803,7 +1803,7 @@ function Booking() {
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                        href: "https://widget.sonline.su/ru/services/?placeid=999974132",
+                                        href: "https://xn--k1agajh.xn--p1ai/book.html?m=sah744",
                                         target: "_blank",
                                         rel: "noopener noreferrer",
                                         className: "btn-rust mt-7 text-sm",
@@ -1813,7 +1813,7 @@ function Booking() {
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/page.tsx",
                                                 lineNumber: 370,
-                                                columnNumber: 156
+                                                columnNumber: 147
                                             }, this),
                                             t.booking.widgetCta
                                         ]

@@ -96,7 +96,7 @@ function Header() {
             <a href={site.phoneHref} className="hidden items-center gap-2 font-display text-sm uppercase tracking-[0.14em] text-cream/80 transition-colors hover:text-brass md:flex" aria-label={`Call ${site.phone}`}>
               <PhoneIcon className="h-4 w-4" /><span className="hidden xl:inline">{site.phone}</span>
             </a>
-            <a href="https://widget.sonline.su/ru/services/?placeid=999974132" target="_blank" rel="noopener noreferrer" className="btn-rust hidden sm:inline-flex text-xs">{t.ui.book}<ArrowIcon className="h-3.5 w-3.5" /></a>
+            <a href="https://xn--k1agajh.xn--p1ai/book.html?m=sah744" target="_blank" rel="noopener noreferrer" className="btn-rust hidden sm:inline-flex text-xs">{t.ui.book}<ArrowIcon className="h-3.5 w-3.5" /></a>
             <button type="button" onClick={() => setOpen(true)} className="flex h-10 w-10 items-center justify-center border border-ash/30 text-cream transition-colors hover:border-brass hover:text-brass lg:hidden" aria-label={t.ui.openMenu} aria-expanded={open}>
               <MenuIcon className="h-5 w-5" />
             </button>
@@ -116,7 +116,7 @@ function Header() {
               </a>
             ))}
           </nav>
-          <div className="px-5 pt-4"><a href="https://widget.sonline.su/ru/services/?placeid=999974132" target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)} className="btn-rust w-full text-sm">{t.ui.bookChair}<ArrowIcon className="h-4 w-4" /></a></div>
+          <div className="px-5 pt-4"><a href="https://xn--k1agajh.xn--p1ai/book.html?m=sah744" target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)} className="btn-rust w-full text-sm">{t.ui.bookChair}<ArrowIcon className="h-4 w-4" /></a></div>
         </div>
       )}
     </header>
@@ -145,7 +145,7 @@ function Hero() {
           </h1>
           {t.hero.desc && <p className="reveal reveal-delay-2 mt-7 max-w-xl text-base leading-relaxed text-cream-dim sm:text-lg">{t.hero.desc}</p>}
           <div className="reveal reveal-delay-3 mt-9 flex flex-col gap-4 sm:flex-row sm:items-center">
-            <a href="https://widget.sonline.su/ru/services/?placeid=999974132" target="_blank" rel="noopener noreferrer" className="btn-rust text-sm">{t.hero.ctaBook}<ArrowIcon className="h-4 w-4" /></a>
+            <a href="https://xn--k1agajh.xn--p1ai/book.html?m=sah744" target="_blank" rel="noopener noreferrer" className="btn-rust text-sm">{t.hero.ctaBook}<ArrowIcon className="h-4 w-4" /></a>
             <a href="#services" className="btn-outline text-sm">{t.hero.ctaBoard}</a>
           </div>
 
@@ -367,7 +367,7 @@ function Booking() {
             <div className="flex items-center gap-2 text-brass"><span className="bulb-dot" /><span className="font-display text-[0.6rem] uppercase tracking-[0.3em]">Онлайн-запись</span></div>
             <h3 className="mt-5 font-anton text-3xl text-cream sm:text-4xl">{t.booking.widgetTitle}</h3>
             <p className="mt-3 max-w-sm text-sm text-cream-dim">{t.booking.widgetDesc}</p>
-            <a href="https://widget.sonline.su/ru/services/?placeid=999974132" target="_blank" rel="noopener noreferrer" className="btn-rust mt-7 text-sm"><ArrowIcon className="h-4 w-4" />{t.booking.widgetCta}</a>
+            <a href="https://xn--k1agajh.xn--p1ai/book.html?m=sah744" target="_blank" rel="noopener noreferrer" className="btn-rust mt-7 text-sm"><ArrowIcon className="h-4 w-4" />{t.booking.widgetCta}</a>
           </div>
         </div>
       </div>
