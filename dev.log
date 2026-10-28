@@ -75,4 +75,34 @@ Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allow
  GET / 200 in 19ms (next.js: 3ms, application-code: 16ms)
  GET / 200 in 18ms (next.js: 3ms, application-code: 14ms)
  GET / 200 in 168ms (next.js: 2ms, application-code: 166ms)
-ext.js: 2ms, application-code: 166ms)
+ GET / 200 in 48ms (next.js: 2ms, application-code: 46ms)
+ GET / 200 in 63ms (next.js: 5ms, application-code: 58ms)
+✓ Compiled in 185ms
+⚠ Fast Refresh had to perform a full reload when ./src/components/barbershop/translations.ts changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ GET / 200 in 229ms (next.js: 10ms, application-code: 219ms)
+ GET / 200 in 122ms (next.js: 1.9ms, application-code: 120ms)
+ GET / 200 in 67ms (next.js: 3ms, application-code: 64ms)
+⚠ Fast Refresh had to perform a full reload when ./src/components/barbershop/translations.ts changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ GET / 200 in 44ms (next.js: 2ms, application-code: 42ms)
+✓ Compiled in 348ms
+✓ Compiled in 258ms
+ GET / 200 in 116ms (next.js: 56ms, application-code: 60ms)
+ GET / 200 in 68ms (next.js: 3ms, application-code: 65ms)
+✓ Compiled in 207ms
+ GET / 200 in 24ms (next.js: 7ms, application-code: 16ms)
+ GET / 200 in 39ms (next.js: 5ms, application-code: 34ms)
+ GET / 200 in 95ms (next.js: 4ms, application-code: 91ms)
+ GET / 200 in 136ms (next.js: 5ms, application-code: 131ms)
+ GET / 200 in 136ms (next.js: 3ms, application-code: 132ms)
+ GET / 200 in 110ms (next.js: 3ms, application-code: 106ms)
+ GET / 200 in 57ms (next.js: 3ms, application-code: 54ms)
+✓ Compiled in 247ms
+✓ Compiled in 289ms
+ GET / 200 in 113ms (next.js: 9ms, application-code: 104ms)
+ GET / 200 in 63ms (next.js: 31ms, application-code: 32ms)
+ GET / 200 in 22ms (next.js: 3ms, application-code: 19ms)
+ GET / 200 in 17ms (next.js: 3ms, application-code: 14ms)
+ GET / 200 in 114ms (next.js: 2ms, application-code: 112ms)
+ GET / 200 in 47ms (next.js: 3ms, application-code: 44ms)
+ GET / 200 in 126ms (next.js: 3ms, application-code: 123ms)
+ext.js: 3ms, application-code: 123ms)

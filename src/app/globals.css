@@ -197,6 +197,15 @@
     50% { box-shadow: 0 0 0 4px rgba(181,80,46,0.18), 0 6px 26px -6px rgba(181,80,46,0.8); }
   }
 
+  .text-outline {
+    color: transparent;
+    -webkit-text-stroke: 1.5px rgba(232,228,220,0.22);
+  }
+  .text-outline-rust {
+    color: transparent;
+    -webkit-text-stroke: 1.5px rgba(181,80,46,0.55);
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .cta-float, .ken-burns, .marquee__track { animation: none; }
   }

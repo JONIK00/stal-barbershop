@@ -18,3 +18,20 @@
 {"timestamp":"00:09:38.687","source":"Server","level":"LOG","message":"✓ Compiled in 360ms"}
 {"timestamp":"00:09:39.099","source":"Server","level":"LOG","message":"✓ Compiled in 459ms"}
 {"timestamp":"00:09:53.110","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:16:22.688","source":"Server","level":"LOG","message":"✓ Compiled in 185ms"}
+{"timestamp":"00:16:22.753","source":"Server","level":"WARN","message":"⚠ Fast Refresh had to perform a full reload when ./src/components/barbershop/translations.ts changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload"}
+{"timestamp":"00:16:23.112","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:16:24.257","source":"Server","level":"WARN","message":"⚠ Fast Refresh had to perform a full reload when ./src/components/barbershop/translations.ts changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload"}
+{"timestamp":"00:16:28.519","source":"Server","level":"LOG","message":"✓ Compiled in 348ms"}
+{"timestamp":"00:17:12.987","source":"Server","level":"LOG","message":"✓ Compiled in 258ms"}
+{"timestamp":"00:17:20.280","source":"Server","level":"LOG","message":"✓ Compiled in 207ms"}
+{"timestamp":"00:17:30.385","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:17:30.948","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:18:31.168","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:18:50.972","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:19:03.019","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:19:28.877","source":"Server","level":"LOG","message":"✓ Compiled in 247ms"}
+{"timestamp":"00:19:29.059","source":"Server","level":"LOG","message":"✓ Compiled in 289ms"}
+{"timestamp":"00:19:37.094","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:19:38.494","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:19:49.853","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}

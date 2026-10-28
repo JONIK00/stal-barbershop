@@ -560,7 +560,7 @@ function Contacts() {
 }
 
 /* ============ FOOTER ============ */
-function Footer() {
+function Footer({ onOpenPrivacy }: { onOpenPrivacy: () => void }) {
   const { t } = useI18n();
   const year = new Date().getFullYear();
   const navItems = [
@@ -572,34 +572,138 @@ function Footer() {
   const serviceNames = t.services.items.slice(0, 5).map((s) => s.name);
   return (
     <footer className="mt-auto border-t border-ash/25 bg-ink grain-overlay">
-      <div className="border-b border-ash/15 px-5 py-10 sm:px-8 md:px-12 lg:px-20">
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 md:flex-row">
-          <div className="flex items-center gap-4">
-            <BrandMark className="h-12 w-12 text-rust" />
-            <div className="leading-none"><div className="font-anton text-3xl tracking-[0.06em] text-cream sm:text-4xl">{t.brandName}</div><div className="mt-1 font-display text-[0.62rem] uppercase tracking-[0.3em] text-brass">{t.footer.tagline}</div></div>
+      {/* Statement — вордплей имени и слогана */}
+      <div className="relative overflow-hidden border-b border-ash/15 px-5 py-12 sm:px-8 md:px-12 lg:px-20">
+        <div aria-hidden="true" className="pointer-events-none absolute -right-6 top-1/2 hidden -translate-y-1/2 select-none font-anton text-[11rem] leading-none text-ash/[0.05] lg:block">СТАЛЬ</div>
+        <div className="mx-auto flex max-w-7xl flex-col gap-6 md:flex-row md:items-end md:justify-between">
+          <div>
+            <div className="flex items-center gap-3 font-display text-[0.62rem] uppercase tracking-[0.35em] text-brass"><span className="bulb-dot" />{t.footer.motto}</div>
+            <p className="mt-4 font-anton text-5xl leading-[0.95] text-cream sm:text-6xl md:text-7xl">
+              {t.brandName} <span className="text-outline-rust">— {t.footer.statement}</span>
+            </p>
+            <p className="mt-5 max-w-md text-sm leading-relaxed text-cream-dim">{t.footer.manifesto}</p>
           </div>
-          <div className="flex flex-wrap items-center justify-center gap-3">
-            {site.socials.map((s) => {
-              const Icon = s.label === "Instagram" ? InstagramIcon : s.label === "Telegram" ? TelegramIcon : VkIcon;
-              return <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" className="flex h-11 w-11 items-center justify-center border border-ash/30 text-cream-dim hover:border-brass hover:text-brass" aria-label={`${t.brandName} on ${s.label}`}><Icon className="h-4 w-4" /></a>;
-            })}
-          </div>
+          <a href={site.bookingUrl} target="_blank" rel="noopener noreferrer" className="btn-rust shrink-0 text-sm">{t.footer.bookCta}<ArrowIcon className="h-4 w-4" /></a>
         </div>
       </div>
+      {/* Columns */}
       <div className="px-5 py-12 sm:px-8 md:px-12 lg:px-20">
-        <div className="mx-auto grid max-w-7xl gap-10 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mx-auto grid max-w-7xl gap-10 sm:grid-cols-2 lg:grid-cols-[1.3fr_1fr_1fr_1.2fr]">
+          <div>
+            <div className="flex items-center gap-4">
+              <BrandMark className="h-12 w-12 text-rust" />
+              <div className="leading-none"><div className="font-anton text-3xl tracking-[0.06em] text-cream sm:text-4xl">{t.brandName}</div><div className="mt-1 font-display text-[0.62rem] uppercase tracking-[0.3em] text-brass">{t.footer.tagline}</div></div>
+            </div>
+            <div className="mt-6 flex flex-wrap gap-3">
+              {site.socials.map((s) => {
+                const Icon = s.label === "Instagram" ? InstagramIcon : s.label === "Telegram" ? TelegramIcon : VkIcon;
+                return <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" className="flex h-11 w-11 items-center justify-center border border-ash/30 text-cream-dim hover:border-brass hover:text-brass" aria-label={`${t.brandName} on ${s.label}`}><Icon className="h-4 w-4" /></a>;
+              })}
+            </div>
+          </div>
           <div><h3 className="font-display text-[0.62rem] uppercase tracking-[0.3em] text-brass">{t.footer.navigate}</h3><ul className="mt-4 space-y-2.5">{navItems.map((item)=><li key={item.href}><a href={item.href} className="font-display text-sm uppercase tracking-[0.12em] text-cream-dim hover:text-rust">{item.label}</a></li>)}</ul></div>
           <div><h3 className="font-display text-[0.62rem] uppercase tracking-[0.3em] text-brass">{t.footer.servicesCol}</h3><ul className="mt-4 space-y-2.5">{serviceNames.map((s)=><li key={s}><a href="#services" className="font-display text-sm text-cream-dim hover:text-rust">{s}</a></li>)}</ul></div>
-          <div><h3 className="font-display text-[0.62rem] uppercase tracking-[0.3em] text-brass">{t.footer.contactCol}</h3><ul className="mt-4 space-y-3"><li className="flex items-start gap-2.5 text-sm text-cream-dim"><PinIcon className="mt-0.5 h-4 w-4 shrink-0 text-brass" />{site.address}</li><li><a href={site.phoneHref} className="flex items-center gap-2.5 text-sm text-cream-dim hover:text-rust"><PhoneIcon className="h-4 w-4 shrink-0 text-brass" />{site.phone}</a></li><li className="text-sm text-cream-dim">{t.booking.hoursLabel}</li></ul></div>
+          <div><h3 className="font-display text-[0.62rem] uppercase tracking-[0.3em] text-brass">{t.footer.contactCol}</h3><ul className="mt-4 space-y-3"><li className="flex items-start gap-2.5 text-sm text-cream-dim"><PinIcon className="mt-0.5 h-4 w-4 shrink-0 text-brass" />{site.address}</li><li><a href={site.phoneHref} className="flex items-center gap-2.5 text-sm text-cream-dim hover:text-rust"><PhoneIcon className="h-4 w-4 shrink-0 text-brass" />{site.phone}</a></li><li className="flex items-center gap-2.5 text-sm text-cream-dim"><ClockIcon className="h-4 w-4 shrink-0 text-brass" />{site.hours}</li></ul></div>
         </div>
       </div>
+      {/* Bottom bar */}
       <div className="border-t border-ash/15 px-5 py-6 sm:px-8 md:px-12 lg:px-20">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 text-center sm:flex-row sm:text-left">
           <p className="font-display text-[0.65rem] uppercase tracking-[0.18em] text-ash">© {year} {site.name}. {t.footer.copyright}</p>
-          <div className="flex items-center gap-4 font-display text-[0.65rem] uppercase tracking-[0.18em] text-ash"><span>{t.hero.title1} {t.hero.title2}</span></div>
+          <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 font-display text-[0.65rem] uppercase tracking-[0.18em] text-ash">
+            <button type="button" onClick={onOpenPrivacy} className="underline decoration-ash/40 underline-offset-4 transition-colors hover:text-brass hover:decoration-brass">{t.footer.privacy}</button>
+            <span className="hidden h-1 w-1 rounded-full bg-ash/50 sm:inline-block" aria-hidden="true" />
+            <span className="flex items-center gap-1.5"><span className="h-1.5 w-1.5 rounded-full bg-brass/70" aria-hidden="true" />{t.footer.cookieNote}</span>
+          </div>
         </div>
       </div>
     </footer>
+  );
+}
+
+/* ============ PRIVACY MODAL ============ */
+function PrivacyModal({ open, onClose }: { open: boolean; onClose: () => void }) {
+  const { t } = useI18n();
+  const panelRef = React.useRef<HTMLDivElement>(null);
+
+  React.useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") onClose(); };
+    document.addEventListener("keydown", onKey);
+    document.body.style.overflow = "hidden";
+    panelRef.current?.focus();
+    return () => { document.removeEventListener("keydown", onKey); document.body.style.overflow = ""; };
+  }, [open, onClose]);
+
+  if (!open) return null;
+  return (
+    <div className="fixed inset-0 z-[70] flex items-center justify-center p-4 sm:p-6" role="dialog" aria-modal="true" aria-label={t.footer.privacyTitle}>
+      <button type="button" className="absolute inset-0 cursor-default bg-ink/85 backdrop-blur-sm" onClick={onClose} aria-label={t.footer.closeLabel} tabIndex={-1} />
+      <div ref={panelRef} tabIndex={-1} className="relative flex max-h-[85vh] w-full max-w-2xl flex-col border border-ash/30 bg-ink-2 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.8)] outline-none">
+        <span className="pointer-events-none absolute left-2 top-2 z-20 h-3 w-3 border-l border-t border-brass/60" />
+        <span className="pointer-events-none absolute right-2 top-2 z-20 h-3 w-3 border-r border-t border-brass/60" />
+        <span className="pointer-events-none absolute bottom-2 left-2 z-20 h-3 w-3 border-b border-l border-brass/60" />
+        <span className="pointer-events-none absolute bottom-2 right-2 z-20 h-3 w-3 border-b border-r border-brass/60" />
+        <div className="flex items-start justify-between gap-4 border-b border-ash/20 p-6 sm:p-8">
+          <div>
+            <div className="flex items-center gap-2 text-brass"><span className="bulb-dot" /><span className="font-display text-[0.6rem] uppercase tracking-[0.3em]">{t.brandName}</span></div>
+            <h2 className="mt-3 font-anton text-2xl text-cream sm:text-3xl">{t.footer.privacyTitle}</h2>
+            <p className="mt-2 text-xs text-cream-dim">{t.footer.privacyUpdated}</p>
+          </div>
+          <button type="button" onClick={onClose} className="flex h-10 w-10 shrink-0 items-center justify-center border border-ash/30 text-cream-dim transition-colors hover:border-rust hover:bg-rust hover:text-cream" aria-label={t.footer.closeLabel}><CloseIcon className="h-5 w-5" /></button>
+        </div>
+        <div className="max-h-[60vh] overflow-y-auto p-6 sm:p-8">
+          <div className="space-y-6">
+            {t.footer.privacyBody.map((item) => (
+              <div key={item.h}>
+                <h3 className="flex items-center gap-3 font-display text-sm font-semibold uppercase tracking-[0.18em] text-brass"><span className="h-px w-5 bg-brass/60" />{item.h}</h3>
+                <p className="mt-2.5 text-sm leading-relaxed text-cream-dim">{item.p}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ============ COOKIE BAR ============ */
+const COOKIE_KEY = "stal-cookie-ok";
+
+function CookieBar({ onOpenPrivacy }: { onOpenPrivacy: () => void }) {
+  const { t } = useI18n();
+  const [show, setShow] = React.useState(false);
+
+  React.useEffect(() => {
+    if (typeof window === "undefined") return;
+    let dismissed = false;
+    try { dismissed = window.localStorage.getItem(COOKIE_KEY) === "1"; } catch { /* приватный режим — просто покажем плашку */ }
+    if (dismissed) return;
+    const timer = window.setTimeout(() => setShow(true), 900);
+    return () => window.clearTimeout(timer);
+  }, []);
+
+  const dismiss = () => {
+    setShow(false);
+    try { window.localStorage.setItem(COOKIE_KEY, "1"); } catch { /* ок, просто закрываем */ }
+  };
+
+  return (
+    <div
+      className={`fixed bottom-20 left-4 z-[60] w-[calc(100vw-2rem)] max-w-sm border border-ash/30 bg-ink-2/95 p-5 shadow-[0_20px_50px_-15px_rgba(0,0,0,0.7)] backdrop-blur-md transition-all duration-500 sm:bottom-5 ${show ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-4 opacity-0"}`}
+      role="region"
+      aria-label="Cookies"
+      aria-hidden={!show}
+    >
+      <span className="pointer-events-none absolute left-1.5 top-1.5 h-2.5 w-2.5 border-l border-t border-brass/50" />
+      <span className="pointer-events-none absolute right-1.5 top-1.5 h-2.5 w-2.5 border-r border-t border-brass/50" />
+      <div className="flex items-center gap-2 font-display text-[0.62rem] uppercase tracking-[0.3em] text-brass"><span className="bulb-dot" />Cookies</div>
+      <p className="mt-3 text-[0.82rem] leading-relaxed text-cream-dim">{t.footer.cookieText}</p>
+      <div className="mt-4 flex items-center justify-between gap-3">
+        <button type="button" onClick={onOpenPrivacy} className="font-display text-[0.68rem] uppercase tracking-[0.16em] text-cream-dim underline decoration-ash/40 underline-offset-4 transition-colors hover:text-brass hover:decoration-brass">{t.footer.privacy}</button>
+        <button type="button" onClick={dismiss} className="btn-rust px-4 py-2.5 text-xs">{t.footer.cookieOk}</button>
+      </div>
+    </div>
   );
 }
 
@@ -612,7 +716,7 @@ function BackToTop() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
   return (
-    <button type="button" onClick={() => window.scrollTo({top:0,behavior:"smooth"})} className={`fixed bottom-5 right-5 z-40 flex h-12 w-12 items-center justify-center border border-brass/50 bg-ink/90 text-brass backdrop-blur-sm transition-all duration-300 hover:border-rust hover:bg-rust hover:text-cream ${show?"translate-y-0 opacity-100":"pointer-events-none translate-y-4 opacity-0"}`} aria-label={t.ui.backToTop}><ArrowUpIcon className="h-5 w-5" /></button>
+    <button type="button" onClick={() => window.scrollTo({top:0,behavior:"smooth"})} className={`fixed bottom-5 right-5 z-40 hidden h-12 w-12 items-center justify-center border border-brass/50 bg-ink/90 text-brass backdrop-blur-sm transition-all duration-300 hover:border-rust hover:bg-rust hover:text-cream lg:flex ${show?"translate-y-0 opacity-100":"pointer-events-none translate-y-4 opacity-0"}`} aria-label={t.ui.backToTop}><ArrowUpIcon className="h-5 w-5" /></button>
   );
 }
 
@@ -646,7 +750,7 @@ function FloatingBook() {
     <button
       type="button"
       onClick={() => document.getElementById("booking")?.scrollIntoView({ behavior: "smooth", block: "start" })}
-      className={`cta-float group fixed bottom-[5.5rem] right-5 z-40 flex items-center gap-2.5 border border-rust bg-rust px-5 py-3.5 font-display text-sm font-semibold uppercase tracking-[0.16em] text-cream transition-all duration-300 hover:bg-[#c75e38] hover:shadow-[0_0_0_1px_#a9793a,0_10px_28px_-8px_rgba(181,80,46,0.75)] hover:-translate-y-0.5 active:translate-y-0 ${show ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-4 opacity-0"}`}
+      className={`cta-float group fixed bottom-[5.5rem] right-5 z-40 hidden items-center gap-2.5 border border-rust bg-rust px-5 py-3.5 font-display text-sm font-semibold uppercase tracking-[0.16em] text-cream transition-all duration-300 hover:bg-[#c75e38] hover:shadow-[0_0_0_1px_#a9793a,0_10px_28px_-8px_rgba(181,80,46,0.75)] hover:-translate-y-0.5 active:translate-y-0 lg:flex ${show ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-4 opacity-0"}`}
       style={{ clipPath: "polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px)" }}
       aria-label={t.ui.bookNow}
       aria-hidden={!show}
@@ -678,6 +782,9 @@ function MobileStickyBar() {
 /* ============ MAIN PAGE ============ */
 export default function Home() {
   useScrollReveal();
+  const [privacyOpen, setPrivacyOpen] = React.useState(false);
+  const openPrivacy = React.useCallback(() => setPrivacyOpen(true), []);
+  const closePrivacy = React.useCallback(() => setPrivacyOpen(false), []);
   return (
     <div className="page-enter relative flex min-h-screen flex-col bg-ink">
       <a href="#top" className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[60] focus:bg-rust focus:px-4 focus:py-2 focus:font-display focus:text-sm focus:uppercase focus:tracking-widest focus:text-cream">Skip to content</a>
@@ -692,9 +799,12 @@ export default function Home() {
         <Booking />
         <Contacts />
       </main>
-      <Footer />
+      <Footer onOpenPrivacy={openPrivacy} />
       <BackToTop />
       <FloatingBook />
+      <MobileStickyBar />
+      <CookieBar onOpenPrivacy={openPrivacy} />
+      <PrivacyModal open={privacyOpen} onClose={closePrivacy} />
     </div>
   );
 }

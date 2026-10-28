@@ -2109,7 +2109,34 @@ const translations = {
             bookDesc: "Забронируй слот онлайн или позвони. Первый стул — в 10:00.",
             bookCta: "Записаться",
             copyright: "Все стрижки защищены.",
-            motto: "Бетон · Сталь · Латунь"
+            motto: "Бетон · Сталь · Латунь",
+            statement: "Не барбершоп.",
+            manifesto: "Ремесло, а не тренд. Кресло, а не конвейер. Один мастер — одна стрижка за раз.",
+            privacy: "Политика конфиденциальности",
+            cookieNote: "Мы не собираем ваши данные",
+            cookieText: "Сайт использует файлы cookie — с ними карта и язык интерфейса работают как надо.",
+            cookieOk: "Понятно",
+            privacyTitle: "Политика конфиденциальности",
+            privacyUpdated: "Коротко и по делу — без юридической воды.",
+            privacyBody: [
+                {
+                    h: "Что мы собираем",
+                    p: "Ничего. Сайт не запрашивает имя, телефон или почту — никаких форм с вашими данными здесь нет."
+                },
+                {
+                    h: "Онлайн-запись",
+                    p: "Запись идёт через отдельный сервис (Sonline). Данные, которые вы вводите там, обрабатываются по правилам этого сервиса."
+                },
+                {
+                    h: "Файлы cookie",
+                    p: "Встроенная Яндекс.Карта может устанавливать cookie для своей работы. Также сайт запоминает выбранный язык. Всё это можно отключить в настройках браузера — сайт продолжит работать."
+                },
+                {
+                    h: "Вопросы",
+                    p: "Что-то непонятно — пишите: chair@stal.barbershop"
+                }
+            ],
+            closeLabel: "Закрыть"
         },
         ui: {
             book: "Запись",
@@ -2463,7 +2490,34 @@ const translations = {
             bookDesc: "Reserve a slot online or call ahead. First chair opens at 10:00.",
             bookCta: "Book your chair",
             copyright: "All cuts reserved.",
-            motto: "Concrete · Steel · Brass"
+            motto: "Concrete · Steel · Brass",
+            statement: "Not a barbershop.",
+            manifesto: "Craft, not trend. A chair, not a conveyor. One master — one cut at a time.",
+            privacy: "Privacy policy",
+            cookieNote: "We don't collect your data",
+            cookieText: "This site uses cookies — they keep the map and the interface language working.",
+            cookieOk: "Got it",
+            privacyTitle: "Privacy policy",
+            privacyUpdated: "Short and honest — no legal fog.",
+            privacyBody: [
+                {
+                    h: "What we collect",
+                    p: "Nothing. The site never asks for your name, phone or email — there are no forms with your data here."
+                },
+                {
+                    h: "Online booking",
+                    p: "Booking runs through a separate service (Sonline). Data you enter there is handled under that service's policy."
+                },
+                {
+                    h: "Cookies",
+                    p: "The embedded Yandex Map may set cookies for its work. The site also remembers your chosen language. You can disable cookies in your browser — the site will keep working."
+                },
+                {
+                    h: "Questions",
+                    p: "Anything unclear — write to chair@stal.barbershop"
+                }
+            ],
+            closeLabel: "Close"
         },
         ui: {
             book: "Book",
