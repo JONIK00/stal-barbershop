@@ -8,24 +8,24 @@ const anton = Anton({ variable: "--font-anton", subsets: ["latin"], weight: ["40
 const inter = Inter({ variable: "--font-inter", subsets: ["latin", "cyrillic"], weight: ["300","400","500","600","700"] });
 
 export const metadata: Metadata = {
-  title: "СТАЛЬ | Барбершоп — Стрижки. Бороды. Опасная бритва.",
-  description: "СТАЛЬ — барбершоп в Москве. Мужские стрижки, оформление бороды, бритьё опасной бритвой. Запишись онлайн.",
-  keywords: ["барбершоп","барбершоп Москва","мужская стрижка","стрижка бороды","бритьё опасной бритвой","СТАЛЬ"],
+  title: "СТАЛЬ | Мужские стрижки — Бороды. Опасная бритва.",
+  description: "СТАЛЬ — мужские стрижки, оформление бороды, бритьё опасной бритвой. Москва, ул. Михайлова, 39. Запишись онлайн.",
+  keywords: ["мужская стрижка","стрижка бороды","оформление бороды","бритьё опасной бритвой","СТАЛЬ"],
   openGraph: {
-    title: "СТАЛЬ | Барбершоп",
+    title: "СТАЛЬ | Мужские стрижки",
     description: "Стрижки с характером. Оформление бороды. Бритьё опасной бритвой.",
     url: "https://stal.barbershop",
-    siteName: "СТАЛЬ Барбершоп",
+    siteName: "СТАЛЬ",
     type: "website",
     locale: "ru_RU",
   },
-  twitter: { card: "summary_large_image", title: "СТАЛЬ | Барбершоп", description: "Стрижки с характером. Бороды. Бритьё опасной бритвой." },
+  twitter: { card: "summary_large_image", title: "СТАЛЬ | Мужские стрижки", description: "Стрижки с характером. Бороды. Бритьё опасной бритвой." },
 };
 
 const jsonLd = {
   "@context": "https://schema.org", "@type": "HairSalon",
   name: "СТАЛЬ",
-  description: "Барбершоп в Москве. Мужские стрижки, оформление бороды, бритьё опасной бритвой.",
+  description: "Мужские стрижки, оформление бороды, бритьё опасной бритвой.",
   url: "https://stal.barbershop", telephone: "+7-925-038-75-74", priceRange: "₽₽₽",
   address: { "@type": "PostalAddress", streetAddress: "улица Михайлова, 39", addressLocality: "Москва", addressCountry: "RU" },
   openingHoursSpecification: [{ "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], opens: "10:00", closes: "22:00" }],

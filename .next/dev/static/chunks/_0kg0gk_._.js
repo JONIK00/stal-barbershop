@@ -1784,10 +1784,15 @@ const translations = {
             badge: "Москва — Стрижем, бреем",
             title1: "Стрижки с",
             title2: "характером.",
-            desc: "",
+            desc: "Мужские стрижки, бороды и опасная бритва. Одно кресло — один мастер.",
             ctaBook: "Записаться онлайн",
             ctaBoard: "Прайс",
-            stats: []
+            stats: [],
+            strip: {
+                address: "Адрес",
+                hours: "Часы работы",
+                chair: "Первый стул"
+            }
         },
         ticker: [
             "ВОЗЬМЁМ БЕЗ ЗАПИСИ",
@@ -1964,6 +1969,12 @@ const translations = {
             title1: "Забронируй",
             title2: "кресло.",
             desc: "Выбери услугу, выбери время, приходи. Запись онлайн за минуту.",
+            onlineLabel: "Онлайн-запись",
+            steps: {
+                service: "Услуга",
+                time: "Время",
+                chair: "Кресло"
+            },
             phoneLabel: "Можно и по телефону — позвони",
             hoursLabel: "Пн — Вс · 10:00 — 22:00",
             addressLabel: "ул. Михайлова, 39",
@@ -2125,7 +2136,7 @@ const translations = {
                 },
                 {
                     h: "Онлайн-запись",
-                    p: "Запись идёт через отдельный сервис (Sonline). Данные, которые вы вводите там, обрабатываются по правилам этого сервиса."
+                    p: "Запись идёт через отдельный сервис онлайн-записи. Данные, которые вы вводите там, обрабатываются по правилам этого сервиса."
                 },
                 {
                     h: "Файлы cookie",
@@ -2165,10 +2176,15 @@ const translations = {
             badge: "Moscow — We cut, we shave",
             title1: "Cuts with",
             title2: "character.",
-            desc: "",
+            desc: "Men's cuts, beards, and the straight razor. One chair — one master.",
             ctaBook: "Book online",
             ctaBoard: "See the board",
-            stats: []
+            stats: [],
+            strip: {
+                address: "Address",
+                hours: "Hours",
+                chair: "First chair"
+            }
         },
         ticker: [
             "WALK-INS WELCOME",
@@ -2345,6 +2361,12 @@ const translations = {
             title1: "Book your",
             title2: "chair.",
             desc: "Pick a service, pick a time, show up. Book online in a minute.",
+            onlineLabel: "Online booking",
+            steps: {
+                service: "Service",
+                time: "Time",
+                chair: "Chair"
+            },
             phoneLabel: "Or call us — we don't mind",
             hoursLabel: "Mon — Sun · 10:00 — 22:00",
             addressLabel: "Mikhailova St., 39",
@@ -2506,7 +2528,7 @@ const translations = {
                 },
                 {
                     h: "Online booking",
-                    p: "Booking runs through a separate service (Sonline). Data you enter there is handled under that service's policy."
+                    p: "Booking runs through a separate booking service. Data you enter there is handled under that service's policy."
                 },
                 {
                     h: "Cookies",

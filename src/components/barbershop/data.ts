@@ -30,15 +30,6 @@ export const nav = [
   { label: "Contacts", href: "#contacts" },
 ] as const;
 
-export const heroStats = [
-  { value: "12", label: "Years sharp" },
-  { value: "4", label: "Master barbers" },
-  { value: "8", label: "Services on the board" },
-  { value: "4.9", label: "Avg. rating · 312 reviews" },
-] as const;
-
-export const tickerItems = ["WALK-INS WELCOME","MON–SUN 10:00–22:00","STRAIGHT-RAZOR SHAVES","BOOK ONLINE — FIRST CHAIR 10:00","HOT TOWEL · LEATHER · BRASS","+7 495 234-56-78"] as const;
-
 export type Service = { no: string; name: string; desc: string; duration: string; price: string; icon: typeof ScissorsIcon; popular?: boolean };
 
 export const services: Service[] = [

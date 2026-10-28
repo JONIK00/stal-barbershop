@@ -16,6 +16,7 @@ export type Dict = {
     ctaBook: string;
     ctaBoard: string;
     stats: { value: string; label: string }[];
+    strip: { address: string; hours: string; chair: string };
   };
   ticker: string[];
   about: {
@@ -66,6 +67,8 @@ export type Dict = {
     hoursLabel: string;
     addressLabel: string;
     messengerLabel: string;
+    onlineLabel: string;
+    steps: { service: string; time: string; chair: string };
     widgetTitle: string;
     widgetDesc: string;
     widgetCta: string;
@@ -168,10 +171,11 @@ export const translations: Record<Lang, Dict> = {
       badge: "Москва — Стрижем, бреем",
       title1: "Стрижки с",
       title2: "характером.",
-      desc: "",
+      desc: "Мужские стрижки, бороды и опасная бритва. Одно кресло — один мастер.",
       ctaBook: "Записаться онлайн",
       ctaBoard: "Прайс",
       stats: [],
+      strip: { address: "Адрес", hours: "Часы работы", chair: "Первый стул" },
     },
     ticker: ["ВОЗЬМЁМ БЕЗ ЗАПИСИ","ПН–ВС 10:00–22:00","БРИТЬЁ ОПАСНОЙ БРИТВОЙ","ОНЛАЙН-ЗАПИСЬ — ПЕРВЫЙ СТУЛ 10:00","ГОРЯЧЕЕ ПОЛОТЕНЦЕ · КОЖА · ЛАТУНЬ","+7 925 038-75-74"],
     about: {
@@ -238,6 +242,8 @@ export const translations: Record<Lang, Dict> = {
       title1: "Забронируй",
       title2: "кресло.",
       desc: "Выбери услугу, выбери время, приходи. Запись онлайн за минуту.",
+      onlineLabel: "Онлайн-запись",
+      steps: { service: "Услуга", time: "Время", chair: "Кресло" },
       phoneLabel: "Можно и по телефону — позвони",
       hoursLabel: "Пн — Вс · 10:00 — 22:00",
       addressLabel: "ул. Михайлова, 39",
@@ -337,7 +343,7 @@ export const translations: Record<Lang, Dict> = {
       privacyUpdated: "Коротко и по делу — без юридической воды.",
       privacyBody: [
         { h: "Что мы собираем", p: "Ничего. Сайт не запрашивает имя, телефон или почту — никаких форм с вашими данными здесь нет." },
-        { h: "Онлайн-запись", p: "Запись идёт через отдельный сервис (Sonline). Данные, которые вы вводите там, обрабатываются по правилам этого сервиса." },
+        { h: "Онлайн-запись", p: "Запись идёт через отдельный сервис онлайн-записи. Данные, которые вы вводите там, обрабатываются по правилам этого сервиса." },
         { h: "Файлы cookie", p: "Встроенная Яндекс.Карта может устанавливать cookie для своей работы. Также сайт запоминает выбранный язык. Всё это можно отключить в настройках браузера — сайт продолжит работать." },
         { h: "Вопросы", p: "Что-то непонятно — пишите: chair@stal.barbershop" },
       ],
@@ -362,10 +368,11 @@ export const translations: Record<Lang, Dict> = {
       badge: "Moscow — We cut, we shave",
       title1: "Cuts with",
       title2: "character.",
-      desc: "",
+      desc: "Men's cuts, beards, and the straight razor. One chair — one master.",
       ctaBook: "Book online",
       ctaBoard: "See the board",
       stats: [],
+      strip: { address: "Address", hours: "Hours", chair: "First chair" },
     },
     ticker: ["WALK-INS WELCOME","MON–SUN 10:00–22:00","STRAIGHT-RAZOR SHAVES","BOOK ONLINE — FIRST CHAIR 10:00","HOT TOWEL · LEATHER · BRASS","+7 925 038-75-74"],
     about: {
@@ -432,6 +439,8 @@ export const translations: Record<Lang, Dict> = {
       title1: "Book your",
       title2: "chair.",
       desc: "Pick a service, pick a time, show up. Book online in a minute.",
+      onlineLabel: "Online booking",
+      steps: { service: "Service", time: "Time", chair: "Chair" },
       phoneLabel: "Or call us — we don't mind",
       hoursLabel: "Mon — Sun · 10:00 — 22:00",
       addressLabel: "Mikhailova St., 39",
@@ -531,7 +540,7 @@ export const translations: Record<Lang, Dict> = {
       privacyUpdated: "Short and honest — no legal fog.",
       privacyBody: [
         { h: "What we collect", p: "Nothing. The site never asks for your name, phone or email — there are no forms with your data here." },
-        { h: "Online booking", p: "Booking runs through a separate service (Sonline). Data you enter there is handled under that service's policy." },
+        { h: "Online booking", p: "Booking runs through a separate booking service. Data you enter there is handled under that service's policy." },
         { h: "Cookies", p: "The embedded Yandex Map may set cookies for its work. The site also remembers your chosen language. You can disable cookies in your browser — the site will keep working." },
         { h: "Questions", p: "Anything unclear — write to chair@stal.barbershop" },
       ],

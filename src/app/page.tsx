@@ -126,28 +126,44 @@ function Header() {
 function Hero() {
   const { t } = useI18n();
   return (
-    <section id="top" className="relative flex min-h-[100svh] items-center overflow-hidden pt-28 pb-16">
+    <section id="top" className="relative flex min-h-[calc(100svh-88px)] flex-col overflow-hidden">
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <img src="/images/hero-bg.webp" alt="" fetchPriority="high" decoding="async" className="ken-burns h-full w-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/85 to-ink/40" />
         <div className="absolute inset-0 bg-gradient-to-t from-ink via-transparent to-ink/70" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_40%,rgba(181,80,46,0.18),transparent_55%)]" />
       </div>
-      <div className="mx-auto w-full max-w-7xl px-5 sm:px-8 md:px-12 lg:px-20">
-        <div className="max-w-3xl">
-          <div className="reveal flex items-center gap-3">
-            <span className="bulb-dot" aria-hidden="true" />
-            <span className="font-display text-xs uppercase tracking-[0.35em] text-brass">{t.hero.badge}</span>
+      <div className="mx-auto flex w-full max-w-7xl flex-1 flex-col px-5 sm:px-8 md:px-12 lg:px-20">
+        <div className="flex flex-1 flex-col justify-center py-16">
+          <div className="max-w-3xl">
+            <div className="reveal flex items-center gap-3">
+              <span className="bulb-dot" aria-hidden="true" />
+              <span className="font-display text-xs uppercase tracking-[0.35em] text-brass">{t.hero.badge}</span>
+            </div>
+            <h1 className="reveal reveal-delay-1 heading-xl mt-6 text-[3.2rem] leading-[0.9] sm:text-7xl md:text-8xl lg:text-[7.5rem]">
+              {t.hero.title1}<br /><span className="text-rust">{t.hero.title2}</span>
+            </h1>
+            {t.hero.desc && <p className="reveal reveal-delay-2 mt-7 max-w-xl text-base leading-relaxed text-cream-dim sm:text-lg">{t.hero.desc}</p>}
+            <div className="reveal reveal-delay-3 mt-9 flex flex-col gap-4 sm:flex-row sm:items-center">
+              <a href={site.bookingUrl} target="_blank" rel="noopener noreferrer" className="btn-rust text-sm">{t.hero.ctaBook}<ArrowIcon className="h-4 w-4" /></a>
+              <a href="#services" className="btn-outline text-sm">{t.hero.ctaBoard}</a>
+            </div>
           </div>
-          <h1 className="reveal reveal-delay-1 heading-xl mt-6 text-[3.2rem] leading-[0.9] sm:text-7xl md:text-8xl lg:text-[7.5rem]">
-            {t.hero.title1}<br /><span className="text-rust">{t.hero.title2}</span>
-          </h1>
-          {t.hero.desc && <p className="reveal reveal-delay-2 mt-7 max-w-xl text-base leading-relaxed text-cream-dim sm:text-lg">{t.hero.desc}</p>}
-          <div className="reveal reveal-delay-3 mt-9 flex flex-col gap-4 sm:flex-row sm:items-center">
-            <a href={site.bookingUrl} target="_blank" rel="noopener noreferrer" className="btn-rust text-sm">{t.hero.ctaBook}<ArrowIcon className="h-4 w-4" /></a>
-            <a href="#services" className="btn-outline text-sm">{t.hero.ctaBoard}</a>
+        </div>
+        {/* Быстрая инфо-полоса — заполняет низ первого экрана */}
+        <div className="reveal reveal-delay-3 mb-8 grid gap-px overflow-hidden border border-ash/25 bg-ash/15 sm:grid-cols-3">
+          <div className="flex items-center gap-3.5 bg-ink/75 px-5 py-4 backdrop-blur-sm">
+            <PinIcon className="h-5 w-5 shrink-0 text-brass" />
+            <span className="flex flex-col"><span className="font-display text-[0.55rem] uppercase tracking-[0.25em] text-brass">{t.hero.strip.address}</span><span className="mt-0.5 font-display text-sm text-cream">{site.addressShort}</span></span>
           </div>
-
+          <div className="flex items-center gap-3.5 bg-ink/75 px-5 py-4 backdrop-blur-sm">
+            <ClockIcon className="h-5 w-5 shrink-0 text-brass" />
+            <span className="flex flex-col"><span className="font-display text-[0.55rem] uppercase tracking-[0.25em] text-brass">{t.hero.strip.hours}</span><span className="mt-0.5 font-display text-sm text-cream">{site.hours}</span></span>
+          </div>
+          <div className="flex items-center gap-3.5 bg-ink/75 px-5 py-4 backdrop-blur-sm">
+            <BulbIcon className="h-5 w-5 shrink-0 text-brass" />
+            <span className="flex flex-col"><span className="font-display text-[0.55rem] uppercase tracking-[0.25em] text-brass">{t.hero.strip.chair}</span><span className="mt-0.5 font-display text-sm text-cream">{t.services.firstChairValue}</span></span>
+          </div>
         </div>
       </div>
     </section>
@@ -162,7 +178,7 @@ function About() {
       <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
         <div className="reveal relative">
           <div className="card-industrial relative aspect-[4/3] overflow-hidden">
-            <img src="/images/about-bg.webp" alt="Барбер за работой" loading="lazy" decoding="async" className="h-full w-full object-cover" />
+            <img src="/images/about-bg.webp" alt="Мастер за работой" loading="lazy" decoding="async" className="h-full w-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-ink/60 to-transparent" />
           </div>
 
@@ -198,12 +214,8 @@ function Services() {
   const { t } = useI18n();
   return (
     <SectionShell id="services" className="bg-brick" watermark="01">
-      <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+      <div className="flex flex-col gap-6">
         <SectionHeading eyebrow={t.services.eyebrow} title={<>{t.services.title1}<br />{t.services.title2}.</>} desc={t.services.desc} />
-        <div className="reveal reveal-delay-2 hidden shrink-0 border border-ash/25 bg-ink-2/60 px-5 py-4 md:block">
-          <div className="font-display text-[0.6rem] uppercase tracking-[0.25em] text-brass">{t.services.firstChairLabel}</div>
-          <div className="mt-1 font-anton text-2xl text-cream">{t.services.firstChairValue}</div>
-        </div>
       </div>
       <RivetDivider className="my-12" />
       <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
@@ -324,57 +336,62 @@ function Portfolio() {
 }
 
 /* ============ BOOKING ============ */
-function HtmlComment({ children }: { children: string }) {
-  return <div dangerouslySetInnerHTML={{ __html: `<!-- ${children} -->` }} aria-hidden="true" />;
-}
-
 function Booking() {
   const { t } = useI18n();
+  const steps = [t.booking.steps.service, t.booking.steps.time, t.booking.steps.chair];
   return (
     <SectionShell id="booking" className="relative overflow-hidden bg-ink">
       <div className="absolute inset-0 -z-10"><div className="absolute inset-0 bg-brick opacity-40" /><div className="absolute inset-0 bg-gradient-to-b from-ink via-ink/80 to-ink" /></div>
-      <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-12">
+      <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12">
+        {/* Онлайн-запись — главный акцент секции */}
         <div className="reveal flex flex-col">
           <Eyebrow>{t.booking.eyebrow}</Eyebrow>
           <h2 className="heading-xl mt-5 text-4xl sm:text-5xl md:text-6xl text-cream">{t.booking.title1}<br /><span className="text-rust">{t.booking.title2}</span></h2>
           <p className="mt-6 max-w-md text-base leading-relaxed text-cream-dim sm:text-lg">{t.booking.desc}</p>
-          <a href={site.phoneHref} className="mt-8 group flex items-center gap-4 border border-brass/40 bg-ink-2 p-5 transition-colors hover:border-brass">
+          <div id="booking-card" className="relative mt-8 overflow-hidden border border-rust/40 bg-ink-2 p-6 sm:p-8">
+            <span className="pointer-events-none absolute left-2 top-2 z-20 h-3 w-3 border-l border-t border-brass/60" />
+            <span className="pointer-events-none absolute right-2 top-2 z-20 h-3 w-3 border-r border-t border-brass/60" />
+            <span className="pointer-events-none absolute bottom-2 left-2 z-20 h-3 w-3 border-b border-l border-brass/60" />
+            <span className="pointer-events-none absolute bottom-2 right-2 z-20 h-3 w-3 border-b border-r border-brass/60" />
+            <div className="flex items-center gap-2 text-brass"><span className="bulb-dot" /><span className="font-display text-[0.6rem] uppercase tracking-[0.3em]">{t.booking.onlineLabel}</span></div>
+            <h3 className="mt-4 font-anton text-3xl text-cream sm:text-4xl">{t.booking.widgetTitle}</h3>
+            <p className="mt-3 max-w-md text-sm leading-relaxed text-cream-dim">{t.booking.widgetDesc}</p>
+            <div className="mt-7 grid grid-cols-3 gap-px border border-ash/20 bg-ash/15">
+              {steps.map((s, i) => (
+                <div key={s} className="bg-ink-2/90 px-3 py-4 text-center">
+                  <span className="font-anton text-xl text-rust/90">0{i + 1}</span>
+                  <div className="mt-1 font-display text-[0.6rem] uppercase tracking-[0.18em] text-cream-dim">{s}</div>
+                </div>
+              ))}
+            </div>
+            <a href={site.bookingUrl} target="_blank" rel="noopener noreferrer" className="btn-rust mt-7 w-full text-sm sm:w-auto">{t.booking.widgetCta}<ArrowIcon className="h-4 w-4" /></a>
+            <p className="mt-4 flex items-center gap-2 text-xs text-cream-dim"><ClockIcon className="h-3.5 w-3.5 shrink-0 text-brass" />{t.booking.widgetNote}</p>
+          </div>
+        </div>
+        {/* Контакты — вторично: одна карточка телефона + единая контактная плита */}
+        <div className="reveal reveal-delay-1 flex flex-col gap-5">
+          <a href={site.phoneHref} className="group flex items-center gap-4 border border-ash/25 bg-ink-2 p-5 transition-colors hover:border-brass">
             <span className="flex h-12 w-12 shrink-0 items-center justify-center bg-rust text-cream transition-colors group-hover:bg-brass group-hover:text-ink"><PhoneIcon className="h-5 w-5" /></span>
             <span className="flex flex-col"><span className="font-display text-[0.6rem] uppercase tracking-[0.25em] text-brass">{t.booking.phoneLabel}</span><span className="font-anton text-2xl text-cream sm:text-3xl">{site.phone}</span></span>
             <ArrowIcon className="ml-auto h-5 w-5 text-cream-dim transition-colors group-hover:text-brass" />
           </a>
-          <div className="mt-6 grid grid-cols-1 gap-px overflow-hidden border border-ash/20 bg-ash/15 sm:grid-cols-2">
-            <div className="flex items-center gap-3 bg-ink-2 p-4"><ClockIcon className="h-5 w-5 text-brass" /><span className="font-display text-xs uppercase tracking-[0.15em] text-cream-dim">{t.booking.hoursLabel}</span></div>
-            <div className="flex items-center gap-3 bg-ink-2 p-4"><PinIcon className="h-5 w-5 text-brass" /><span className="font-display text-xs uppercase tracking-[0.15em] text-cream-dim">{t.booking.addressLabel}</span></div>
-          </div>
-          <div className="mt-6">
-            <div className="mb-3 flex items-center gap-2"><span className="h-px w-6 bg-brass/60" /><span className="font-display text-[0.6rem] uppercase tracking-[0.25em] text-brass">{t.booking.messengerLabel}</span></div>
-            <div className="grid gap-3 sm:grid-cols-3">
-              {messengers.map((m) => {
-                const Icon = m.label === "WhatsApp" ? WhatsappIcon : TelegramIcon;
-                return (
-                  <a key={m.label} href={m.href} target="_blank" rel="noopener noreferrer" className="group flex items-center gap-3 border border-ash/25 bg-ink-2 p-4 transition-colors hover:border-brass">
-                    <span className="flex h-10 w-10 shrink-0 items-center justify-center border border-brass/40 text-brass transition-colors group-hover:border-rust group-hover:bg-rust group-hover:text-cream"><Icon className="h-5 w-5" /></span>
-                    <span className="flex min-w-0 flex-col"><span className="font-display text-xs uppercase tracking-[0.18em] text-cream">{m.label}</span><span className="truncate font-display text-[0.62rem] uppercase tracking-[0.15em] text-cream-dim">{m.handle}</span></span>
-                    <ArrowIcon className="ml-auto h-4 w-4 shrink-0 text-ash transition-colors group-hover:text-brass" />
-                  </a>
-                );
-              })}
-              <a href={site.phoneHref} className="group flex items-center gap-3 border border-ash/25 bg-ink-2 p-4 transition-colors hover:border-brass">
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center border border-brass/40 text-brass transition-colors group-hover:border-rust group-hover:bg-rust group-hover:text-cream"><PhoneIcon className="h-5 w-5" /></span>
-                <span className="flex min-w-0 flex-col"><span className="font-display text-xs uppercase tracking-[0.18em] text-cream">{t.ui.call}</span><span className="truncate font-display text-[0.62rem] uppercase tracking-[0.15em] text-cream-dim">{site.phone}</span></span>
-              </a>
+          <div className="grid flex-1 gap-px overflow-hidden border border-ash/20 bg-ash/15 sm:grid-cols-2">
+            <div className="flex items-center gap-3 bg-ink-2 p-4 sm:col-span-2"><ClockIcon className="h-5 w-5 shrink-0 text-brass" /><span className="font-display text-xs uppercase tracking-[0.15em] text-cream-dim">{t.booking.hoursLabel}</span></div>
+            <div className="flex items-center gap-3 bg-ink-2 p-4 sm:col-span-2"><PinIcon className="h-5 w-5 shrink-0 text-brass" /><span className="font-display text-xs uppercase tracking-[0.15em] text-cream-dim">{t.booking.addressLabel}</span></div>
+            <div className="bg-ink-2 p-4 sm:col-span-2">
+              <div className="mb-3 flex items-center gap-2"><span className="h-px w-6 bg-brass/60" /><span className="font-display text-[0.6rem] uppercase tracking-[0.25em] text-brass">{t.booking.messengerLabel}</span></div>
+              <div className="flex flex-wrap gap-3">
+                {messengers.map((m) => {
+                  const Icon = m.label === "WhatsApp" ? WhatsappIcon : TelegramIcon;
+                  return (
+                    <a key={m.label} href={m.href} target="_blank" rel="noopener noreferrer" className="group flex items-center gap-2.5 border border-ash/30 px-4 py-2.5 transition-colors hover:border-brass">
+                      <Icon className="h-4 w-4 text-brass" />
+                      <span className="font-display text-xs uppercase tracking-[0.15em] text-cream-dim group-hover:text-brass">{m.label}</span>
+                    </a>
+                  );
+                })}
+              </div>
             </div>
-          </div>
-        </div>
-        <div className="reveal reveal-delay-1">
-          <HtmlComment>Вставить embed-код виджета из личного кабинета Sonline: Настройки → Виджет для сайта</HtmlComment>
-          <div id="sonline-widget" className="relative flex min-h-[420px] flex-col items-center justify-center border border-ash/25 bg-ink-2 p-8 text-center">
-            <span className="absolute left-2 top-2 z-20 h-2 w-2 rounded-full bg-brass/60" /><span className="absolute right-2 top-2 z-20 h-2 w-2 rounded-full bg-brass/60" /><span className="absolute left-2 bottom-2 z-20 h-2 w-2 rounded-full bg-brass/60" /><span className="absolute right-2 bottom-2 z-20 h-2 w-2 rounded-full bg-brass/60" />
-            <div className="flex items-center gap-2 text-brass"><span className="bulb-dot" /><span className="font-display text-[0.6rem] uppercase tracking-[0.3em]">Онлайн-запись</span></div>
-            <h3 className="mt-5 font-anton text-3xl text-cream sm:text-4xl">{t.booking.widgetTitle}</h3>
-            <p className="mt-3 max-w-sm text-sm text-cream-dim">{t.booking.widgetDesc}</p>
-            <a href={site.bookingUrl} target="_blank" rel="noopener noreferrer" className="btn-rust mt-7 text-sm"><ArrowIcon className="h-4 w-4" />{t.booking.widgetCta}</a>
           </div>
         </div>
       </div>
@@ -583,7 +600,6 @@ function Footer({ onOpenPrivacy }: { onOpenPrivacy: () => void }) {
             </p>
             <p className="mt-5 max-w-md text-sm leading-relaxed text-cream-dim">{t.footer.manifesto}</p>
           </div>
-          <a href={site.bookingUrl} target="_blank" rel="noopener noreferrer" className="btn-rust shrink-0 text-sm">{t.footer.bookCta}<ArrowIcon className="h-4 w-4" /></a>
         </div>
       </div>
       {/* Columns */}
@@ -690,7 +706,7 @@ function CookieBar({ onOpenPrivacy }: { onOpenPrivacy: () => void }) {
 
   return (
     <div
-      className={`fixed bottom-20 left-4 z-[60] w-[calc(100vw-2rem)] max-w-sm border border-ash/30 bg-ink-2/95 p-5 shadow-[0_20px_50px_-15px_rgba(0,0,0,0.7)] backdrop-blur-md transition-all duration-500 sm:bottom-5 ${show ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-4 opacity-0"}`}
+      className={`fixed bottom-4 left-4 right-4 z-[60] border border-ash/30 bg-ink-2/95 p-5 shadow-[0_20px_50px_-15px_rgba(0,0,0,0.7)] backdrop-blur-md transition-all duration-500 sm:bottom-5 sm:right-auto sm:max-w-sm ${show ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-4 opacity-0"}`}
       role="region"
       aria-label="Cookies"
       aria-hidden={!show}
@@ -716,7 +732,7 @@ function BackToTop() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
   return (
-    <button type="button" onClick={() => window.scrollTo({top:0,behavior:"smooth"})} className={`fixed bottom-5 right-5 z-40 hidden h-12 w-12 items-center justify-center border border-brass/50 bg-ink/90 text-brass backdrop-blur-sm transition-all duration-300 hover:border-rust hover:bg-rust hover:text-cream lg:flex ${show?"translate-y-0 opacity-100":"pointer-events-none translate-y-4 opacity-0"}`} aria-label={t.ui.backToTop}><ArrowUpIcon className="h-5 w-5" /></button>
+    <button type="button" onClick={() => window.scrollTo({top:0,behavior:"smooth"})} className={`fixed bottom-5 right-5 z-40 flex h-12 w-12 items-center justify-center border border-brass/50 bg-ink/90 text-brass backdrop-blur-sm transition-all duration-300 hover:border-rust hover:bg-rust hover:text-cream ${show?"translate-y-0 opacity-100":"pointer-events-none translate-y-4 opacity-0"}`} aria-label={t.ui.backToTop}><ArrowUpIcon className="h-5 w-5" /></button>
   );
 }
 
@@ -749,8 +765,8 @@ function FloatingBook() {
   return (
     <button
       type="button"
-      onClick={() => document.getElementById("booking")?.scrollIntoView({ behavior: "smooth", block: "start" })}
-      className={`cta-float group fixed bottom-[5.5rem] right-5 z-40 hidden items-center gap-2.5 border border-rust bg-rust px-5 py-3.5 font-display text-sm font-semibold uppercase tracking-[0.16em] text-cream transition-all duration-300 hover:bg-[#c75e38] hover:shadow-[0_0_0_1px_#a9793a,0_10px_28px_-8px_rgba(181,80,46,0.75)] hover:-translate-y-0.5 active:translate-y-0 lg:flex ${show ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-4 opacity-0"}`}
+      onClick={() => document.getElementById("booking-card")?.scrollIntoView({ behavior: "smooth", block: "center" })}
+      className={`cta-float group fixed bottom-[5.5rem] right-5 z-40 flex items-center gap-2.5 border border-rust bg-rust px-4 py-3 font-display text-xs font-semibold uppercase tracking-[0.16em] text-cream transition-all duration-300 hover:bg-[#c75e38] hover:shadow-[0_0_0_1px_#a9793a,0_10px_28px_-8px_rgba(181,80,46,0.75)] hover:-translate-y-0.5 active:translate-y-0 sm:px-5 sm:py-3.5 sm:text-sm lg:flex ${show ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-4 opacity-0"}`}
       style={{ clipPath: "polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px)" }}
       aria-label={t.ui.bookNow}
       aria-hidden={!show}
@@ -762,20 +778,8 @@ function FloatingBook() {
       </span>
       <span className="hidden sm:inline">{t.ui.bookNow}</span>
       <span className="sm:hidden">{t.ui.book}</span>
-      <ArrowDownIcon className="h-4 w-4 transition-transform duration-300 group-hover:translate-y-0.5" />
+      <ArrowDownIcon className="hidden h-4 w-4 transition-transform duration-300 group-hover:translate-y-0.5 sm:block" />
     </button>
-  );
-}
-
-function MobileStickyBar() {
-  const { t } = useI18n();
-  return (
-    <div className="fixed inset-x-0 bottom-0 z-40 border-t border-brass/30 bg-ink/95 backdrop-blur-md lg:hidden" style={{ paddingBottom: "env(safe-area-inset-bottom)" }}>
-      <div className="flex items-stretch gap-px bg-ash/20">
-        <a href={site.phoneHref} className="flex flex-1 items-center justify-center gap-2 bg-ink-2 py-3.5 font-display text-sm uppercase tracking-[0.16em] text-cream hover:bg-ink-3"><PhoneIcon className="h-4 w-4 text-brass" />{t.ui.call}</a>
-        <a href="#booking" className="flex flex-[1.3] items-center justify-center gap-2 bg-rust py-3.5 font-display text-sm font-semibold uppercase tracking-[0.16em] text-cream hover:bg-[#c75e38]">{t.ui.bookChair}<ArrowIcon className="h-4 w-4" /></a>
-      </div>
-    </div>
   );
 }
 
@@ -802,7 +806,6 @@ export default function Home() {
       <Footer onOpenPrivacy={openPrivacy} />
       <BackToTop />
       <FloatingBook />
-      <MobileStickyBar />
       <CookieBar onOpenPrivacy={openPrivacy} />
       <PrivacyModal open={privacyOpen} onClose={closePrivacy} />
     </div>
