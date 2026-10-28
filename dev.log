@@ -207,4 +207,71 @@ Import traces:
  GET / 200 in 50ms (next.js: 23ms, application-code: 27ms)
  GET / 200 in 29ms (next.js: 3ms, application-code: 26ms)
  GET / 200 in 78ms (next.js: 5ms, application-code: 74ms)
-next.js: 5ms, application-code: 74ms)
+ GET / 200 in 57ms (next.js: 3ms, application-code: 54ms)
+[browser] ./src/app/page.tsx:768:119
+Error: Unexpected token `}`. Expected jsx identifier
+  766 | ...
+  767 | ...
+> 768 | ...w({ behavior: "smooth", block: "center" })}}
+      |                                               ^
+  769 | ...tems-center gap-2.5 border border-rust bg-rust px-4 py-3 font-display text-xs font-sem...
+  770 | ...alc(100% - 10px) 100%, 0 100%, 0 10px)" }}
+  771 | ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component] 
+[browser] ./src/app/page.tsx:768:119
+Error: Unexpected token `}`. Expected jsx identifier
+  766 | ...
+  767 | ...
+> 768 | ...w({ behavior: "smooth", block: "center" })}}
+      |                                               ^
+  769 | ...tems-center gap-2.5 border border-rust bg-rust px-4 py-3 font-display text-xs font-sem...
+  770 | ...alc(100% - 10px) 100%, 0 100%, 0 10px)" }}
+  771 | ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component] 
+ GET / 200 in 48ms (next.js: 2ms, application-code: 46ms)
+ GET / 200 in 98ms (next.js: 3ms, application-code: 95ms)
+✓ Compiled in 327ms
+✓ Compiled in 314ms
+✓ Compiled in 177ms
+✓ Compiled in 91ms
+⚠ Fast Refresh had to perform a full reload when ./src/components/barbershop/translations.ts changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+✓ Compiled in 202ms
+⚠ Fast Refresh had to perform a full reload when ./src/components/barbershop/translations.ts changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ GET / 200 in 29ms (next.js: 25ms, application-code: 3ms)
+ GET / 200 in 487ms (next.js: 93ms, application-code: 394ms)
+ GET / 200 in 220ms (next.js: 104ms, application-code: 115ms)
+⚠ Fast Refresh had to perform a full reload when ./src/components/barbershop/translations.ts changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+✓ Compiled in 138ms
+⚠ Fast Refresh had to perform a full reload when ./src/components/barbershop/translations.ts changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ GET / 200 in 178ms (next.js: 8ms, application-code: 170ms)
+ GET / 200 in 403ms (next.js: 154ms, application-code: 248ms)
+ GET / 200 in 140ms (next.js: 8ms, application-code: 132ms)
+ GET / 200 in 134ms (next.js: 17ms, application-code: 117ms)
+✓ Compiled in 233ms
+ GET / 200 in 29ms (next.js: 4ms, application-code: 25ms)
+ GET / 200 in 70ms (next.js: 3ms, application-code: 67ms)
+✓ Compiled in 311ms
+ GET / 200 in 53ms (next.js: 6ms, application-code: 48ms)
+ GET / 200 in 40ms (next.js: 2ms, application-code: 38ms)
+ GET / 200 in 42ms (next.js: 2ms, application-code: 40ms)
+next.js: 2ms, application-code: 40ms)

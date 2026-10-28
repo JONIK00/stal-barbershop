@@ -73,10 +73,12 @@
   html {
     scroll-behavior: smooth;
     scroll-padding-top: 6rem;
+    overflow-x: clip;
   }
   body {
     background-color: #121212;
     color: #e8e4dc;
+    overflow-x: clip;
   }
   ::selection {
     background-color: #b5502e;
@@ -185,6 +187,12 @@
   .marquee__track { flex-shrink: 0; display: flex; align-items: center; gap: 3rem; min-width: 100%; animation: marquee 28s linear infinite; }
   @keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-100%)} }
 
+  /* Mobile services carousel */
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .hint-nudge { animation: hint-nudge 1.6s ease-in-out infinite; }
+  @keyframes hint-nudge { 0%,100% { transform: translateX(0); opacity: 0.65; } 50% { transform: translateX(7px); opacity: 1; } }
+
   .ken-burns { animation: ken-burns 22s ease-in-out infinite alternate; }
   @keyframes ken-burns { 0%{transform:scale(1) translate(0,0)} 100%{transform:scale(1.12) translate(-1.5%,-2%)} }
 
@@ -207,7 +215,7 @@
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .cta-float, .ken-burns, .marquee__track { animation: none; }
+    .cta-float, .ken-burns, .marquee__track, .hint-nudge { animation: none; }
   }
 
   select {

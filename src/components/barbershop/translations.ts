@@ -40,6 +40,7 @@ export type Dict = {
     footnote: string;
     cta: string;
     popular: string;
+    swipeHint: string;
     items: { no: string; name: string; desc: string; duration: string; price: string; popular?: boolean }[];
   };
   masters: {
@@ -160,6 +161,8 @@ export type Dict = {
     closeMenu: string;
     skipContent: string;
     langToggle: string;
+    prevService: string;
+    nextService: string;
   };
 };
 
@@ -199,6 +202,7 @@ export const translations: Record<Lang, Dict> = {
       footnote: "Цены фиксированные.",
       cta: "Записаться",
       popular: "Хит",
+      swipeHint: "Листайте",
       items: [
         { no: "01", name: "Мужская стрижка", desc: "Полный цикл: консультация, стрижка, укладка. Под твои волосы и форму лица.", duration: "30 мин", price: "1000 ₽" },
         { no: "02", name: "Стрижка под одну насадку (одна насадка)", desc: "Минимум движений — максимум порядка. Ровно, быстро, без компромиссов.", duration: "15 мин", price: "500 ₽" },
@@ -359,6 +363,8 @@ export const translations: Record<Lang, Dict> = {
       closeMenu: "Закрыть меню",
       skipContent: "К содержанию",
       langToggle: "EN",
+      prevService: "Предыдущая услуга",
+      nextService: "Следующая услуга",
     },
   },
   en: {
@@ -396,6 +402,7 @@ export const translations: Record<Lang, Dict> = {
       footnote: "Prices are fixed.",
       cta: "Book your chair",
       popular: "Most booked",
+      swipeHint: "Swipe",
       items: [
         { no: "01", name: "Men's Haircut", desc: "Full cycle: consultation, cut, styling. Tailored to your hair and face shape.", duration: "30 min", price: "1000 ₽" },
         { no: "02", name: "Clipper Cut (one guard)", desc: "Minimum moves — maximum order. Even, fast, no compromises.", duration: "15 min", price: "500 ₽" },
@@ -556,6 +563,8 @@ export const translations: Record<Lang, Dict> = {
       closeMenu: "Close menu",
       skipContent: "Skip to content",
       langToggle: "RU",
+      prevService: "Previous service",
+      nextService: "Next service",
     },
   },
 };

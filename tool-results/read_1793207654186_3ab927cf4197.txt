@@ -1,0 +1,814 @@
+     1→"use client";
+     2→
+     3→import * as React from "react";
+     4→import { useScrollReveal } from "@/components/barbershop/use-reveal";
+     5→import { useI18n } from "@/components/barbershop/i18n";
+     6→import { site, services as serviceIcons, masters as masterData, messengers } from "@/components/barbershop/data";
+     7→import { SectionShell, SectionHeading, Eyebrow, RivetDivider } from "@/components/barbershop/shared";
+     8→import {
+     9→  BrandMark, MenuIcon, CloseIcon, PhoneIcon, ClockIcon, ArrowIcon, ArrowDownIcon, PinIcon, BulbIcon,
+    10→  RazorIcon, ScissorsIcon, ClipperIcon, CombIcon, MustacheIcon, BeardIcon,
+    11→  InstagramIcon, TelegramIcon, VkIcon, StarIcon, ArrowUpIcon, WhatsappIcon,
+    12→} from "@/components/barbershop/icons";
+    13→
+    14→/* ============ SCROLL PROGRESS ============ */
+    15→function ScrollProgress() {
+    16→  const [pct, setPct] = React.useState(0);
+    17→  React.useEffect(() => {
+    18→    const onScroll = () => {
+    19→      const d = document.documentElement;
+    20→      const h = d.scrollHeight - d.clientHeight;
+    21→      setPct(h > 0 ? Math.min(100, (d.scrollTop / h) * 100) : 0);
+    22→    };
+    23→    onScroll();
+    24→    window.addEventListener("scroll", onScroll, { passive: true });
+    25→    return () => window.removeEventListener("scroll", onScroll);
+    26→  }, []);
+    27→  return (
+    28→    <div className="pointer-events-none fixed inset-x-0 top-0 z-[55] h-[3px]" aria-hidden="true">
+    29→      <div className="h-full bg-gradient-to-r from-rust via-brass to-rust shadow-[0_0_8px_rgba(181,80,46,0.6)] transition-[width] duration-75" style={{ width: `${pct}%` }} />
+    30→    </div>
+    31→  );
+    32→}
+    33→
+    34→/* ============ LANGUAGE TOGGLE ============ */
+    35→function LangToggle() {
+    36→  const { lang, toggle, t } = useI18n();
+    37→  return (
+    38→    <button
+    39→      type="button"
+    40→      onClick={toggle}
+    41→      className="flex h-10 items-center gap-1.5 border border-ash/30 px-2.5 font-display text-xs uppercase tracking-[0.14em] text-cream-dim transition-colors hover:border-brass hover:text-brass"
+    42→      aria-label={lang === "ru" ? "Switch to English" : "Переключить на русский"}
+    43→    >
+    44→      <span className={lang === "ru" ? "text-rust" : ""}>RU</span>
+    45→      <span className="text-ash/40">/</span>
+    46→      <span className={lang === "en" ? "text-rust" : ""}>EN</span>
+    47→    </button>
+    48→  );
+    49→}
+    50→
+    51→/* ============ HEADER ============ */
+    52→function Header() {
+    53→  const { t } = useI18n();
+    54→  const [open, setOpen] = React.useState(false);
+    55→  const [scrolled, setScrolled] = React.useState(false);
+    56→  React.useEffect(() => {
+    57→    const onScroll = () => setScrolled(window.scrollY > 24);
+    58→    onScroll();
+    59→    window.addEventListener("scroll", onScroll, { passive: true });
+    60→    return () => window.removeEventListener("scroll", onScroll);
+    61→  }, []);
+    62→  React.useEffect(() => {
+    63→    document.body.style.overflow = open ? "hidden" : "";
+    64→    return () => { document.body.style.overflow = ""; };
+    65→  }, [open]);
+    66→
+    67→  const navItems = [
+    68→    { label: t.nav.about, href: "#about" },
+    69→    { label: t.nav.services, href: "#services" },
+    70→    { label: t.nav.masters, href: "#masters" },
+    71→    { label: t.nav.contacts, href: "#contacts" },
+    72→  ];
+    73→
+    74→  return (
+    75→    <header className="fixed inset-x-0 top-0 z-50">
+    76→      <div className={`border-b transition-all duration-300 ${scrolled ? "border-ash/20 bg-ink/90 backdrop-blur-md" : "border-transparent bg-ink/40 backdrop-blur-sm"}`}>
+    77→        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 sm:px-8 md:px-12 lg:px-20">
+    78→          <a href="#top" className="group flex items-center gap-3" aria-label={`${t.brandName} — home`}>
+    79→            <BrandMark className="h-9 w-9 text-rust transition-transform duration-300 group-hover:rotate-6" />
+    80→            <span className="flex flex-col leading-none">
+    81→              <span className="font-anton text-xl tracking-[0.06em] text-cream">{t.brandName}</span>
+    82→              <span className="font-display text-[0.6rem] uppercase tracking-[0.3em] text-brass/80">{t.footer.tagline}</span>
+    83→            </span>
+    84→          </a>
+    85→          <nav className="hidden items-center gap-7 lg:flex" aria-label="Primary">
+    86→            {navItems.map((item) => (
+    87→              <a key={item.href} href={item.href} className="group relative font-display text-sm uppercase tracking-[0.18em] text-cream/60 transition-colors hover:text-cream">
+    88→                {item.label}
+    89→                <span className="absolute -bottom-1 left-0 h-px w-0 bg-rust transition-all duration-300 group-hover:w-full" />
+    90→              </a>
+    91→            ))}
+    92→          </nav>
+    93→          <div className="flex items-center gap-3">
+    94→            <LangToggle />
+    95→            <a href={site.phoneHref} className="hidden items-center gap-2 font-display text-sm uppercase tracking-[0.14em] text-cream/80 transition-colors hover:text-brass md:flex" aria-label={`Call ${site.phone}`}>
+    96→              <PhoneIcon className="h-4 w-4" /><span className="hidden xl:inline">{site.phone}</span>
+    97→            </a>
+    98→            <a href={site.bookingUrl} target="_blank" rel="noopener noreferrer" className="btn-rust hidden sm:inline-flex text-xs">{t.ui.book}<ArrowIcon className="h-3.5 w-3.5" /></a>
+    99→            <button type="button" onClick={() => setOpen(true)} className="flex h-10 w-10 items-center justify-center border border-ash/30 text-cream transition-colors hover:border-brass hover:text-brass lg:hidden" aria-label={t.ui.openMenu} aria-expanded={open}>
+   100→              <MenuIcon className="h-5 w-5" />
+   101→            </button>
+   102→          </div>
+   103→        </div>
+   104→      </div>
+   105→      {open && (
+   106→        <div className="fixed inset-0 z-50 bg-ink/98 backdrop-blur-sm lg:hidden">
+   107→          <div className="flex h-16 items-center justify-between border-b border-ash/20 px-5">
+   108→            <span className="font-anton text-lg tracking-[0.06em] text-cream">{t.brandName}</span>
+   109→            <button type="button" onClick={() => setOpen(false)} className="flex h-10 w-10 items-center justify-center border border-ash/30 text-cream hover:border-brass hover:text-brass" aria-label={t.ui.closeMenu}><CloseIcon className="h-5 w-5" /></button>
+   110→          </div>
+   111→          <nav className="flex flex-col gap-1 px-5 py-8" aria-label="Mobile" onClick={() => setOpen(false)}>
+   112→            {navItems.map((item, i) => (
+   113→              <a key={item.href} href={item.href} className="group flex items-center justify-between border-b border-ash/15 py-4 font-anton text-2xl uppercase tracking-wide text-cream hover:text-rust">
+   114→                <span>{item.label}</span><span className="font-display text-xs text-brass/60">0{i + 1}</span>
+   115→              </a>
+   116→            ))}
+   117→          </nav>
+   118→          <div className="px-5 pt-4"><a href={site.bookingUrl} target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)} className="btn-rust w-full text-sm">{t.ui.bookChair}<ArrowIcon className="h-4 w-4" /></a></div>
+   119→        </div>
+   120→      )}
+   121→    </header>
+   122→  );
+   123→}
+   124→
+   125→/* ============ HERO ============ */
+   126→function Hero() {
+   127→  const { t } = useI18n();
+   128→  return (
+   129→    <section id="top" className="relative flex min-h-[calc(100svh-88px)] flex-col overflow-hidden">
+   130→      <div className="absolute inset-0 -z-10 overflow-hidden">
+   131→        <img src="/images/hero-bg.webp" alt="" fetchPriority="high" decoding="async" className="ken-burns h-full w-full object-cover" />
+   132→        <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/85 to-ink/40" />
+   133→        <div className="absolute inset-0 bg-gradient-to-t from-ink via-transparent to-ink/70" />
+   134→        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_40%,rgba(181,80,46,0.18),transparent_55%)]" />
+   135→      </div>
+   136→      <div className="mx-auto flex w-full max-w-7xl flex-1 flex-col px-5 sm:px-8 md:px-12 lg:px-20">
+   137→        <div className="flex flex-1 flex-col justify-center py-16">
+   138→          <div className="max-w-3xl">
+   139→            <div className="reveal flex items-center gap-3">
+   140→              <span className="bulb-dot" aria-hidden="true" />
+   141→              <span className="font-display text-xs uppercase tracking-[0.35em] text-brass">{t.hero.badge}</span>
+   142→            </div>
+   143→            <h1 className="reveal reveal-delay-1 heading-xl mt-6 text-[3.2rem] leading-[0.9] sm:text-7xl md:text-8xl lg:text-[7.5rem]">
+   144→              {t.hero.title1}<br /><span className="text-rust">{t.hero.title2}</span>
+   145→            </h1>
+   146→            {t.hero.desc && <p className="reveal reveal-delay-2 mt-7 max-w-xl text-base leading-relaxed text-cream-dim sm:text-lg">{t.hero.desc}</p>}
+   147→            <div className="reveal reveal-delay-3 mt-9 flex flex-col gap-4 sm:flex-row sm:items-center">
+   148→              <a href={site.bookingUrl} target="_blank" rel="noopener noreferrer" className="btn-rust text-sm">{t.hero.ctaBook}<ArrowIcon className="h-4 w-4" /></a>
+   149→              <a href="#services" className="btn-outline text-sm">{t.hero.ctaBoard}</a>
+   150→            </div>
+   151→          </div>
+   152→        </div>
+   153→        {/* Быстрая инфо-полоса — заполняет низ первого экрана */}
+   154→        <div className="reveal reveal-delay-3 mb-8 grid gap-px overflow-hidden border border-ash/25 bg-ash/15 sm:grid-cols-3">
+   155→          <div className="flex items-center gap-3.5 bg-ink/75 px-5 py-4 backdrop-blur-sm">
+   156→            <PinIcon className="h-5 w-5 shrink-0 text-brass" />
+   157→            <span className="flex flex-col"><span className="font-display text-[0.55rem] uppercase tracking-[0.25em] text-brass">{t.hero.strip.address}</span><span className="mt-0.5 font-display text-sm text-cream">{site.addressShort}</span></span>
+   158→          </div>
+   159→          <div className="flex items-center gap-3.5 bg-ink/75 px-5 py-4 backdrop-blur-sm">
+   160→            <ClockIcon className="h-5 w-5 shrink-0 text-brass" />
+   161→            <span className="flex flex-col"><span className="font-display text-[0.55rem] uppercase tracking-[0.25em] text-brass">{t.hero.strip.hours}</span><span className="mt-0.5 font-display text-sm text-cream">{site.hours}</span></span>
+   162→          </div>
+   163→          <div className="flex items-center gap-3.5 bg-ink/75 px-5 py-4 backdrop-blur-sm">
+   164→            <BulbIcon className="h-5 w-5 shrink-0 text-brass" />
+   165→            <span className="flex flex-col"><span className="font-display text-[0.55rem] uppercase tracking-[0.25em] text-brass">{t.hero.strip.chair}</span><span className="mt-0.5 font-display text-sm text-cream">{t.services.firstChairValue}</span></span>
+   166→          </div>
+   167→        </div>
+   168→      </div>
+   169→    </section>
+   170→  );
+   171→}
+   172→
+   173→/* ============ ABOUT ============ */
+   174→function About() {
+   175→  const { t } = useI18n();
+   176→  return (
+   177→    <SectionShell id="about" className="bg-concrete">
+   178→      <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+   179→        <div className="reveal relative">
+   180→          <div className="card-industrial relative aspect-[4/3] overflow-hidden">
+   181→            <img src="/images/about-bg.webp" alt="Мастер за работой" loading="lazy" decoding="async" className="h-full w-full object-cover" />
+   182→            <div className="absolute inset-0 bg-gradient-to-t from-ink/60 to-transparent" />
+   183→          </div>
+   184→
+   185→        </div>
+   186→        <div>
+   187→          <Eyebrow>{t.about.eyebrow}</Eyebrow>
+   188→          <h2 className="reveal heading-xl mt-5 text-4xl sm:text-5xl md:text-6xl text-cream">{t.about.title1}<br /><span className="text-rust">{t.about.title2}</span></h2>
+   189→          <div className="reveal reveal-delay-1 mt-7 space-y-5 text-base leading-relaxed text-cream-dim sm:text-lg">
+   190→            <p>{t.about.p1}</p>
+   191→            <p>{t.about.p2}</p>
+   192→            <p className="text-cream">{t.about.p3}</p>
+   193→          </div>
+   194→          <RivetDivider className="my-9 max-w-xs" />
+   195→          <div className="reveal reveal-delay-2 grid grid-cols-3 gap-4">
+   196→            {t.about.pillars.map((p, i) => {
+   197→              const Icon = [RazorIcon, ScissorsIcon, ClipperIcon][i];
+   198→              return (
+   199→                <div key={p.label} className="border border-ash/20 bg-ink-2/60 px-3 py-5 text-center transition-colors hover:border-brass/50">
+   200→                  <Icon className="mx-auto h-7 w-7 text-brass" />
+   201→                  <div className="mt-3 font-display text-[0.62rem] uppercase tracking-[0.2em] text-cream-dim">{p.label}</div>
+   202→                </div>
+   203→              );
+   204→            })}
+   205→          </div>
+   206→        </div>
+   207→      </div>
+   208→    </SectionShell>
+   209→  );
+   210→}
+   211→
+   212→/* ============ SERVICES ============ */
+   213→function Services() {
+   214→  const { t } = useI18n();
+   215→  return (
+   216→    <SectionShell id="services" className="bg-brick" watermark="01">
+   217→      <div className="flex flex-col gap-6">
+   218→        <SectionHeading eyebrow={t.services.eyebrow} title={<>{t.services.title1}<br />{t.services.title2}.</>} desc={t.services.desc} />
+   219→      </div>
+   220→      <RivetDivider className="my-12" />
+   221→      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+   222→        {t.services.items.map((s, i) => {
+   223→          const Icon = serviceIcons[i]?.icon ?? ScissorsIcon;
+   224→          const img = `/images/svc-${String(i + 1).padStart(2, "0")}.webp`;
+   225→          return (
+   226→            <article key={s.no} className={`reveal reveal-delay-${(i % 4) + 1} group relative flex flex-col border border-ash/20 bg-ink-2 overflow-hidden transition-all duration-300 hover:border-brass/50 ${s.popular ? "ring-1 ring-inset ring-rust/30" : ""}`}>
+   227→              {/* Photo */}
+   228→              <div className="relative aspect-[4/3] overflow-hidden">
+   229→                <img src={img} alt={s.name} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" decoding="async" />
+   230→                <div className="absolute inset-0 bg-gradient-to-t from-ink-2 via-transparent to-transparent" />
+   231→                {s.popular && <span className="absolute right-3 top-3 flex items-center gap-1 border border-rust/50 bg-ink/80 px-2 py-0.5 font-display text-[0.52rem] uppercase tracking-[0.2em] text-rust backdrop-blur-sm">★ {t.services.popular}</span>}
+   232→                <span className="absolute left-3 top-3 font-anton text-2xl text-cream/40">{s.no}</span>
+   233→              </div>
+   234→              {/* Body */}
+   235→              <div className="flex flex-1 flex-col p-4">
+   236→                <h3 className="font-display text-base font-semibold uppercase tracking-wide text-cream">{s.name}</h3>
+   237→                <p className="mt-2 flex-1 text-xs leading-relaxed text-cream-dim line-clamp-2">{s.desc}</p>
+   238→                <div className="mt-4 flex items-center justify-between border-t border-ash/15 pt-3">
+   239→                  <span className="flex items-center gap-1 font-display text-xs uppercase tracking-[0.15em] text-cream-dim"><ClockIcon className="h-3.5 w-3.5 text-brass/70" />{s.duration}</span>
+   240→                  <span className="font-anton text-lg text-cream transition-colors group-hover:text-rust">{s.price}</span>
+   241→                </div>
+   242→              </div>
+   243→              <span className="absolute inset-x-0 bottom-0 h-0.5 origin-left scale-x-0 bg-rust transition-transform duration-300 group-hover:scale-x-100" />
+   244→            </article>
+   245→          );
+   246→        })}
+   247→      </div>
+   248→      <div className="reveal mt-10 flex flex-col items-start justify-between gap-4 border border-ash/20 bg-ink-2/50 p-6 sm:flex-row sm:items-center">
+   249→        <p className="text-sm text-cream-dim">{t.services.footnote}</p>
+   250→      </div>
+   251→    </SectionShell>
+   252→  );
+   253→}
+   254→
+   255→/* ============ MASTERS ============ */
+   256→function Masters() {
+   257→  const { t } = useI18n();
+   258→  return (
+   259→    <SectionShell id="masters" className="bg-concrete" watermark="03">
+   260→      <SectionHeading eyebrow={t.masters.eyebrow} title={<>{t.masters.title1}<br />{t.masters.title2}.</>} desc={t.masters.desc} />
+   261→      <RivetDivider className="my-12" />
+   262→      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+   263→        {t.masters.items.map((m, i) => {
+   264→          const data = masterData[i];
+   265→          return (
+   266→            <article key={m.name} className={`reveal reveal-delay-${(i % 4) + 1} card-industrial group flex flex-col`}>
+   267→              <div className="relative aspect-[4/5] overflow-hidden bg-concrete">
+   268→                {data?.image ? (
+   269→                  <img src={data.image} alt={data.alt || m.name} loading="lazy" decoding="async" className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+   270→                ) : (
+   271→                  <div className="flex h-full w-full flex-col items-center justify-center gap-5 bg-[repeating-linear-gradient(135deg,transparent_0px,transparent_14px,rgba(255,255,255,0.025)_14px,rgba(255,255,255,0.025)_28px)]">
+   272→                    <BrandMark className="h-20 w-20 text-ash/25 transition-colors duration-300 group-hover:text-brass/50" />
+   273→                    <div className="flex flex-col items-center gap-2">
+   274→                      <span className="font-display text-[0.6rem] uppercase tracking-[0.35em] text-ash/60">{t.masters.photoSoon}</span>
+   275→                      <span className="h-px w-14 bg-gradient-to-r from-transparent via-brass/60 to-transparent" />
+   276→                    </div>
+   277→                  </div>
+   278→                )}
+   279→                <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/10 to-transparent" />
+   280→                <div className="absolute left-0 top-4 bg-rust px-3 py-1 font-display text-[0.6rem] uppercase tracking-[0.25em] text-cream">“{m.nickname}”</div>
+   281→              </div>
+   282→              <div className="flex flex-1 flex-col p-5">
+   283→                <h3 className="font-display text-xl font-semibold uppercase tracking-wide text-cream">{m.name}</h3>
+   284→                <div className="mt-1 font-display text-xs uppercase tracking-[0.2em] text-brass">{m.specialty}</div>
+   285→                <p className="mt-3 text-sm text-cream-dim">{m.experience}</p>
+   286→              </div>
+   287→            </article>
+   288→          );
+   289→        })}
+   290→      </div>
+   291→    </SectionShell>
+   292→  );
+   293→}
+   294→
+   295→/* ============ PORTFOLIO ============ */
+   296→function Portfolio() {
+   297→  const { t } = useI18n();
+   298→  const filterLabels = [t.portfolio.filters.all, t.portfolio.filters.cuts, t.portfolio.filters.beards, t.portfolio.filters.shaves];
+   299→  const filterValues = ["all", "cuts", "beards", "shaves"] as const;
+   300→  const [filterIdx, setFilterIdx] = React.useState(0);
+   301→  const filter = filterValues[filterIdx];
+   302→  const filtered = React.useMemo(() => filter === "all" ? t.portfolio.items : t.portfolio.items.filter((w) => w.category === filter), [filter, t.portfolio.items]);
+   303→  return (
+   304→    <SectionShell id="work" className="bg-brick" watermark="04">
+   305→      <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
+   306→        <SectionHeading eyebrow={t.portfolio.eyebrow} title={<>{t.portfolio.title1}<br />{t.portfolio.title2}.</>} desc={t.portfolio.desc} />
+   307→        <div className="reveal reveal-delay-2 flex flex-wrap gap-2">
+   308→          {filterLabels.map((f, i) => {
+   309→            const active = i === filterIdx;
+   310→            const count = i === 0 ? t.portfolio.items.length : t.portfolio.items.filter((w) => w.category === filterValues[i]).length;
+   311→            return (
+   312→              <button key={f} type="button" onClick={() => setFilterIdx(i)} className={`flex items-center gap-2 border px-4 py-2 font-display text-xs uppercase tracking-[0.18em] transition-all ${active ? "border-rust bg-rust text-cream" : "border-ash/30 text-cream-dim hover:border-brass hover:text-brass"}`} aria-pressed={active}>
+   313→                {f}<span className={`font-anton text-sm ${active ? "text-cream" : "text-ash"}`}>{count}</span>
+   314→              </button>
+   315→            );
+   316→          })}
+   317→        </div>
+   318→      </div>
+   319→      <RivetDivider className="my-12" />
+   320→      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+   321→        {filtered.map((w, i) => (
+   322→          <figure key={w.title} className={`reveal reveal-delay-${(i % 3) + 1} group relative aspect-square overflow-hidden border border-ash/20 bg-ink-2`}>
+   323→            <div className="flex h-full w-full items-center justify-center"><span className="font-display text-xs uppercase tracking-[0.3em] text-ash">{w.title}</span></div>
+   324→            <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/10 to-transparent opacity-80" />
+   325→            <figcaption className="absolute inset-x-0 bottom-0 p-5">
+   326→              <div className="font-display text-[0.6rem] uppercase tracking-[0.25em] text-brass">{filterLabels[filterValues.indexOf(w.category)]}</div>
+   327→              <div className="mt-1 font-display text-lg font-semibold uppercase tracking-wide text-cream">{w.title}</div>
+   328→            </figcaption>
+   329→            <span className="pointer-events-none absolute left-2 top-2 h-3 w-3 border-l border-t border-brass/50" />
+   330→            <span className="pointer-events-none absolute right-2 top-2 h-3 w-3 border-r border-t border-brass/50" />
+   331→          </figure>
+   332→        ))}
+   333→      </div>
+   334→    </SectionShell>
+   335→  );
+   336→}
+   337→
+   338→/* ============ BOOKING ============ */
+   339→function Booking() {
+   340→  const { t } = useI18n();
+   341→  const steps = [t.booking.steps.service, t.booking.steps.time, t.booking.steps.chair];
+   342→  return (
+   343→    <SectionShell id="booking" className="relative overflow-hidden bg-ink">
+   344→      <div className="absolute inset-0 -z-10"><div className="absolute inset-0 bg-brick opacity-40" /><div className="absolute inset-0 bg-gradient-to-b from-ink via-ink/80 to-ink" /></div>
+   345→      <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12">
+   346→        {/* Онлайн-запись — главный акцент секции */}
+   347→        <div className="reveal flex flex-col">
+   348→          <Eyebrow>{t.booking.eyebrow}</Eyebrow>
+   349→          <h2 className="heading-xl mt-5 text-4xl sm:text-5xl md:text-6xl text-cream">{t.booking.title1}<br /><span className="text-rust">{t.booking.title2}</span></h2>
+   350→          <p className="mt-6 max-w-md text-base leading-relaxed text-cream-dim sm:text-lg">{t.booking.desc}</p>
+   351→          <div id="booking-card" className="relative mt-8 overflow-hidden border border-rust/40 bg-ink-2 p-6 sm:p-8">
+   352→            <span className="pointer-events-none absolute left-2 top-2 z-20 h-3 w-3 border-l border-t border-brass/60" />
+   353→            <span className="pointer-events-none absolute right-2 top-2 z-20 h-3 w-3 border-r border-t border-brass/60" />
+   354→            <span className="pointer-events-none absolute bottom-2 left-2 z-20 h-3 w-3 border-b border-l border-brass/60" />
+   355→            <span className="pointer-events-none absolute bottom-2 right-2 z-20 h-3 w-3 border-b border-r border-brass/60" />
+   356→            <div className="flex items-center gap-2 text-brass"><span className="bulb-dot" /><span className="font-display text-[0.6rem] uppercase tracking-[0.3em]">{t.booking.onlineLabel}</span></div>
+   357→            <h3 className="mt-4 font-anton text-3xl text-cream sm:text-4xl">{t.booking.widgetTitle}</h3>
+   358→            <p className="mt-3 max-w-md text-sm leading-relaxed text-cream-dim">{t.booking.widgetDesc}</p>
+   359→            <div className="mt-7 grid grid-cols-3 gap-px border border-ash/20 bg-ash/15">
+   360→              {steps.map((s, i) => (
+   361→                <div key={s} className="bg-ink-2/90 px-3 py-4 text-center">
+   362→                  <span className="font-anton text-xl text-rust/90">0{i + 1}</span>
+   363→                  <div className="mt-1 font-display text-[0.6rem] uppercase tracking-[0.18em] text-cream-dim">{s}</div>
+   364→                </div>
+   365→              ))}
+   366→            </div>
+   367→            <a href={site.bookingUrl} target="_blank" rel="noopener noreferrer" className="btn-rust mt-7 w-full text-sm sm:w-auto">{t.booking.widgetCta}<ArrowIcon className="h-4 w-4" /></a>
+   368→            <p className="mt-4 flex items-center gap-2 text-xs text-cream-dim"><ClockIcon className="h-3.5 w-3.5 shrink-0 text-brass" />{t.booking.widgetNote}</p>
+   369→          </div>
+   370→        </div>
+   371→        {/* Контакты — вторично: одна карточка телефона + единая контактная плита */}
+   372→        <div className="reveal reveal-delay-1 flex flex-col gap-5">
+   373→          <a href={site.phoneHref} className="group flex items-center gap-4 border border-ash/25 bg-ink-2 p-5 transition-colors hover:border-brass">
+   374→            <span className="flex h-12 w-12 shrink-0 items-center justify-center bg-rust text-cream transition-colors group-hover:bg-brass group-hover:text-ink"><PhoneIcon className="h-5 w-5" /></span>
+   375→            <span className="flex flex-col"><span className="font-display text-[0.6rem] uppercase tracking-[0.25em] text-brass">{t.booking.phoneLabel}</span><span className="font-anton text-2xl text-cream sm:text-3xl">{site.phone}</span></span>
+   376→            <ArrowIcon className="ml-auto h-5 w-5 text-cream-dim transition-colors group-hover:text-brass" />
+   377→          </a>
+   378→          <div className="grid flex-1 gap-px overflow-hidden border border-ash/20 bg-ash/15 sm:grid-cols-2">
+   379→            <div className="flex items-center gap-3 bg-ink-2 p-4 sm:col-span-2"><ClockIcon className="h-5 w-5 shrink-0 text-brass" /><span className="font-display text-xs uppercase tracking-[0.15em] text-cream-dim">{t.booking.hoursLabel}</span></div>
+   380→            <div className="flex items-center gap-3 bg-ink-2 p-4 sm:col-span-2"><PinIcon className="h-5 w-5 shrink-0 text-brass" /><span className="font-display text-xs uppercase tracking-[0.15em] text-cream-dim">{t.booking.addressLabel}</span></div>
+   381→            <div className="bg-ink-2 p-4 sm:col-span-2">
+   382→              <div className="mb-3 flex items-center gap-2"><span className="h-px w-6 bg-brass/60" /><span className="font-display text-[0.6rem] uppercase tracking-[0.25em] text-brass">{t.booking.messengerLabel}</span></div>
+   383→              <div className="flex flex-wrap gap-3">
+   384→                {messengers.map((m) => {
+   385→                  const Icon = m.label === "WhatsApp" ? WhatsappIcon : TelegramIcon;
+   386→                  return (
+   387→                    <a key={m.label} href={m.href} target="_blank" rel="noopener noreferrer" className="group flex items-center gap-2.5 border border-ash/30 px-4 py-2.5 transition-colors hover:border-brass">
+   388→                      <Icon className="h-4 w-4 text-brass" />
+   389→                      <span className="font-display text-xs uppercase tracking-[0.15em] text-cream-dim group-hover:text-brass">{m.label}</span>
+   390→                    </a>
+   391→                  );
+   392→                })}
+   393→              </div>
+   394→            </div>
+   395→          </div>
+   396→        </div>
+   397→      </div>
+   398→    </SectionShell>
+   399→  );
+   400→}
+   401→
+   402→/* ============ BOOKING FORM ============ */
+   403→const inputClass = "w-full bg-ink border border-ash/30 px-4 py-3 font-sans text-sm text-cream placeholder:text-ash/60 transition-colors focus:border-brass focus:outline-none focus:ring-1 focus:ring-brass/40";
+   404→
+   405→function BookingForm() {
+   406→  const { t } = useI18n();
+   407→  const [status, setStatus] = React.useState<"idle"|"loading"|"success"|"error">("idle");
+   408→  const [errMsg, setErrMsg] = React.useState("");
+   409→  async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
+   410→    e.preventDefault();
+   411→    setStatus("loading"); setErrMsg("");
+   412→    const data = new FormData(e.currentTarget);
+   413→    const payload = { name: String(data.get("name")), phone: String(data.get("phone")), service: String(data.get("service")), master: String(data.get("master")||""), date: String(data.get("date")||""), time: String(data.get("time")||""), notes: String(data.get("notes")||"") };
+   414→    try {
+   415→      const res = await fetch("/api/booking", { method: "POST", headers: {"Content-Type":"application/json"}, body: JSON.stringify(payload) });
+   416→      const json = await res.json();
+   417→      if (!res.ok || !json.ok) throw new Error(json.error || "Failed");
+   418→      setStatus("success"); e.currentTarget.reset();
+   419→    } catch (err) { setStatus("error"); setErrMsg(err instanceof Error ? err.message : "Something went wrong"); }
+   420→  }
+   421→  if (status === "success") {
+   422→    return (
+   423→      <SectionShell id="booking-form" className="bg-ink">
+   424→        <div className="reveal mx-auto max-w-xl border border-brass/40 bg-ink-2 p-8 text-center sm:p-10">
+   425→          <span className="mx-auto flex h-14 w-14 items-center justify-center border border-rust bg-rust/10 text-rust"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="h-7 w-7"><path d="M5 13l4 4L19 7" strokeLinecap="round" strokeLinejoin="round" /></svg></span>
+   426→          <h3 className="mt-6 font-anton text-3xl text-cream sm:text-4xl">{t.bookingForm.successTitle}</h3>
+   427→          <p className="mt-4 text-sm leading-relaxed text-cream-dim">{t.bookingForm.successDesc}</p>
+   428→          <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:justify-center"><a href={site.phoneHref} className="btn-outline text-xs"><PhoneIcon className="h-3.5 w-3.5" />{t.bookingForm.successCall}</a><button type="button" onClick={() => setStatus("idle")} className="btn-rust text-xs">{t.bookingForm.successAgain}<ArrowIcon className="h-3.5 w-3.5" /></button></div>
+   429→        </div>
+   430→      </SectionShell>
+   431→    );
+   432→  }
+   433→  return (
+   434→    <SectionShell id="booking-form" className="relative overflow-hidden bg-ink">
+   435→      <div className="absolute inset-0 -z-10"><div className="absolute inset-0 bg-brick opacity-30" /><div className="absolute inset-0 bg-gradient-to-b from-ink via-ink/85 to-ink" /></div>
+   436→      <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:gap-12">
+   437→        <div className="reveal flex flex-col">
+   438→          <Eyebrow>{t.bookingForm.eyebrow}</Eyebrow>
+   439→          <h2 className="heading-xl mt-5 text-4xl sm:text-5xl md:text-6xl text-cream">{t.bookingForm.title1}<br /><span className="text-rust">{t.bookingForm.title2}</span></h2>
+   440→          <p className="mt-6 max-w-md text-base leading-relaxed text-cream-dim sm:text-lg">{t.bookingForm.desc}</p>
+   441→          <div className="mt-8 grid gap-px overflow-hidden border border-ash/20 bg-ash/15">
+   442→            <a href={site.phoneHref} className="group flex items-center gap-3 bg-ink-2 p-4 hover:bg-ink-3"><PhoneIcon className="h-5 w-5 text-brass" /><span className="font-display text-xs uppercase tracking-[0.15em] text-cream-dim">{site.phone}</span></a>
+   443→            <div className="flex items-center gap-3 bg-ink-2 p-4"><ClockIcon className="h-5 w-5 text-brass" /><span className="font-display text-xs uppercase tracking-[0.15em] text-cream-dim">{t.booking.hoursLabel}</span></div>
+   444→            <div className="flex items-center gap-3 bg-ink-2 p-4"><PinIcon className="h-5 w-5 text-brass" /><span className="font-display text-xs uppercase tracking-[0.15em] text-cream-dim">{t.booking.addressLabel}</span></div>
+   445→          </div>
+   446→        </div>
+   447→        <form onSubmit={onSubmit} className="reveal reveal-delay-1 border border-ash/25 bg-ink-2 p-6 sm:p-8" noValidate>
+   448→          <div className="grid gap-5 sm:grid-cols-2">
+   449→            <div className="flex flex-col gap-1.5"><label htmlFor="bf-name" className="font-display text-[0.62rem] uppercase tracking-[0.22em] text-brass">{t.bookingForm.nameLabel} <span className="text-rust">*</span></label><input id="bf-name" name="name" type="text" required minLength={2} autoComplete="name" placeholder={t.bookingForm.namePlaceholder} className={inputClass} /></div>
+   450→            <div className="flex flex-col gap-1.5"><label htmlFor="bf-phone" className="font-display text-[0.62rem] uppercase tracking-[0.22em] text-brass">{t.bookingForm.phoneLabel} <span className="text-rust">*</span></label><input id="bf-phone" name="phone" type="tel" required autoComplete="tel" placeholder={t.bookingForm.phonePlaceholder} className={inputClass} /></div>
+   451→          </div>
+   452→          <div className="mt-5 grid gap-5 sm:grid-cols-2">
+   453→            <div className="flex flex-col gap-1.5"><label htmlFor="bf-service" className="font-display text-[0.62rem] uppercase tracking-[0.22em] text-brass">{t.bookingForm.serviceLabel} <span className="text-rust">*</span></label><select id="bf-service" name="service" required defaultValue="" className={inputClass}><option value="" disabled>{t.bookingForm.servicePlaceholder}</option>{t.services.items.map((s) => <option key={s.no} value={s.name}>{s.name} · {s.price}</option>)}</select></div>
+   454→            <div className="flex flex-col gap-1.5"><label htmlFor="bf-master" className="font-display text-[0.62rem] uppercase tracking-[0.22em] text-brass">{t.bookingForm.masterLabel}</label><select id="bf-master" name="master" defaultValue="" className={inputClass}><option value="">{t.bookingForm.masterAny}</option>{t.masters.items.map((m) => <option key={m.name} value={m.name}>{m.name} — «{m.nickname}»</option>)}</select></div>
+   455→          </div>
+   456→          <div className="mt-5 grid gap-5 sm:grid-cols-2">
+   457→            <div className="flex flex-col gap-1.5"><label htmlFor="bf-date" className="font-display text-[0.62rem] uppercase tracking-[0.22em] text-brass">{t.bookingForm.dateLabel}</label><input id="bf-date" name="date" type="date" className={`${inputClass} [color-scheme:dark]`} /></div>
+   458→            <div className="flex flex-col gap-1.5"><label htmlFor="bf-time" className="font-display text-[0.62rem] uppercase tracking-[0.22em] text-brass">{t.bookingForm.timeLabel}</label><select id="bf-time" name="time" defaultValue="" className={inputClass}><option value="">{t.bookingForm.timeAny}</option><option value="morning">{t.bookingForm.timeMorning}</option><option value="lunch">{t.bookingForm.timeLunch}</option><option value="evening">{t.bookingForm.timeEvening}</option><option value="late">{t.bookingForm.timeLate}</option></select></div>
+   459→          </div>
+   460→          <div className="mt-5 flex flex-col gap-1.5"><label htmlFor="bf-notes" className="font-display text-[0.62rem] uppercase tracking-[0.22em] text-brass">{t.bookingForm.notesLabel}</label><textarea id="bf-notes" name="notes" rows={3} maxLength={500} placeholder={t.bookingForm.notesPlaceholder} className={`${inputClass} resize-none`} /></div>
+   461→          {status === "error" && <div className="mt-5 flex items-start gap-2 border border-rust/50 bg-rust/10 p-3 text-sm text-cream"><CloseIcon className="mt-0.5 h-4 w-4 shrink-0 text-rust" /><span>{errMsg}</span></div>}
+   462→          <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
+   463→            <button type="submit" disabled={status === "loading"} className="btn-rust text-sm disabled:cursor-not-allowed disabled:opacity-60">
+   464→              {status === "loading" ? <><span className="h-4 w-4 animate-spin rounded-full border-2 border-cream/40 border-t-cream" />{t.bookingForm.sending}</> : <>{t.bookingForm.submit}<ArrowIcon className="h-4 w-4" /></>}
+   465→            </button>
+   466→            <span className="font-display text-[0.6rem] uppercase tracking-[0.18em] text-ash">{t.bookingForm.spamNote}</span>
+   467→          </div>
+   468→        </form>
+   469→      </div>
+   470→    </SectionShell>
+   471→  );
+   472→}
+   473→
+   474→/* ============ REVIEWS ============ */
+   475→function Stars({ rating }: { rating: number }) {
+   476→  return <div className="flex items-center gap-0.5" aria-label={`${rating} out of 5 stars`}>{Array.from({length:5}).map((_,i)=><StarIcon key={i} className={`h-4 w-4 ${i<rating?"text-brass":"text-ash/40"}`} />)}</div>;
+   477→}
+   478→
+   479→function Reviews() {
+   480→  const { t } = useI18n();
+   481→  return (
+   482→    <SectionShell id="reviews" className="bg-concrete">
+   483→      <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
+   484→        <SectionHeading eyebrow={t.reviews.eyebrow} title={<>{t.reviews.title1}<br />{t.reviews.title2}.</>} />
+   485→
+   486→      </div>
+   487→      <RivetDivider className="my-12" />
+   488→      <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+   489→        {t.reviews.items.map((r, i) => (
+   490→          <figure key={i} className={`reveal reveal-delay-${(i%3)+1} card-industrial flex flex-col p-6`}>
+   491→            <div className="flex items-center justify-between"><Stars rating={5} /><span className="font-display text-[0.6rem] uppercase tracking-[0.2em] text-ash">{r.date}</span></div>
+   492→            <blockquote className="mt-4 flex-1 text-base leading-relaxed text-cream"><span className="font-anton text-2xl text-rust/70">“</span>{r.text}</blockquote>
+   493→            <figcaption className="mt-5 flex items-center gap-3 border-t border-ash/15 pt-4">
+   494→              <span className="flex h-10 w-10 items-center justify-center border border-brass/40 font-anton text-lg text-brass">{r.name.charAt(0)}</span>
+   495→              <div><div className="font-display text-sm font-semibold uppercase tracking-wide text-cream">{r.name}</div><div className="font-display text-[0.62rem] uppercase tracking-[0.18em] text-cream-dim">{r.role}</div></div>
+   496→            </figcaption>
+   497→          </figure>
+   498→        ))}
+   499→      </div>
+   500→    </SectionShell>
+   501→  );
+   502→}
+   503→
+   504→/* ============ FAQ ============ */
+   505→function Faq() {
+   506→  const { t } = useI18n();
+   507→  const [open, setOpen] = React.useState<number | null>(0);
+   508→  return (
+   509→    <SectionShell id="faq" className="bg-brick">
+   510→      <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
+   511→        <div className="lg:sticky lg:top-32 lg:self-start">
+   512→          <SectionHeading eyebrow={t.faq.eyebrow} title={<>{t.faq.title1}<br />{t.faq.title2}.</>} desc={t.faq.desc} />
+   513→        </div>
+   514→        <div>
+   515→          <RivetDivider className="mb-8 lg:hidden" />
+   516→          {t.faq.items.map((f, i) => {
+   517→            const isOpen = open === i;
+   518→            return (
+   519→              <div key={i} className="border-b border-ash/20 first:border-t">
+   520→                <button type="button" onClick={() => setOpen(isOpen ? null : i)} className="group flex w-full items-center gap-4 py-5 text-left hover:text-brass" aria-expanded={isOpen}>
+   521→                  <span className="font-display text-[0.62rem] uppercase tracking-[0.2em] text-brass/70">{String(i+1).padStart(2,"0")}</span>
+   522→                  <span className="flex-1 font-display text-base font-medium uppercase tracking-wide text-cream group-hover:text-cream sm:text-lg">{f.q}</span>
+   523→                  <span className={`flex h-7 w-7 shrink-0 items-center justify-center border border-ash/30 text-brass transition-all duration-300 ${isOpen ? "rotate-45 border-rust bg-rust text-cream" : ""}`}>
+   524→                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} className="h-3.5 w-3.5"><path d="M12 5v14M5 12h14" strokeLinecap="round" /></svg>
+   525→                  </span>
+   526→                </button>
+   527→                {isOpen && <div className="flex gap-4 pb-6 pl-11 pr-11"><span className="font-display text-[0.58rem] uppercase tracking-[0.22em] text-rust">{f.category}</span><p className="flex-1 text-sm leading-relaxed text-cream-dim sm:text-base">{f.a}</p></div>}
+   528→              </div>
+   529→            );
+   530→          })}
+   531→        </div>
+   532→      </div>
+   533→    </SectionShell>
+   534→  );
+   535→}
+   536→
+   537→/* ============ CONTACTS ============ */
+   538→function Contacts() {
+   539→  const { t } = useI18n();
+   540→  return (
+   541→    <SectionShell id="contacts" className="bg-brick">
+   542→      <SectionHeading eyebrow={t.contacts.eyebrow} title={<>{t.contacts.title1}<br />{t.contacts.title2}.</>} />
+   543→      <RivetDivider className="my-12" />
+   544→      <div className="grid gap-8 lg:grid-cols-2">
+   545→        <div className="reveal flex flex-col gap-px overflow-hidden border border-ash/20 bg-ash/15">
+   546→          {[{icon:PinIcon,label:t.contacts.addressLabel,value:site.address,href:site.mapHref},{icon:PhoneIcon,label:t.contacts.phoneLabel,value:site.phone,href:site.phoneHref},{icon:ClockIcon,label:t.contacts.hoursLabel,value:t.booking.hoursLabel}].map(({icon:Icon,label,value,href}) => {
+   547→            const inner = (
+   548→              <>
+   549→                <span className="flex h-12 w-12 shrink-0 items-center justify-center border border-brass/40 text-brass"><Icon className="h-5 w-5" /></span>
+   550→                <span className="flex flex-col"><span className="font-display text-[0.6rem] uppercase tracking-[0.25em] text-brass">{label}</span><span className="mt-1 font-display text-base text-cream sm:text-lg">{value}</span></span>
+   551→                {href && <ArrowIcon className="ml-auto h-4 w-4 text-cream-dim group-hover:text-brass" />}
+   552→              </>
+   553→            );
+   554→            return href ? <a key={label} href={href} target={href.startsWith("http")?"_blank":undefined} rel={href.startsWith("http")?"noopener noreferrer":undefined} className="group flex items-center gap-4 bg-ink-2 p-5 hover:bg-ink-3">{inner}</a> : <div key={label} className="flex items-center gap-4 bg-ink-2 p-5">{inner}</div>;
+   555→          })}
+   556→        </div>
+   557→        <div className="reveal reveal-delay-1 relative min-h-[360px] overflow-hidden border border-ash/25 bg-ink-2">
+   558→          <iframe src="https://yandex.ru/map-widget/v1/?text=Москва%20улица%20Михайлова%2039&z=16&l=map" title="Map" className="absolute inset-0 h-full w-full" style={{ border: 0, filter: "invert(0.92) hue-rotate(180deg) saturate(0.6) brightness(0.95)" }} loading="lazy" allowFullScreen />
+   559→          <span className="pointer-events-none absolute left-2 top-2 z-20 h-3 w-3 border-l border-t border-brass/60" />
+   560→          <span className="pointer-events-none absolute right-2 top-2 z-20 h-3 w-3 border-r border-t border-brass/60" />
+   561→          <span className="pointer-events-none absolute bottom-2 left-2 z-20 h-3 w-3 border-b border-l border-brass/60" />
+   562→          <span className="pointer-events-none absolute bottom-2 right-2 z-20 h-3 w-3 border-b border-r border-brass/60" />
+   563→          <a href={site.mapHref} target="_blank" rel="noopener noreferrer" className="absolute bottom-3 right-3 z-30 inline-flex items-center gap-1.5 border border-brass/50 bg-ink/85 px-3 py-2 font-display text-[0.6rem] uppercase tracking-[0.18em] text-brass backdrop-blur-sm hover:bg-rust hover:text-cream hover:border-rust"><PinIcon className="h-3.5 w-3.5" />{t.contacts.openMap}</a>
+   564→        </div>
+   565→      </div>
+   566→      <div className="reveal mt-8 flex flex-col gap-4 border border-ash/20 bg-ink-2/50 p-5 sm:flex-row sm:items-center sm:justify-between">
+   567→        <span className="font-display text-xs uppercase tracking-[0.2em] text-cream-dim">{t.contacts.socialsLabel}</span>
+   568→        <div className="flex flex-wrap gap-3">
+   569→          {site.socials.map((s) => {
+   570→            const Icon = s.label === "Instagram" ? InstagramIcon : s.label === "Telegram" ? TelegramIcon : VkIcon;
+   571→            return <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" className="group flex items-center gap-2 border border-ash/30 px-4 py-2.5 font-display text-xs uppercase tracking-[0.15em] text-cream-dim transition-colors hover:border-brass hover:text-brass"><Icon className="h-4 w-4" />{s.label}</a>;
+   572→          })}
+   573→        </div>
+   574→      </div>
+   575→    </SectionShell>
+   576→  );
+   577→}
+   578→
+   579→/* ============ FOOTER ============ */
+   580→function Footer({ onOpenPrivacy }: { onOpenPrivacy: () => void }) {
+   581→  const { t } = useI18n();
+   582→  const year = new Date().getFullYear();
+   583→  const navItems = [
+   584→    { label: t.nav.about, href: "#about" },
+   585→    { label: t.nav.services, href: "#services" },
+   586→    { label: t.nav.masters, href: "#masters" },
+   587→    { label: t.nav.contacts, href: "#contacts" },
+   588→  ];
+   589→  const serviceNames = t.services.items.slice(0, 5).map((s) => s.name);
+   590→  return (
+   591→    <footer className="mt-auto border-t border-ash/25 bg-ink grain-overlay">
+   592→      {/* Statement — вордплей имени и слогана */}
+   593→      <div className="relative overflow-hidden border-b border-ash/15 px-5 py-12 sm:px-8 md:px-12 lg:px-20">
+   594→        <div aria-hidden="true" className="pointer-events-none absolute -right-6 top-1/2 hidden -translate-y-1/2 select-none font-anton text-[11rem] leading-none text-ash/[0.05] lg:block">СТАЛЬ</div>
+   595→        <div className="mx-auto flex max-w-7xl flex-col gap-6 md:flex-row md:items-end md:justify-between">
+   596→          <div>
+   597→            <div className="flex items-center gap-3 font-display text-[0.62rem] uppercase tracking-[0.35em] text-brass"><span className="bulb-dot" />{t.footer.motto}</div>
+   598→            <p className="mt-4 font-anton text-5xl leading-[0.95] text-cream sm:text-6xl md:text-7xl">
+   599→              {t.brandName} <span className="text-outline-rust">— {t.footer.statement}</span>
+   600→            </p>
+   601→            <p className="mt-5 max-w-md text-sm leading-relaxed text-cream-dim">{t.footer.manifesto}</p>
+   602→          </div>
+   603→        </div>
+   604→      </div>
+   605→      {/* Columns */}
+   606→      <div className="px-5 py-12 sm:px-8 md:px-12 lg:px-20">
+   607→        <div className="mx-auto grid max-w-7xl gap-10 sm:grid-cols-2 lg:grid-cols-[1.3fr_1fr_1fr_1.2fr]">
+   608→          <div>
+   609→            <div className="flex items-center gap-4">
+   610→              <BrandMark className="h-12 w-12 text-rust" />
+   611→              <div className="leading-none"><div className="font-anton text-3xl tracking-[0.06em] text-cream sm:text-4xl">{t.brandName}</div><div className="mt-1 font-display text-[0.62rem] uppercase tracking-[0.3em] text-brass">{t.footer.tagline}</div></div>
+   612→            </div>
+   613→            <div className="mt-6 flex flex-wrap gap-3">
+   614→              {site.socials.map((s) => {
+   615→                const Icon = s.label === "Instagram" ? InstagramIcon : s.label === "Telegram" ? TelegramIcon : VkIcon;
+   616→                return <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" className="flex h-11 w-11 items-center justify-center border border-ash/30 text-cream-dim hover:border-brass hover:text-brass" aria-label={`${t.brandName} on ${s.label}`}><Icon className="h-4 w-4" /></a>;
+   617→              })}
+   618→            </div>
+   619→          </div>
+   620→          <div><h3 className="font-display text-[0.62rem] uppercase tracking-[0.3em] text-brass">{t.footer.navigate}</h3><ul className="mt-4 space-y-2.5">{navItems.map((item)=><li key={item.href}><a href={item.href} className="font-display text-sm uppercase tracking-[0.12em] text-cream-dim hover:text-rust">{item.label}</a></li>)}</ul></div>
+   621→          <div><h3 className="font-display text-[0.62rem] uppercase tracking-[0.3em] text-brass">{t.footer.servicesCol}</h3><ul className="mt-4 space-y-2.5">{serviceNames.map((s)=><li key={s}><a href="#services" className="font-display text-sm text-cream-dim hover:text-rust">{s}</a></li>)}</ul></div>
+   622→          <div><h3 className="font-display text-[0.62rem] uppercase tracking-[0.3em] text-brass">{t.footer.contactCol}</h3><ul className="mt-4 space-y-3"><li className="flex items-start gap-2.5 text-sm text-cream-dim"><PinIcon className="mt-0.5 h-4 w-4 shrink-0 text-brass" />{site.address}</li><li><a href={site.phoneHref} className="flex items-center gap-2.5 text-sm text-cream-dim hover:text-rust"><PhoneIcon className="h-4 w-4 shrink-0 text-brass" />{site.phone}</a></li><li className="flex items-center gap-2.5 text-sm text-cream-dim"><ClockIcon className="h-4 w-4 shrink-0 text-brass" />{site.hours}</li></ul></div>
+   623→        </div>
+   624→      </div>
+   625→      {/* Bottom bar */}
+   626→      <div className="border-t border-ash/15 px-5 py-6 sm:px-8 md:px-12 lg:px-20">
+   627→        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 text-center sm:flex-row sm:text-left">
+   628→          <p className="font-display text-[0.65rem] uppercase tracking-[0.18em] text-ash">© {year} {site.name}. {t.footer.copyright}</p>
+   629→          <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 font-display text-[0.65rem] uppercase tracking-[0.18em] text-ash">
+   630→            <button type="button" onClick={onOpenPrivacy} className="underline decoration-ash/40 underline-offset-4 transition-colors hover:text-brass hover:decoration-brass">{t.footer.privacy}</button>
+   631→            <span className="hidden h-1 w-1 rounded-full bg-ash/50 sm:inline-block" aria-hidden="true" />
+   632→            <span className="flex items-center gap-1.5"><span className="h-1.5 w-1.5 rounded-full bg-brass/70" aria-hidden="true" />{t.footer.cookieNote}</span>
+   633→          </div>
+   634→        </div>
+   635→      </div>
+   636→    </footer>
+   637→  );
+   638→}
+   639→
+   640→/* ============ PRIVACY MODAL ============ */
+   641→function PrivacyModal({ open, onClose }: { open: boolean; onClose: () => void }) {
+   642→  const { t } = useI18n();
+   643→  const panelRef = React.useRef<HTMLDivElement>(null);
+   644→
+   645→  React.useEffect(() => {
+   646→    if (!open) return;
+   647→    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") onClose(); };
+   648→    document.addEventListener("keydown", onKey);
+   649→    document.body.style.overflow = "hidden";
+   650→    panelRef.current?.focus();
+   651→    return () => { document.removeEventListener("keydown", onKey); document.body.style.overflow = ""; };
+   652→  }, [open, onClose]);
+   653→
+   654→  if (!open) return null;
+   655→  return (
+   656→    <div className="fixed inset-0 z-[70] flex items-center justify-center p-4 sm:p-6" role="dialog" aria-modal="true" aria-label={t.footer.privacyTitle}>
+   657→      <button type="button" className="absolute inset-0 cursor-default bg-ink/85 backdrop-blur-sm" onClick={onClose} aria-label={t.footer.closeLabel} tabIndex={-1} />
+   658→      <div ref={panelRef} tabIndex={-1} className="relative flex max-h-[85vh] w-full max-w-2xl flex-col border border-ash/30 bg-ink-2 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.8)] outline-none">
+   659→        <span className="pointer-events-none absolute left-2 top-2 z-20 h-3 w-3 border-l border-t border-brass/60" />
+   660→        <span className="pointer-events-none absolute right-2 top-2 z-20 h-3 w-3 border-r border-t border-brass/60" />
+   661→        <span className="pointer-events-none absolute bottom-2 left-2 z-20 h-3 w-3 border-b border-l border-brass/60" />
+   662→        <span className="pointer-events-none absolute bottom-2 right-2 z-20 h-3 w-3 border-b border-r border-brass/60" />
+   663→        <div className="flex items-start justify-between gap-4 border-b border-ash/20 p-6 sm:p-8">
+   664→          <div>
+   665→            <div className="flex items-center gap-2 text-brass"><span className="bulb-dot" /><span className="font-display text-[0.6rem] uppercase tracking-[0.3em]">{t.brandName}</span></div>
+   666→            <h2 className="mt-3 font-anton text-2xl text-cream sm:text-3xl">{t.footer.privacyTitle}</h2>
+   667→            <p className="mt-2 text-xs text-cream-dim">{t.footer.privacyUpdated}</p>
+   668→          </div>
+   669→          <button type="button" onClick={onClose} className="flex h-10 w-10 shrink-0 items-center justify-center border border-ash/30 text-cream-dim transition-colors hover:border-rust hover:bg-rust hover:text-cream" aria-label={t.footer.closeLabel}><CloseIcon className="h-5 w-5" /></button>
+   670→        </div>
+   671→        <div className="max-h-[60vh] overflow-y-auto p-6 sm:p-8">
+   672→          <div className="space-y-6">
+   673→            {t.footer.privacyBody.map((item) => (
+   674→              <div key={item.h}>
+   675→                <h3 className="flex items-center gap-3 font-display text-sm font-semibold uppercase tracking-[0.18em] text-brass"><span className="h-px w-5 bg-brass/60" />{item.h}</h3>
+   676→                <p className="mt-2.5 text-sm leading-relaxed text-cream-dim">{item.p}</p>
+   677→              </div>
+   678→            ))}
+   679→          </div>
+   680→        </div>
+   681→      </div>
+   682→    </div>
+   683→  );
+   684→}
+   685→
+   686→/* ============ COOKIE BAR ============ */
+   687→const COOKIE_KEY = "stal-cookie-ok";
+   688→
+   689→function CookieBar({ onOpenPrivacy }: { onOpenPrivacy: () => void }) {
+   690→  const { t } = useI18n();
+   691→  const [show, setShow] = React.useState(false);
+   692→
+   693→  React.useEffect(() => {
+   694→    if (typeof window === "undefined") return;
+   695→    let dismissed = false;
+   696→    try { dismissed = window.localStorage.getItem(COOKIE_KEY) === "1"; } catch { /* приватный режим — просто покажем плашку */ }
+   697→    if (dismissed) return;
+   698→    const timer = window.setTimeout(() => setShow(true), 900);
+   699→    return () => window.clearTimeout(timer);
+   700→  }, []);
+   701→
+   702→  const dismiss = () => {
+   703→    setShow(false);
+   704→    try { window.localStorage.setItem(COOKIE_KEY, "1"); } catch { /* ок, просто закрываем */ }
+   705→  };
+   706→
+   707→  return (
+   708→    <div
+   709→      className={`fixed bottom-4 left-4 right-4 z-[60] border border-ash/30 bg-ink-2/95 p-5 shadow-[0_20px_50px_-15px_rgba(0,0,0,0.7)] backdrop-blur-md transition-all duration-500 sm:bottom-5 sm:right-auto sm:max-w-sm ${show ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-4 opacity-0"}`}
+   710→      role="region"
+   711→      aria-label="Cookies"
+   712→      aria-hidden={!show}
+   713→    >
+   714→      <span className="pointer-events-none absolute left-1.5 top-1.5 h-2.5 w-2.5 border-l border-t border-brass/50" />
+   715→      <span className="pointer-events-none absolute right-1.5 top-1.5 h-2.5 w-2.5 border-r border-t border-brass/50" />
+   716→      <div className="flex items-center gap-2 font-display text-[0.62rem] uppercase tracking-[0.3em] text-brass"><span className="bulb-dot" />Cookies</div>
+   717→      <p className="mt-3 text-[0.82rem] leading-relaxed text-cream-dim">{t.footer.cookieText}</p>
+   718→      <div className="mt-4 flex items-center justify-between gap-3">
+   719→        <button type="button" onClick={onOpenPrivacy} className="font-display text-[0.68rem] uppercase tracking-[0.16em] text-cream-dim underline decoration-ash/40 underline-offset-4 transition-colors hover:text-brass hover:decoration-brass">{t.footer.privacy}</button>
+   720→        <button type="button" onClick={dismiss} className="btn-rust px-4 py-2.5 text-xs">{t.footer.cookieOk}</button>
+   721→      </div>
+   722→    </div>
+   723→  );
+   724→}
+   725→
+   726→function BackToTop() {
+   727→  const { t } = useI18n();
+   728→  const [show, setShow] = React.useState(false);
+   729→  React.useEffect(() => {
+   730→    const onScroll = () => setShow(window.scrollY > 640);
+   731→    onScroll(); window.addEventListener("scroll", onScroll, { passive: true });
+   732→    return () => window.removeEventListener("scroll", onScroll);
+   733→  }, []);
+   734→  return (
+   735→    <button type="button" onClick={() => window.scrollTo({top:0,behavior:"smooth"})} className={`fixed bottom-5 right-5 z-40 flex h-12 w-12 items-center justify-center border border-brass/50 bg-ink/90 text-brass backdrop-blur-sm transition-all duration-300 hover:border-rust hover:bg-rust hover:text-cream ${show?"translate-y-0 opacity-100":"pointer-events-none translate-y-4 opacity-0"}`} aria-label={t.ui.backToTop}><ArrowUpIcon className="h-5 w-5" /></button>
+   736→  );
+   737→}
+   738→
+   739→/* ============ FLOATING BOOK CTA ============ */
+   740→function FloatingBook() {
+   741→  const { t } = useI18n();
+   742→  const [show, setShow] = React.useState(false);
+   743→
+   744→  React.useEffect(() => {
+   745→    const hero = document.getElementById("top");
+   746→    const booking = document.getElementById("booking");
+   747→    if (!hero || !booking) return;
+   748→
+   749→    let heroVisible = true;
+   750→    let bookingVisible = false;
+   751→    const update = () => setShow(!heroVisible && !bookingVisible);
+   752→
+   753→    // Hero: срезаем 15% сверху и снизу — кнопка появляется, когда первый экран почти прошёл
+   754→    const heroObs = new IntersectionObserver(([e]) => { heroVisible = e.isIntersecting; update(); },
+   755→      { rootMargin: "-15% 0px -15% 0px" });
+   756→    // Booking: считаем видимым, когда блок реально вошёл в экран (не просто показался краем)
+   757→    const bookingObs = new IntersectionObserver(([e]) => { bookingVisible = e.isIntersecting; update(); },
+   758→      { rootMargin: "0px 0px -30% 0px" });
+   759→
+   760→    heroObs.observe(hero);
+   761→    bookingObs.observe(booking);
+   762→    return () => { heroObs.disconnect(); bookingObs.disconnect(); };
+   763→  }, []);
+   764→
+   765→  return (
+   766→    <button
+   767→      type="button"
+   768→      onClick={() => document.getElementById("booking-card")?.scrollIntoView({ behavior: "smooth", block: "center" })}
+   769→      className={`cta-float group fixed bottom-[5.5rem] right-5 z-40 flex items-center gap-2.5 border border-rust bg-rust px-4 py-3 font-display text-xs font-semibold uppercase tracking-[0.16em] text-cream transition-all duration-300 hover:bg-[#c75e38] hover:shadow-[0_0_0_1px_#a9793a,0_10px_28px_-8px_rgba(181,80,46,0.75)] hover:-translate-y-0.5 active:translate-y-0 sm:px-5 sm:py-3.5 sm:text-sm lg:flex ${show ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-4 opacity-0"}`}
+   770→      style={{ clipPath: "polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px)" }}
+   771→      aria-label={t.ui.bookNow}
+   772→      aria-hidden={!show}
+   773→      tabIndex={show ? 0 : -1}
+   774→    >
+   775→      <span className="relative flex h-2 w-2 shrink-0" aria-hidden="true">
+   776→        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-cream/70" />
+   777→        <span className="relative inline-flex h-2 w-2 rounded-full bg-cream" />
+   778→      </span>
+   779→      <span className="hidden sm:inline">{t.ui.bookNow}</span>
+   780→      <span className="sm:hidden">{t.ui.book}</span>
+   781→      <ArrowDownIcon className="hidden h-4 w-4 transition-transform duration-300 group-hover:translate-y-0.5 sm:block" />
+   782→    </button>
+   783→  );
+   784→}
+   785→
+   786→/* ============ MAIN PAGE ============ */
+   787→export default function Home() {
+   788→  useScrollReveal();
+   789→  const [privacyOpen, setPrivacyOpen] = React.useState(false);
+   790→  const openPrivacy = React.useCallback(() => setPrivacyOpen(true), []);
+   791→  const closePrivacy = React.useCallback(() => setPrivacyOpen(false), []);
+   792→  return (
+   793→    <div className="page-enter relative flex min-h-screen flex-col bg-ink">
+   794→      <a href="#top" className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[60] focus:bg-rust focus:px-4 focus:py-2 focus:font-display focus:text-sm focus:uppercase focus:tracking-widest focus:text-cream">Skip to content</a>
+   795→      <ScrollProgress />
+   796→      <Header />
+   797→      <div aria-hidden="true" className="h-[88px]" />
+   798→      <main className="flex-1">
+   799→        <Hero />
+   800→        <About />
+   801→        <Services />
+   802→        <Masters />
+   803→        <Booking />
+   804→        <Contacts />
+   805→      </main>
+   806→      <Footer onOpenPrivacy={openPrivacy} />
+   807→      <BackToTop />
+   808→      <FloatingBook />
+   809→      <CookieBar onOpenPrivacy={openPrivacy} />
+   810→      <PrivacyModal open={privacyOpen} onClose={closePrivacy} />
+   811→    </div>
+   812→  );
+   813→}
+   814→

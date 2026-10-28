@@ -1833,6 +1833,7 @@ const translations = {
             footnote: "Цены фиксированные.",
             cta: "Записаться",
             popular: "Хит",
+            swipeHint: "Листайте",
             items: [
                 {
                     no: "01",
@@ -2158,7 +2159,9 @@ const translations = {
             openMenu: "Открыть меню",
             closeMenu: "Закрыть меню",
             skipContent: "К содержанию",
-            langToggle: "EN"
+            langToggle: "EN",
+            prevService: "Предыдущая услуга",
+            nextService: "Следующая услуга"
         }
     },
     en: {
@@ -2225,6 +2228,7 @@ const translations = {
             footnote: "Prices are fixed.",
             cta: "Book your chair",
             popular: "Most booked",
+            swipeHint: "Swipe",
             items: [
                 {
                     no: "01",
@@ -2550,7 +2554,9 @@ const translations = {
             openMenu: "Open menu",
             closeMenu: "Close menu",
             skipContent: "Skip to content",
-            langToggle: "RU"
+            langToggle: "RU",
+            prevService: "Previous service",
+            nextService: "Next service"
         }
     }
 };

@@ -212,18 +212,63 @@ function About() {
 /* ============ SERVICES ============ */
 function Services() {
   const { t } = useI18n();
+  const items = t.services.items;
+  const trackRef = React.useRef<HTMLDivElement>(null);
+  const [active, setActive] = React.useState(0);
+  const [touched, setTouched] = React.useState(false);
+
+  // Определяем карточку, ближайшую к центру трека (мобильная карусель)
+  const handleScroll = React.useCallback(() => {
+    const track = trackRef.current;
+    if (!track) return;
+    const cards = track.querySelectorAll<HTMLElement>("[data-svc-card]");
+    const center = track.scrollLeft + track.clientWidth / 2;
+    let best = 0;
+    let bestDist = Infinity;
+    cards.forEach((c, i) => {
+      const d = Math.abs(c.offsetLeft + c.offsetWidth / 2 - center);
+      if (d < bestDist) { bestDist = d; best = i; }
+    });
+    setActive(best);
+    setTouched(true);
+  }, []);
+
+  const scrollToCard = (i: number) => {
+    const track = trackRef.current;
+    if (!track) return;
+    const card = track.querySelectorAll<HTMLElement>("[data-svc-card]")[i];
+    if (!card) return;
+    setTouched(true);
+    // 20px = px-5: карточка встаёт по левому полю, как при snap-start
+    track.scrollTo({ left: Math.max(0, card.offsetLeft - 20), behavior: "smooth" });
+  };
+
   return (
     <SectionShell id="services" className="bg-brick" watermark="01">
       <div className="flex flex-col gap-6">
         <SectionHeading eyebrow={t.services.eyebrow} title={<>{t.services.title1}<br />{t.services.title2}.</>} desc={t.services.desc} />
       </div>
       <RivetDivider className="my-12" />
-      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
-        {t.services.items.map((s, i) => {
+      {/* Подсказка «Листайте» — только мобильные, исчезает после первого свайпа */}
+      <div className={`mb-3 flex items-center justify-end gap-2 transition-opacity duration-500 sm:hidden ${touched ? "pointer-events-none opacity-0" : "opacity-100"}`} aria-hidden="true">
+        <span className="font-display text-[0.62rem] uppercase tracking-[0.3em] text-brass">{t.services.swipeHint}</span>
+        <ArrowIcon className="hint-nudge h-3.5 w-3.5 text-rust" />
+      </div>
+      {/* Мобильные: горизонтальная карусель со snap; sm+: сетка как раньше */}
+      <div
+        ref={trackRef}
+        onScroll={handleScroll}
+        className="no-scrollbar -mx-5 flex snap-x snap-mandatory gap-4 overflow-x-auto overscroll-x-contain px-5 pr-24 pb-2 scroll-px-5 sm:mx-0 sm:grid sm:grid-cols-2 sm:gap-5 sm:overflow-visible sm:px-0 sm:pb-0 lg:grid-cols-3 xl:grid-cols-5"
+      >
+        {items.map((s, i) => {
           const Icon = serviceIcons[i]?.icon ?? ScissorsIcon;
           const img = `/images/svc-${String(i + 1).padStart(2, "0")}.webp`;
           return (
-            <article key={s.no} className={`reveal reveal-delay-${(i % 4) + 1} group relative flex flex-col border border-ash/20 bg-ink-2 overflow-hidden transition-all duration-300 hover:border-brass/50 ${s.popular ? "ring-1 ring-inset ring-rust/30" : ""}`}>
+            <article
+              key={s.no}
+              data-svc-card
+              className={`reveal reveal-delay-${(i % 4) + 1} group relative flex w-[74vw] max-w-[300px] shrink-0 snap-start flex-col border border-ash/20 bg-ink-2 overflow-hidden transition-all duration-300 hover:border-brass/50 sm:w-auto sm:max-w-none ${s.popular ? "ring-1 ring-inset ring-rust/30" : ""}`}
+            >
               {/* Photo */}
               <div className="relative aspect-[4/3] overflow-hidden">
                 <img src={img} alt={s.name} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" decoding="async" />
@@ -244,6 +289,32 @@ function Services() {
             </article>
           );
         })}
+      </div>
+      {/* Навигация карусели — только мобильные: счётчик + точки + стрелки */}
+      <div className="mt-5 flex items-center gap-4 sm:hidden">
+        <span className="font-anton text-base leading-none text-rust" aria-live="polite">
+          {String(active + 1).padStart(2, "0")}
+          <span className="text-cream-dim/50">/{String(items.length).padStart(2, "0")}</span>
+        </span>
+        <div className="flex flex-1 items-center justify-center gap-1.5">
+          {items.map((s, i) => (
+            <button
+              key={s.no}
+              type="button"
+              onClick={() => scrollToCard(i)}
+              aria-label={`${i + 1} — ${s.name}`}
+              className={`h-1.5 rounded-full transition-all duration-300 ${i === active ? "w-6 bg-rust" : "w-1.5 bg-ash/60 hover:bg-brass"}`}
+            />
+          ))}
+        </div>
+        <div className="flex items-center gap-2">
+          <button type="button" onClick={() => scrollToCard(active - 1)} disabled={active === 0} className="flex h-9 w-9 items-center justify-center border border-ash/40 text-cream-dim transition-all duration-200 hover:border-rust hover:text-rust active:scale-95 disabled:pointer-events-none disabled:opacity-25" aria-label={t.ui.prevService}>
+            <ArrowIcon className="h-4 w-4 rotate-180" />
+          </button>
+          <button type="button" onClick={() => scrollToCard(active + 1)} disabled={active === items.length - 1} className="flex h-9 w-9 items-center justify-center border border-ash/40 text-cream-dim transition-all duration-200 hover:border-rust hover:text-rust active:scale-95 disabled:pointer-events-none disabled:opacity-25" aria-label={t.ui.nextService}>
+            <ArrowIcon className="h-4 w-4" />
+          </button>
+        </div>
       </div>
       <div className="reveal mt-10 flex flex-col items-start justify-between gap-4 border border-ash/20 bg-ink-2/50 p-6 sm:flex-row sm:items-center">
         <p className="text-sm text-cream-dim">{t.services.footnote}</p>
