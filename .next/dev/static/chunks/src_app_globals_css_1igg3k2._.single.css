@@ -655,6 +655,10 @@
     pointer-events: none;
   }
 
+  .visible {
+    visibility: visible;
+  }
+
   .sr-only {
     clip-path: inset(50%);
     white-space: nowrap;
@@ -1153,6 +1157,10 @@
 
   .animate-spin {
     animation: var(--animate-spin);
+  }
+
+  .resize {
+    resize: both;
   }
 
   .resize-none {

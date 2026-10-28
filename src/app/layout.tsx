@@ -35,6 +35,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="ru" suppressHydrationWarning>
       <head>
+        <link rel="preload" href="/images/hero-bg.webp" as="image" fetchPriority="high" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       </head>
       <body className={`${oswald.variable} ${anton.variable} ${inter.variable} antialiased bg-ink text-cream font-sans`}>

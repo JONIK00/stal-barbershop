@@ -3,7 +3,7 @@
 import * as React from "react";
 import { useScrollReveal } from "@/components/barbershop/use-reveal";
 import { useI18n } from "@/components/barbershop/i18n";
-import { site, services as serviceIcons, masters as masterData, works as workData, messengers } from "@/components/barbershop/data";
+import { site, services as serviceIcons, masters as masterData, messengers } from "@/components/barbershop/data";
 import { SectionShell, SectionHeading, Eyebrow, RivetDivider } from "@/components/barbershop/shared";
 import {
   BrandMark, MenuIcon, CloseIcon, PhoneIcon, ClockIcon, ArrowIcon, PinIcon, BulbIcon,
@@ -128,7 +128,7 @@ function Hero() {
   return (
     <section id="top" className="relative flex min-h-[100svh] items-center overflow-hidden pt-28 pb-16">
       <div className="absolute inset-0 -z-10 overflow-hidden">
-        <img src="/images/hero-bg.png" alt="" className="ken-burns h-full w-full object-cover" />
+        <img src="/images/hero-bg.webp" alt="" fetchPriority="high" decoding="async" className="ken-burns h-full w-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/85 to-ink/40" />
         <div className="absolute inset-0 bg-gradient-to-t from-ink via-transparent to-ink/70" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_40%,rgba(181,80,46,0.18),transparent_55%)]" />
@@ -162,7 +162,7 @@ function About() {
       <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
         <div className="reveal relative">
           <div className="card-industrial relative aspect-[4/3] overflow-hidden">
-            <img src="/images/about-bg.png" alt="Барбер за работой" className="h-full w-full object-cover" />
+            <img src="/images/about-bg.webp" alt="Барбер за работой" loading="lazy" decoding="async" className="h-full w-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-ink/60 to-transparent" />
           </div>
 
@@ -209,12 +209,12 @@ function Services() {
       <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
         {t.services.items.map((s, i) => {
           const Icon = serviceIcons[i]?.icon ?? ScissorsIcon;
-          const img = `/images/svc-${String(i + 1).padStart(2, "0")}.png`;
+          const img = `/images/svc-${String(i + 1).padStart(2, "0")}.webp`;
           return (
             <article key={s.no} className={`reveal reveal-delay-${(i % 4) + 1} group relative flex flex-col border border-ash/20 bg-ink-2 overflow-hidden transition-all duration-300 hover:border-brass/50 ${s.popular ? "ring-1 ring-inset ring-rust/30" : ""}`}>
               {/* Photo */}
               <div className="relative aspect-[4/3] overflow-hidden">
-                <img src={img} alt={s.name} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                <img src={img} alt={s.name} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" decoding="async" />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink-2 via-transparent to-transparent" />
                 {s.popular && <span className="absolute right-3 top-3 flex items-center gap-1 border border-rust/50 bg-ink/80 px-2 py-0.5 font-display text-[0.52rem] uppercase tracking-[0.2em] text-rust backdrop-blur-sm">★ {t.services.popular}</span>}
                 <span className="absolute left-3 top-3 font-anton text-2xl text-cream/40">{s.no}</span>
@@ -253,9 +253,13 @@ function Masters() {
           return (
             <article key={m.name} className={`reveal reveal-delay-${(i % 4) + 1} card-industrial group flex flex-col`}>
               <div className="relative aspect-[4/5] overflow-hidden bg-concrete">
-                <div className="flex h-full w-full items-center justify-center">
-                  <BrandMark className="h-16 w-16 text-ash/30" />
-                </div>
+                {data?.image ? (
+                  <img src={data.image} alt={data.alt || m.name} loading="lazy" decoding="async" className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                ) : (
+                  <div className="flex h-full w-full items-center justify-center">
+                    <BrandMark className="h-16 w-16 text-ash/30" />
+                  </div>
+                )}
                 <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/10 to-transparent" />
                 <div className="absolute left-0 top-4 bg-rust px-3 py-1 font-display text-[0.6rem] uppercase tracking-[0.25em] text-cream">“{m.nickname}”</div>
               </div>
