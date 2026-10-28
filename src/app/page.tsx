@@ -6,7 +6,7 @@ import { useI18n } from "@/components/barbershop/i18n";
 import { site, services as serviceIcons, masters as masterData, messengers } from "@/components/barbershop/data";
 import { SectionShell, SectionHeading, Eyebrow, RivetDivider } from "@/components/barbershop/shared";
 import {
-  BrandMark, MenuIcon, CloseIcon, PhoneIcon, ClockIcon, ArrowIcon, PinIcon, BulbIcon,
+  BrandMark, MenuIcon, CloseIcon, PhoneIcon, ClockIcon, ArrowIcon, ArrowDownIcon, PinIcon, BulbIcon,
   RazorIcon, ScissorsIcon, ClipperIcon, CombIcon, MustacheIcon, BeardIcon,
   InstagramIcon, TelegramIcon, VkIcon, StarIcon, ArrowUpIcon, WhatsappIcon,
 } from "@/components/barbershop/icons";
@@ -95,7 +95,7 @@ function Header() {
             <a href={site.phoneHref} className="hidden items-center gap-2 font-display text-sm uppercase tracking-[0.14em] text-cream/80 transition-colors hover:text-brass md:flex" aria-label={`Call ${site.phone}`}>
               <PhoneIcon className="h-4 w-4" /><span className="hidden xl:inline">{site.phone}</span>
             </a>
-            <a href="https://xn--k1agajh.xn--p1ai/book.html?m=sah744" target="_blank" rel="noopener noreferrer" className="btn-rust hidden sm:inline-flex text-xs">{t.ui.book}<ArrowIcon className="h-3.5 w-3.5" /></a>
+            <a href={site.bookingUrl} target="_blank" rel="noopener noreferrer" className="btn-rust hidden sm:inline-flex text-xs">{t.ui.book}<ArrowIcon className="h-3.5 w-3.5" /></a>
             <button type="button" onClick={() => setOpen(true)} className="flex h-10 w-10 items-center justify-center border border-ash/30 text-cream transition-colors hover:border-brass hover:text-brass lg:hidden" aria-label={t.ui.openMenu} aria-expanded={open}>
               <MenuIcon className="h-5 w-5" />
             </button>
@@ -115,7 +115,7 @@ function Header() {
               </a>
             ))}
           </nav>
-          <div className="px-5 pt-4"><a href="https://xn--k1agajh.xn--p1ai/book.html?m=sah744" target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)} className="btn-rust w-full text-sm">{t.ui.bookChair}<ArrowIcon className="h-4 w-4" /></a></div>
+          <div className="px-5 pt-4"><a href={site.bookingUrl} target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)} className="btn-rust w-full text-sm">{t.ui.bookChair}<ArrowIcon className="h-4 w-4" /></a></div>
         </div>
       )}
     </header>
@@ -144,7 +144,7 @@ function Hero() {
           </h1>
           {t.hero.desc && <p className="reveal reveal-delay-2 mt-7 max-w-xl text-base leading-relaxed text-cream-dim sm:text-lg">{t.hero.desc}</p>}
           <div className="reveal reveal-delay-3 mt-9 flex flex-col gap-4 sm:flex-row sm:items-center">
-            <a href="https://xn--k1agajh.xn--p1ai/book.html?m=sah744" target="_blank" rel="noopener noreferrer" className="btn-rust text-sm">{t.hero.ctaBook}<ArrowIcon className="h-4 w-4" /></a>
+            <a href={site.bookingUrl} target="_blank" rel="noopener noreferrer" className="btn-rust text-sm">{t.hero.ctaBook}<ArrowIcon className="h-4 w-4" /></a>
             <a href="#services" className="btn-outline text-sm">{t.hero.ctaBoard}</a>
           </div>
 
@@ -374,7 +374,7 @@ function Booking() {
             <div className="flex items-center gap-2 text-brass"><span className="bulb-dot" /><span className="font-display text-[0.6rem] uppercase tracking-[0.3em]">Онлайн-запись</span></div>
             <h3 className="mt-5 font-anton text-3xl text-cream sm:text-4xl">{t.booking.widgetTitle}</h3>
             <p className="mt-3 max-w-sm text-sm text-cream-dim">{t.booking.widgetDesc}</p>
-            <a href="https://xn--k1agajh.xn--p1ai/book.html?m=sah744" target="_blank" rel="noopener noreferrer" className="btn-rust mt-7 text-sm"><ArrowIcon className="h-4 w-4" />{t.booking.widgetCta}</a>
+            <a href={site.bookingUrl} target="_blank" rel="noopener noreferrer" className="btn-rust mt-7 text-sm"><ArrowIcon className="h-4 w-4" />{t.booking.widgetCta}</a>
           </div>
         </div>
       </div>
@@ -616,6 +616,53 @@ function BackToTop() {
   );
 }
 
+/* ============ FLOATING BOOK CTA ============ */
+function FloatingBook() {
+  const { t } = useI18n();
+  const [show, setShow] = React.useState(false);
+
+  React.useEffect(() => {
+    const hero = document.getElementById("top");
+    const booking = document.getElementById("booking");
+    if (!hero || !booking) return;
+
+    let heroVisible = true;
+    let bookingVisible = false;
+    const update = () => setShow(!heroVisible && !bookingVisible);
+
+    // Hero: срезаем 15% сверху и снизу — кнопка появляется, когда первый экран почти прошёл
+    const heroObs = new IntersectionObserver(([e]) => { heroVisible = e.isIntersecting; update(); },
+      { rootMargin: "-15% 0px -15% 0px" });
+    // Booking: считаем видимым, когда блок реально вошёл в экран (не просто показался краем)
+    const bookingObs = new IntersectionObserver(([e]) => { bookingVisible = e.isIntersecting; update(); },
+      { rootMargin: "0px 0px -30% 0px" });
+
+    heroObs.observe(hero);
+    bookingObs.observe(booking);
+    return () => { heroObs.disconnect(); bookingObs.disconnect(); };
+  }, []);
+
+  return (
+    <button
+      type="button"
+      onClick={() => document.getElementById("booking")?.scrollIntoView({ behavior: "smooth", block: "start" })}
+      className={`cta-float group fixed bottom-[5.5rem] right-5 z-40 flex items-center gap-2.5 border border-rust bg-rust px-5 py-3.5 font-display text-sm font-semibold uppercase tracking-[0.16em] text-cream transition-all duration-300 hover:bg-[#c75e38] hover:shadow-[0_0_0_1px_#a9793a,0_10px_28px_-8px_rgba(181,80,46,0.75)] hover:-translate-y-0.5 active:translate-y-0 ${show ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-4 opacity-0"}`}
+      style={{ clipPath: "polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px)" }}
+      aria-label={t.ui.bookNow}
+      aria-hidden={!show}
+      tabIndex={show ? 0 : -1}
+    >
+      <span className="relative flex h-2 w-2 shrink-0" aria-hidden="true">
+        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-cream/70" />
+        <span className="relative inline-flex h-2 w-2 rounded-full bg-cream" />
+      </span>
+      <span className="hidden sm:inline">{t.ui.bookNow}</span>
+      <span className="sm:hidden">{t.ui.book}</span>
+      <ArrowDownIcon className="h-4 w-4 transition-transform duration-300 group-hover:translate-y-0.5" />
+    </button>
+  );
+}
+
 function MobileStickyBar() {
   const { t } = useI18n();
   return (
@@ -647,6 +694,7 @@ export default function Home() {
       </main>
       <Footer />
       <BackToTop />
+      <FloatingBook />
     </div>
   );
 }

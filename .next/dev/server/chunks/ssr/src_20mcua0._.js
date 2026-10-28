@@ -243,7 +243,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$barbers
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                    href: "https://xn--k1agajh.xn--p1ai/book.html?m=sah744",
+                                    href: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$barbershop$2f$data$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["site"].bookingUrl,
                                     target: "_blank",
                                     rel: "noopener noreferrer",
                                     className: "btn-rust hidden sm:inline-flex text-xs",
@@ -254,7 +254,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$barbers
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/page.tsx",
                                             lineNumber: 98,
-                                            columnNumber: 175
+                                            columnNumber: 143
                                         }, this)
                                     ]
                                 }, void 0, true, {
@@ -374,7 +374,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$barbers
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "px-5 pt-4",
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                            href: "https://xn--k1agajh.xn--p1ai/book.html?m=sah744",
+                            href: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$barbershop$2f$data$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["site"].bookingUrl,
                             target: "_blank",
                             rel: "noopener noreferrer",
                             onClick: ()=>setOpen(false),
@@ -386,7 +386,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$barbers
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/page.tsx",
                                     lineNumber: 118,
-                                    columnNumber: 221
+                                    columnNumber: 189
                                 }, this)
                             ]
                         }, void 0, true, {
@@ -524,7 +524,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$barbers
                             className: "reveal reveal-delay-3 mt-9 flex flex-col gap-4 sm:flex-row sm:items-center",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                    href: "https://xn--k1agajh.xn--p1ai/book.html?m=sah744",
+                                    href: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$barbershop$2f$data$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["site"].bookingUrl,
                                     target: "_blank",
                                     rel: "noopener noreferrer",
                                     className: "btn-rust text-sm",
@@ -535,7 +535,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$barbers
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/page.tsx",
                                             lineNumber: 147,
-                                            columnNumber: 158
+                                            columnNumber: 126
                                         }, this)
                                     ]
                                 }, void 0, true, {
@@ -1765,7 +1765,7 @@ function Booking() {
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                        href: "https://xn--k1agajh.xn--p1ai/book.html?m=sah744",
+                                        href: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$barbershop$2f$data$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["site"].bookingUrl,
                                         target: "_blank",
                                         rel: "noopener noreferrer",
                                         className: "btn-rust mt-7 text-sm",
@@ -1775,7 +1775,7 @@ function Booking() {
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/page.tsx",
                                                 lineNumber: 377,
-                                                columnNumber: 147
+                                                columnNumber: 115
                                             }, this),
                                             t.booking.widgetCta
                                         ]
@@ -3530,6 +3530,105 @@ function BackToTop() {
         columnNumber: 5
     }, this);
 }
+/* ============ FLOATING BOOK CTA ============ */ function FloatingBook() {
+    const { t } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$barbershop$2f$i18n$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useI18n"])();
+    const [show, setShow] = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"](false);
+    __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"](()=>{
+        const hero = document.getElementById("top");
+        const booking = document.getElementById("booking");
+        if (!hero || !booking) return;
+        let heroVisible = true;
+        let bookingVisible = false;
+        const update = ()=>setShow(!heroVisible && !bookingVisible);
+        // Hero: срезаем 15% сверху и снизу — кнопка появляется, когда первый экран почти прошёл
+        const heroObs = new IntersectionObserver(([e])=>{
+            heroVisible = e.isIntersecting;
+            update();
+        }, {
+            rootMargin: "-15% 0px -15% 0px"
+        });
+        // Booking: считаем видимым, когда блок реально вошёл в экран (не просто показался краем)
+        const bookingObs = new IntersectionObserver(([e])=>{
+            bookingVisible = e.isIntersecting;
+            update();
+        }, {
+            rootMargin: "0px 0px -30% 0px"
+        });
+        heroObs.observe(hero);
+        bookingObs.observe(booking);
+        return ()=>{
+            heroObs.disconnect();
+            bookingObs.disconnect();
+        };
+    }, []);
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+        type: "button",
+        onClick: ()=>document.getElementById("booking")?.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            }),
+        className: `cta-float group fixed bottom-[5.5rem] right-5 z-40 flex items-center gap-2.5 border border-rust bg-rust px-5 py-3.5 font-display text-sm font-semibold uppercase tracking-[0.16em] text-cream transition-all duration-300 hover:bg-[#c75e38] hover:shadow-[0_0_0_1px_#a9793a,0_10px_28px_-8px_rgba(181,80,46,0.75)] hover:-translate-y-0.5 active:translate-y-0 ${show ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-4 opacity-0"}`,
+        style: {
+            clipPath: "polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px)"
+        },
+        "aria-label": t.ui.bookNow,
+        "aria-hidden": !show,
+        tabIndex: show ? 0 : -1,
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                className: "relative flex h-2 w-2 shrink-0",
+                "aria-hidden": "true",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                        className: "absolute inline-flex h-full w-full animate-ping rounded-full bg-cream/70"
+                    }, void 0, false, {
+                        fileName: "[project]/src/app/page.tsx",
+                        lineNumber: 656,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                        className: "relative inline-flex h-2 w-2 rounded-full bg-cream"
+                    }, void 0, false, {
+                        fileName: "[project]/src/app/page.tsx",
+                        lineNumber: 657,
+                        columnNumber: 9
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/src/app/page.tsx",
+                lineNumber: 655,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                className: "hidden sm:inline",
+                children: t.ui.bookNow
+            }, void 0, false, {
+                fileName: "[project]/src/app/page.tsx",
+                lineNumber: 659,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                className: "sm:hidden",
+                children: t.ui.book
+            }, void 0, false, {
+                fileName: "[project]/src/app/page.tsx",
+                lineNumber: 660,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$barbershop$2f$icons$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["ArrowDownIcon"], {
+                className: "h-4 w-4 transition-transform duration-300 group-hover:translate-y-0.5"
+            }, void 0, false, {
+                fileName: "[project]/src/app/page.tsx",
+                lineNumber: 661,
+                columnNumber: 7
+            }, this)
+        ]
+    }, void 0, true, {
+        fileName: "[project]/src/app/page.tsx",
+        lineNumber: 646,
+        columnNumber: 5
+    }, this);
+}
 function MobileStickyBar() {
     const { t } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$barbershop$2f$i18n$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useI18n"])();
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3548,14 +3647,14 @@ function MobileStickyBar() {
                             className: "h-4 w-4 text-brass"
                         }, void 0, false, {
                             fileName: "[project]/src/app/page.tsx",
-                            lineNumber: 624,
+                            lineNumber: 671,
                             columnNumber: 183
                         }, this),
                         t.ui.call
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/page.tsx",
-                    lineNumber: 624,
+                    lineNumber: 671,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -3567,24 +3666,24 @@ function MobileStickyBar() {
                             className: "h-4 w-4"
                         }, void 0, false, {
                             fileName: "[project]/src/app/page.tsx",
-                            lineNumber: 625,
+                            lineNumber: 672,
                             columnNumber: 214
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/page.tsx",
-                    lineNumber: 625,
+                    lineNumber: 672,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/app/page.tsx",
-            lineNumber: 623,
+            lineNumber: 670,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/app/page.tsx",
-        lineNumber: 622,
+        lineNumber: 669,
         columnNumber: 5
     }, this);
 }
@@ -3599,17 +3698,17 @@ function Home() {
                 children: "Skip to content"
             }, void 0, false, {
                 fileName: "[project]/src/app/page.tsx",
-                lineNumber: 636,
+                lineNumber: 683,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(ScrollProgress, {}, void 0, false, {
                 fileName: "[project]/src/app/page.tsx",
-                lineNumber: 637,
+                lineNumber: 684,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(Header, {}, void 0, false, {
                 fileName: "[project]/src/app/page.tsx",
-                lineNumber: 638,
+                lineNumber: 685,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3617,7 +3716,7 @@ function Home() {
                 className: "h-[88px]"
             }, void 0, false, {
                 fileName: "[project]/src/app/page.tsx",
-                lineNumber: 639,
+                lineNumber: 686,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
@@ -3625,54 +3724,59 @@ function Home() {
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(Hero, {}, void 0, false, {
                         fileName: "[project]/src/app/page.tsx",
-                        lineNumber: 641,
+                        lineNumber: 688,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(About, {}, void 0, false, {
                         fileName: "[project]/src/app/page.tsx",
-                        lineNumber: 642,
+                        lineNumber: 689,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(Services, {}, void 0, false, {
                         fileName: "[project]/src/app/page.tsx",
-                        lineNumber: 643,
+                        lineNumber: 690,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(Masters, {}, void 0, false, {
                         fileName: "[project]/src/app/page.tsx",
-                        lineNumber: 644,
+                        lineNumber: 691,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(Booking, {}, void 0, false, {
                         fileName: "[project]/src/app/page.tsx",
-                        lineNumber: 645,
+                        lineNumber: 692,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(Contacts, {}, void 0, false, {
                         fileName: "[project]/src/app/page.tsx",
-                        lineNumber: 646,
+                        lineNumber: 693,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/page.tsx",
-                lineNumber: 640,
+                lineNumber: 687,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(Footer, {}, void 0, false, {
                 fileName: "[project]/src/app/page.tsx",
-                lineNumber: 648,
+                lineNumber: 695,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(BackToTop, {}, void 0, false, {
                 fileName: "[project]/src/app/page.tsx",
-                lineNumber: 649,
+                lineNumber: 696,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(FloatingBook, {}, void 0, false, {
+                fileName: "[project]/src/app/page.tsx",
+                lineNumber: 697,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/page.tsx",
-        lineNumber: 635,
+        lineNumber: 682,
         columnNumber: 5
     }, this);
 }
@@ -3714,6 +3818,7 @@ const site = {
     addressShort: "ул. Михайлова, 39",
     phone: "+7 925 038-75-74",
     phoneHref: "tel:+79250387574",
+    bookingUrl: "https://xn--k1agajh.xn--p1ai/book.html?m=sah744",
     hours: "Пн — Вс · 10:00 — 22:00",
     hoursShort: "10:00 — 22:00",
     email: "chair@stal.barbershop",
@@ -4035,6 +4140,8 @@ const messengers = [
 "use strict";
 
 __turbopack_context__.s([
+    "ArrowDownIcon",
+    ()=>ArrowDownIcon,
     "ArrowIcon",
     ()=>ArrowIcon,
     "ArrowUpIcon",
@@ -4545,6 +4652,22 @@ const ArrowUpIcon = (p)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$pr
         lineNumber: 23,
         columnNumber: 47
     }, ("TURBOPACK compile-time value", void 0));
+const ArrowDownIcon = (p)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+        ...base,
+        ...p,
+        "aria-hidden": "true",
+        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+            d: "M12 5v14M6 13l6 6 6-6"
+        }, void 0, false, {
+            fileName: "[project]/src/components/barbershop/icons.tsx",
+            lineNumber: 24,
+            columnNumber: 90
+        }, ("TURBOPACK compile-time value", void 0))
+    }, void 0, false, {
+        fileName: "[project]/src/components/barbershop/icons.tsx",
+        lineNumber: 24,
+        columnNumber: 49
+    }, ("TURBOPACK compile-time value", void 0));
 const WhatsappIcon = (p)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
         ...base,
         ...p,
@@ -4554,20 +4677,20 @@ const WhatsappIcon = (p)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$p
                 d: "M3 21l1.6-4.5A8 8 0 1 1 8 19.5L3 21z"
             }, void 0, false, {
                 fileName: "[project]/src/components/barbershop/icons.tsx",
-                lineNumber: 24,
+                lineNumber: 25,
                 columnNumber: 89
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
                 d: "M8.5 9c.2 2 1.5 3.8 3.3 4.8.6.3 1.2.3 1.6-.2l.4-.5c.2-.2.5-.2.7-.1l1.3.7c.2.1.3.4.2.7-.3.8-1.2 1.4-2.1 1.2-2.4-.5-4.5-2.5-5.2-4.9-.2-.6 0-1.3.6-1.7l1-.6c.2-.1.5 0 .6.2l.4.7c.1.2.1.4 0 .6z"
             }, void 0, false, {
                 fileName: "[project]/src/components/barbershop/icons.tsx",
-                lineNumber: 24,
+                lineNumber: 25,
                 columnNumber: 137
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/barbershop/icons.tsx",
-        lineNumber: 24,
+        lineNumber: 25,
         columnNumber: 48
     }, ("TURBOPACK compile-time value", void 0));
 const BrandMark = (p)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
@@ -4586,7 +4709,7 @@ const BrandMark = (p)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$proj
                 r: "21"
             }, void 0, false, {
                 fileName: "[project]/src/components/barbershop/icons.tsx",
-                lineNumber: 25,
+                lineNumber: 26,
                 columnNumber: 193
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
@@ -4596,35 +4719,35 @@ const BrandMark = (p)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$proj
                 strokeOpacity: "0.4"
             }, void 0, false, {
                 fileName: "[project]/src/components/barbershop/icons.tsx",
-                lineNumber: 25,
+                lineNumber: 26,
                 columnNumber: 225
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
                 d: "M14 34l10-10"
             }, void 0, false, {
                 fileName: "[project]/src/components/barbershop/icons.tsx",
-                lineNumber: 25,
+                lineNumber: 26,
                 columnNumber: 277
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
                 d: "M30 18l4-4"
             }, void 0, false, {
                 fileName: "[project]/src/components/barbershop/icons.tsx",
-                lineNumber: 25,
+                lineNumber: 26,
                 columnNumber: 301
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
                 d: "M24 24l6-6a2.6 2.6 0 0 0-3.7-3.7l-6 6"
             }, void 0, false, {
                 fileName: "[project]/src/components/barbershop/icons.tsx",
-                lineNumber: 25,
+                lineNumber: 26,
                 columnNumber: 323
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
                 d: "M24 24l-6 6"
             }, void 0, false, {
                 fileName: "[project]/src/components/barbershop/icons.tsx",
-                lineNumber: 25,
+                lineNumber: 26,
                 columnNumber: 372
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
@@ -4633,13 +4756,13 @@ const BrandMark = (p)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$proj
                 r: "2"
             }, void 0, false, {
                 fileName: "[project]/src/components/barbershop/icons.tsx",
-                lineNumber: 25,
+                lineNumber: 26,
                 columnNumber: 395
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/barbershop/icons.tsx",
-        lineNumber: 25,
+        lineNumber: 26,
         columnNumber: 45
     }, ("TURBOPACK compile-time value", void 0));
 }),

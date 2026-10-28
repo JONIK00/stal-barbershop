@@ -141,6 +141,7 @@ export type Dict = {
     book: string;
     call: string;
     bookChair: string;
+    bookNow: string;
     backToTop: string;
     openMenu: string;
     closeMenu: string;
@@ -321,6 +322,7 @@ export const translations: Record<Lang, Dict> = {
       book: "Запись",
       call: "Позвонить",
       bookChair: "Записаться",
+      bookNow: "Записаться",
       backToTop: "Наверх",
       openMenu: "Открыть меню",
       closeMenu: "Закрыть меню",
@@ -499,6 +501,7 @@ export const translations: Record<Lang, Dict> = {
       book: "Book",
       call: "Call",
       bookChair: "Book a chair",
+      bookNow: "Book now",
       backToTop: "Back to top",
       openMenu: "Open menu",
       closeMenu: "Close menu",

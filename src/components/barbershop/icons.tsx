@@ -21,5 +21,6 @@ export const ArrowIcon = (p: IconProps) => (<svg {...base} {...p} aria-hidden="t
 export const MenuIcon = (p: IconProps) => (<svg {...base} {...p} aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>);
 export const CloseIcon = (p: IconProps) => (<svg {...base} {...p} aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>);
 export const ArrowUpIcon = (p: IconProps) => (<svg {...base} {...p} aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>);
+export const ArrowDownIcon = (p: IconProps) => (<svg {...base} {...p} aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg>);
 export const WhatsappIcon = (p: IconProps) => (<svg {...base} {...p} aria-hidden="true"><path d="M3 21l1.6-4.5A8 8 0 1 1 8 19.5L3 21z"/><path d="M8.5 9c.2 2 1.5 3.8 3.3 4.8.6.3 1.2.3 1.6-.2l.4-.5c.2-.2.5-.2.7-.1l1.3.7c.2.1.3.4.2.7-.3.8-1.2 1.4-2.1 1.2-2.4-.5-4.5-2.5-5.2-4.9-.2-.6 0-1.3.6-1.7l1-.6c.2-.1.5 0 .6.2l.4.7c.1.2.1.4 0 .6z"/></svg>);
 export const BrandMark = (p: IconProps) => (<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth={1.6} strokeLinecap="round" strokeLinejoin="round" {...p} aria-hidden="true"><circle cx="24" cy="24" r="21"/><circle cx="24" cy="24" r="17" strokeOpacity="0.4"/><path d="M14 34l10-10"/><path d="M30 18l4-4"/><path d="M24 24l6-6a2.6 2.6 0 0 0-3.7-3.7l-6 6"/><path d="M24 24l-6 6"/><circle cx="14" cy="34" r="2"/></svg>);
