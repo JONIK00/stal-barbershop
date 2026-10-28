@@ -68,7 +68,6 @@ function Header() {
     { label: t.nav.about, href: "#about" },
     { label: t.nav.services, href: "#services" },
     { label: t.nav.masters, href: "#masters" },
-    { label: t.nav.reviews, href: "#reviews" },
     { label: t.nav.contacts, href: "#contacts" },
   ];
 
@@ -560,7 +559,6 @@ function Footer() {
     { label: t.nav.about, href: "#about" },
     { label: t.nav.services, href: "#services" },
     { label: t.nav.masters, href: "#masters" },
-    { label: t.nav.reviews, href: "#reviews" },
     { label: t.nav.contacts, href: "#contacts" },
   ];
   const serviceNames = t.services.items.slice(0, 5).map((s) => s.name);
@@ -637,7 +635,6 @@ export default function Home() {
         <Services />
         <Masters />
         <Booking />
-        <Reviews />
         <Contacts />
       </main>
       <Footer />
