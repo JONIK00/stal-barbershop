@@ -1907,6 +1907,7 @@ const translations = {
             title1: "За",
             title2: "креслом.",
             desc: "Единственный мастер и хозяин кресла. Стрижёт, бреёт, оформляет — всё лично.",
+            photoSoon: "Фото скоро будет",
             items: [
                 {
                     name: "Шах",
@@ -2259,6 +2260,7 @@ const translations = {
             title1: "Behind the",
             title2: "chair.",
             desc: "The sole master and owner of the chair. Cuts, shaves, sculpts — all personally.",
+            photoSoon: "Photo coming soon",
             items: [
                 {
                     name: "Shah",

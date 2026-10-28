@@ -46,6 +46,7 @@ export type Dict = {
     title1: string;
     title2: string;
     desc: string;
+    photoSoon: string;
     items: { name: string; nickname: string; specialty: string; experience: string; bio: string; quote: string; signatureCuts: string[]; stats: { label: string; value: string }[] }[];
   };
   portfolio: {
@@ -201,6 +202,7 @@ export const translations: Record<Lang, Dict> = {
       title1: "За",
       title2: "креслом.",
       desc: "Единственный мастер и хозяин кресла. Стрижёт, бреёт, оформляет — всё лично.",
+      photoSoon: "Фото скоро будет",
       items: [
         { name: "Шах", nickname: "Шах", specialty: "Мастер-барбер", experience: "", bio: "", quote: "", signatureCuts: [], stats: [] },
       ],
@@ -378,6 +380,7 @@ export const translations: Record<Lang, Dict> = {
       title1: "Behind the",
       title2: "chair.",
       desc: "The sole master and owner of the chair. Cuts, shaves, sculpts — all personally.",
+      photoSoon: "Photo coming soon",
       items: [
         { name: "Shah", nickname: "Shah", specialty: "Master Barber", experience: "", bio: "", quote: "", signatureCuts: [], stats: [] },
       ],

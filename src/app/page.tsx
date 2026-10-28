@@ -256,8 +256,12 @@ function Masters() {
                 {data?.image ? (
                   <img src={data.image} alt={data.alt || m.name} loading="lazy" decoding="async" className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
                 ) : (
-                  <div className="flex h-full w-full items-center justify-center">
-                    <BrandMark className="h-16 w-16 text-ash/30" />
+                  <div className="flex h-full w-full flex-col items-center justify-center gap-5 bg-[repeating-linear-gradient(135deg,transparent_0px,transparent_14px,rgba(255,255,255,0.025)_14px,rgba(255,255,255,0.025)_28px)]">
+                    <BrandMark className="h-20 w-20 text-ash/25 transition-colors duration-300 group-hover:text-brass/50" />
+                    <div className="flex flex-col items-center gap-2">
+                      <span className="font-display text-[0.6rem] uppercase tracking-[0.35em] text-ash/60">{t.masters.photoSoon}</span>
+                      <span className="h-px w-14 bg-gradient-to-r from-transparent via-brass/60 to-transparent" />
+                    </div>
                   </div>
                 )}
                 <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/10 to-transparent" />
