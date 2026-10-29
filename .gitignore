@@ -28,3 +28,6 @@ skills/
 # OS/editor
 .DS_Store
 *.swp
+
+# uploads (user screenshots etc.)
+upload/
