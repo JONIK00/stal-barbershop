@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 Disallow: /api/
-Sitemap: https://stal-barbershop.vercel.app/sitemap.xml
+Sitemap: https://jonik00-stal-barbershop-bf50.twc1.net/sitemap.xml
