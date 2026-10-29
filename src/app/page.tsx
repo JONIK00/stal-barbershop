@@ -8,7 +8,7 @@ import { SectionShell, SectionHeading, Eyebrow, RivetDivider } from "@/component
 import {
   BrandMark, MenuIcon, CloseIcon, PhoneIcon, ClockIcon, ArrowIcon, ArrowDownIcon, PinIcon, BulbIcon,
   RazorIcon, ScissorsIcon, ClipperIcon, CombIcon, MustacheIcon, BeardIcon,
-  InstagramIcon, TelegramIcon, VkIcon, StarIcon, ArrowUpIcon, CheckIcon,
+  InstagramIcon, TelegramIcon, VkIcon, StarIcon, ArrowUpIcon,
 } from "@/components/barbershop/icons";
 
 /* ============ SCROLL PROGRESS ============ */
@@ -413,20 +413,12 @@ function Booking() {
   return (
     <SectionShell id="booking" className="relative overflow-hidden bg-ink">
       <div className="absolute inset-0 -z-10"><div className="absolute inset-0 bg-brick opacity-40" /><div className="absolute inset-0 bg-gradient-to-b from-ink via-ink/80 to-ink" /></div>
-      <div className="grid items-start gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
-        {/* Заголовок + преимущества онлайн-записи. Контакты — только в блоке «Контакты» */}
+      <div className="grid items-center gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
+        {/* Заголовок + описание. Контакты — только в блоке «Контакты» */}
         <div className="reveal flex flex-col">
           <Eyebrow>{t.booking.eyebrow}</Eyebrow>
           <h2 className="heading-xl mt-5 text-4xl sm:text-5xl md:text-6xl text-cream">{t.booking.title1}<br /><span className="text-rust">{t.booking.title2}</span></h2>
           <p className="mt-6 max-w-md text-base leading-relaxed text-cream-dim sm:text-lg">{t.booking.desc}</p>
-          <ul className="mt-9 flex flex-col gap-4 border-t border-ash/15 pt-7">
-            {t.booking.points.map((p, i) => (
-              <li key={i} className="flex items-start gap-3.5">
-                <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center border border-brass/40 bg-ink-2 text-brass"><CheckIcon className="h-3.5 w-3.5" /></span>
-                <span className="font-display text-sm uppercase tracking-[0.08em] text-cream-dim sm:text-base">{p}</span>
-              </li>
-            ))}
-          </ul>
         </div>
         <div id="booking-card" className="reveal reveal-delay-1 relative overflow-hidden border border-rust/40 bg-ink-2 p-6 sm:p-8">
             <span className="pointer-events-none absolute left-2 top-2 z-20 h-3 w-3 border-l border-t border-brass/60" />

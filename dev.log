@@ -58,3 +58,17 @@ Check the render method of `Booking`. See https://react.dev/link/warning-keys fo
  GET / 200 in 58ms (next.js: 3ms, application-code: 55ms)
  GET / 200 in 134ms (next.js: 3ms, application-code: 131ms)
  GET / 200 in 51ms (next.js: 4ms, application-code: 47ms)
+ GET / 200 in 45ms (next.js: 3ms, application-code: 42ms)
+ GET / 200 in 45ms (next.js: 2ms, application-code: 43ms)
+✓ Compiled in 334ms
+ GET / 200 in 94ms (next.js: 60ms, application-code: 34ms)
+ GET / 200 in 17ms (next.js: 3ms, application-code: 14ms)
+ GET / 200 in 51ms (next.js: 2ms, application-code: 49ms)
+✓ Compiled in 158ms
+⚠ Fast Refresh had to perform a full reload when ./src/components/barbershop/translations.ts changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ GET / 200 in 40ms (next.js: 6ms, application-code: 34ms)
+ GET / 200 in 52ms (next.js: 3ms, application-code: 49ms)
+⚠ Fast Refresh had to perform a full reload when ./src/components/barbershop/translations.ts changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ GET / 200 in 247ms (next.js: 3ms, application-code: 244ms)
+ GET / 200 in 85ms (next.js: 4ms, application-code: 82ms)
+ GET / 200 in 47ms (next.js: 3ms, application-code: 44ms)
