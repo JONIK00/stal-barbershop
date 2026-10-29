@@ -121,3 +121,5 @@ Check the render method of `Booking`. See https://react.dev/link/warning-keys fo
  GET / 200 in 41ms (next.js: 2ms, application-code: 39ms)
  GET / 200 in 58ms (next.js: 3ms, application-code: 56ms)
  GET / 200 in 48ms (next.js: 2ms, application-code: 46ms)
+ GET / 200 in 43ms (next.js: 2ms, application-code: 41ms)
+ GET / 200 in 43ms (next.js: 2ms, application-code: 40ms)
