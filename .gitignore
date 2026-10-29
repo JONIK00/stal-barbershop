@@ -1,3 +1,30 @@
-skills/
+# dependencies
 node_modules/
+
+# next.js build output & cache (Vercel builds itself)
+.next/
+out/
+
+# local dev artifacts
+dev.log
+
+# environment & secrets
+.env
+.env.*
+!.env.example
+
+# backup images (local only)
+.image-backup/
+
+# tool scratch
+tool-results/
+
+# vercel local state
 .vercel
+
+# skills (internal)
+skills/
+
+# OS/editor
+.DS_Store
+*.swp
