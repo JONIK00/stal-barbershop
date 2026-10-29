@@ -22,3 +22,9 @@
 {"timestamp":"00:13:25.752","source":"Server","level":"WARN","message":"⚠ Fast Refresh had to perform a full reload when ./src/components/barbershop/translations.ts changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload"}
 {"timestamp":"00:13:26.222","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
 {"timestamp":"00:13:30.821","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:18:36.633","source":"Server","level":"LOG","message":"✓ Compiled in 226ms"}
+{"timestamp":"00:18:41.758","source":"Server","level":"LOG","message":"✓ Compiled in 212ms"}
+{"timestamp":"00:18:45.525","source":"Server","level":"WARN","message":"⚠ Fast Refresh had to perform a full reload when ./src/components/barbershop/translations.ts changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload"}
+{"timestamp":"00:18:45.525","source":"Server","level":"LOG","message":"✓ Compiled in 191ms"}
+{"timestamp":"00:18:46.053","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:18:52.952","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}

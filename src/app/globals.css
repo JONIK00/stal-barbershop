@@ -193,6 +193,16 @@
   .hint-nudge { animation: hint-nudge 1.6s ease-in-out infinite; }
   @keyframes hint-nudge { 0%,100% { transform: translateX(0); opacity: 0.65; } 50% { transform: translateX(7px); opacity: 1; } }
 
+  /* Карточки в мобильной карусели услуг: без вертикальной reveal-анимации —
+     при свайпе карточка должна приезжать сбоку, а не «выплывать снизу» */
+  @media (max-width: 639px) {
+    [data-svc-track] .reveal {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
+
   .ken-burns { animation: ken-burns 22s ease-in-out infinite alternate; }
   @keyframes ken-burns { 0%{transform:scale(1) translate(0,0)} 100%{transform:scale(1.12) translate(-1.5%,-2%)} }
 

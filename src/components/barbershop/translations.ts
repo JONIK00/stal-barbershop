@@ -73,7 +73,6 @@ export type Dict = {
     widgetTitle: string;
     widgetDesc: string;
     widgetCta: string;
-    widgetNote: string;
     cta: string;
   };
   bookingForm: {
@@ -255,7 +254,6 @@ export const translations: Record<Lang, Dict> = {
       widgetTitle: "Запишись онлайн",
       widgetDesc: "Выбери услугу и свободное время — система запишет тебя за минуту. Подтверждение придёт сразу.",
       widgetCta: "Записаться онлайн",
-      widgetNote: "Подтвердим слот по смс в течение 10 минут.",
       cta: "Записаться",
     },
     bookingForm: {
@@ -455,7 +453,6 @@ export const translations: Record<Lang, Dict> = {
       widgetTitle: "Book online",
       widgetDesc: "Choose a service and an available time — the system books you in a minute. Confirmation comes instantly.",
       widgetCta: "Book online",
-      widgetNote: "We'll confirm your slot by text within 10 minutes.",
       cta: "Book",
     },
     bookingForm: {

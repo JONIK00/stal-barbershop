@@ -258,6 +258,7 @@ function Services() {
       <div
         ref={trackRef}
         onScroll={handleScroll}
+        data-svc-track
         className="no-scrollbar -mx-5 flex snap-x snap-mandatory gap-4 overflow-x-auto overscroll-x-contain px-5 pr-24 pb-2 scroll-px-5 sm:mx-0 sm:grid sm:grid-cols-2 sm:gap-5 sm:overflow-visible sm:px-0 sm:pb-0 lg:grid-cols-3 xl:grid-cols-5"
       >
         {items.map((s, i) => {
@@ -437,7 +438,6 @@ function Booking() {
               ))}
             </div>
             <a href={site.bookingUrl} target="_blank" rel="noopener noreferrer" className="btn-rust mt-7 w-full text-sm sm:w-auto">{t.booking.widgetCta}<ArrowIcon className="h-4 w-4" /></a>
-            <p className="mt-4 flex items-center gap-2 text-xs text-cream-dim"><ClockIcon className="h-3.5 w-3.5 shrink-0 text-brass" />{t.booking.widgetNote}</p>
           </div>
       </div>
     </SectionShell>

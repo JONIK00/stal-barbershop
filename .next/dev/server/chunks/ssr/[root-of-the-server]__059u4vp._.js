@@ -347,7 +347,6 @@ const translations = {
             widgetTitle: "Запишись онлайн",
             widgetDesc: "Выбери услугу и свободное время — система запишет тебя за минуту. Подтверждение придёт сразу.",
             widgetCta: "Записаться онлайн",
-            widgetNote: "Подтвердим слот по смс в течение 10 минут.",
             cta: "Записаться"
         },
         bookingForm: {
@@ -741,7 +740,6 @@ const translations = {
             widgetTitle: "Book online",
             widgetDesc: "Choose a service and an available time — the system books you in a minute. Confirmation comes instantly.",
             widgetCta: "Book online",
-            widgetNote: "We'll confirm your slot by text within 10 minutes.",
             cta: "Book"
         },
         bookingForm: {
