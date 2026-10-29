@@ -28,3 +28,20 @@
 {"timestamp":"00:18:45.525","source":"Server","level":"LOG","message":"✓ Compiled in 191ms"}
 {"timestamp":"00:18:46.053","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
 {"timestamp":"00:18:52.952","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:22:30.787","source":"Server","level":"LOG","message":"✓ Compiled in 239ms"}
+{"timestamp":"00:22:30.834","source":"Server","level":"WARN","message":"⚠ Fast Refresh had to perform a full reload when ./src/components/barbershop/translations.ts changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload"}
+{"timestamp":"00:22:31.042","source":"Server","level":"LOG","message":"✓ Compiled in 133ms"}
+{"timestamp":"00:22:31.254","source":"Server","level":"LOG","message":"✓ Compiled in 160ms"}
+{"timestamp":"00:22:31.388","source":"Server","level":"LOG","message":"✓ Compiled in 217ms"}
+{"timestamp":"00:22:31.389","source":"Server","level":"WARN","message":"⚠ Fast Refresh had to perform a full reload when ./src/components/barbershop/translations.ts changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload"}
+{"timestamp":"00:22:31.413","source":"Server","level":"WARN","message":"⚠ Fast Refresh had to perform a full reload when ./src/components/barbershop/translations.ts changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload"}
+{"timestamp":"00:22:31.548","source":"Server","level":"LOG","message":"✓ Compiled in 152ms"}
+{"timestamp":"00:22:31.587","source":"Server","level":"WARN","message":"⚠ Fast Refresh had to perform a full reload when ./src/components/barbershop/translations.ts changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload"}
+{"timestamp":"00:22:31.623","source":"Server","level":"WARN","message":"⚠ Fast Refresh had to perform a full reload when ./src/components/barbershop/translations.ts changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload"}
+{"timestamp":"00:22:32.108","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:22:32.228","source":"Server","level":"WARN","message":"⚠ Fast Refresh had to perform a full reload when ./src/components/barbershop/translations.ts changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload"}
+{"timestamp":"00:22:32.414","source":"Server","level":"WARN","message":"⚠ Fast Refresh had to perform a full reload when ./src/components/barbershop/translations.ts changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload"}
+{"timestamp":"00:22:32.515","source":"Server","level":"WARN","message":"⚠ Fast Refresh had to perform a full reload when ./src/components/barbershop/translations.ts changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload"}
+{"timestamp":"00:22:32.619","source":"Server","level":"WARN","message":"⚠ Fast Refresh had to perform a full reload when ./src/components/barbershop/translations.ts changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload"}
+{"timestamp":"00:22:32.664","source":"Server","level":"WARN","message":"⚠ Fast Refresh had to perform a full reload when ./src/components/barbershop/translations.ts changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload"}
+{"timestamp":"00:22:40.454","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
