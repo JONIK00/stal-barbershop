@@ -2,12 +2,26 @@ export const dynamic = "force-dynamic";
 
 import { NextResponse } from "next/server";
 import { db } from "@/lib/db";
+import { reviews as staticReviews } from "@/components/barbershop/data";
 
 export async function GET() {
   try {
     const list = await db.review.findMany({ where: { status: "approved" }, orderBy: { createdAt: "desc" } });
     return NextResponse.json({ ok: true, reviews: list });
-  } catch (err) { console.error("[api/reviews] list failed", err); return NextResponse.json({ ok: false, error: "Could not list reviews" }, { status: 500 }); }
+  } catch (err) {
+    // SQLite недоступен (serverless/Vercel) — отдаём статические отзывы, чтобы API не падал 500-й
+    console.warn("[api/reviews] DB unavailable, serving static fallback:", err instanceof Error ? err.message : err);
+    const fallback = staticReviews.map((r, i) => ({
+      id: `static-${i}`,
+      name: r.name,
+      role: r.role,
+      rating: r.rating,
+      text: r.text,
+      status: "approved",
+      createdAt: r.date,
+    }));
+    return NextResponse.json({ ok: true, reviews: fallback, fallback: true });
+  }
 }
 
 export async function POST(req: Request) {
@@ -23,5 +37,8 @@ export async function POST(req: Request) {
   try {
     const record = await db.review.create({ data: { name: name.slice(0, 80), text: text.slice(0, 800), rating, role: role.slice(0, 60), status: "pending" } });
     return NextResponse.json({ ok: true, id: record.id });
-  } catch (err) { console.error("[api/reviews] create failed", err); return NextResponse.json({ ok: false, error: "Could not save review" }, { status: 500 }); }
+  } catch (err) {
+    console.warn("[api/reviews] DB unavailable:", err instanceof Error ? err.message : err);
+    return NextResponse.json({ ok: false, error: "Reviews are read-only in this environment" }, { status: 503 });
+  }
 }
