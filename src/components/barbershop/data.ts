@@ -51,16 +51,7 @@ export const masters: Master[] = [
   { name: "Шах", nickname: "Шах", specialty: "Мастер-барбер", experience: "", image: "", alt: "Портрет мастера-барбера Шаха", social: { label: "Instagram", href: "https://instagram.com", handle: "@shah.barber" }, bio: "", quote: "", signatureCuts: [], stats: [] },
 ];
 
-export type Work = { image: string; title: string; category: "Cuts" | "Beards" | "Shaves"; alt: string };
-export const works: Work[] = [
-  { image: "/images/work-1.png", title: "Skin Fade Undercut", category: "Cuts", alt: "Skin fade undercut haircut, side profile" },
-  { image: "/images/work-2.png", title: "Sculpted Full Beard", category: "Beards", alt: "Sculpted full beard trim, side profile" },
-  { image: "/images/work-3.png", title: "Slicked Pompadour", category: "Cuts", alt: "Slicked-back pompadour hairstyle, back view" },
-  { image: "/images/work-4.png", title: "Straight-Razor Shave", category: "Shaves", alt: "Clean straight-razor shave result" },
-  { image: "/images/work-5.png", title: "Textured Crop + Beard", category: "Cuts", alt: "Modern textured crop haircut with beard" },
-  { image: "/images/work-6.png", title: "Gentleman's Side Part", category: "Cuts", alt: "Sharp side-part gentleman's haircut with mustache" },
-];
-export const workFilters = ["All", "Cuts", "Beards", "Shaves"] as const;
+
 
 export type Review = { name: string; role: string; rating: number; text: string; date: string };
 export const reviews: Review[] = [
