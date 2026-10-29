@@ -69,7 +69,8 @@ export type Dict = {
     addressLabel: string;
     messengerLabel: string;
     onlineLabel: string;
-    steps: { service: string; time: string; chair: string };
+    steps: { service: string; time: string };
+    points: string[];
     widgetTitle: string;
     widgetDesc: string;
     widgetCta: string;
@@ -247,7 +248,8 @@ export const translations: Record<Lang, Dict> = {
       title2: "кресло.",
       desc: "Выбери услугу, выбери время, приходи. Запись онлайн за минуту.",
       onlineLabel: "Онлайн-запись",
-      steps: { service: "Услуга", time: "Время", chair: "Кресло" },
+      steps: { service: "Услуга", time: "Время" },
+      points: ["Без звонков — вся запись онлайн", "Без предоплаты — оплата на месте", "Цены — как в прайсе, без доплат"],
       phoneLabel: "Можно и по телефону — позвони",
       hoursLabel: "Пн — Вс · 10:00 — 22:00",
       addressLabel: "ул. Михайлова, 39",
@@ -447,7 +449,8 @@ export const translations: Record<Lang, Dict> = {
       title2: "chair.",
       desc: "Pick a service, pick a time, show up. Book online in a minute.",
       onlineLabel: "Online booking",
-      steps: { service: "Service", time: "Time", chair: "Chair" },
+      steps: { service: "Service", time: "Time" },
+      points: ["No calls — booking is fully online", "No prepayment — pay at the chair", "Prices as listed — no add-ons"],
       phoneLabel: "Or call us — we don't mind",
       hoursLabel: "Mon — Sun · 10:00 — 22:00",
       addressLabel: "Mikhailova St., 39",

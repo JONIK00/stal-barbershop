@@ -338,9 +338,13 @@ const translations = {
             onlineLabel: "Онлайн-запись",
             steps: {
                 service: "Услуга",
-                time: "Время",
-                chair: "Кресло"
+                time: "Время"
             },
+            points: [
+                "Без звонков — вся запись онлайн",
+                "Без предоплаты — оплата на месте",
+                "Цены — как в прайсе, без доплат"
+            ],
             phoneLabel: "Можно и по телефону — позвони",
             hoursLabel: "Пн — Вс · 10:00 — 22:00",
             addressLabel: "ул. Михайлова, 39",
@@ -733,9 +737,13 @@ const translations = {
             onlineLabel: "Online booking",
             steps: {
                 service: "Service",
-                time: "Time",
-                chair: "Chair"
+                time: "Time"
             },
+            points: [
+                "No calls — booking is fully online",
+                "No prepayment — pay at the chair",
+                "Prices as listed — no add-ons"
+            ],
             phoneLabel: "Or call us — we don't mind",
             hoursLabel: "Mon — Sun · 10:00 — 22:00",
             addressLabel: "Mikhailova St., 39",

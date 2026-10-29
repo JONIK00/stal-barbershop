@@ -3,12 +3,12 @@
 import * as React from "react";
 import { useScrollReveal } from "@/components/barbershop/use-reveal";
 import { useI18n } from "@/components/barbershop/i18n";
-import { site, services as serviceIcons, masters as masterData, messengers } from "@/components/barbershop/data";
+import { site, services as serviceIcons, masters as masterData } from "@/components/barbershop/data";
 import { SectionShell, SectionHeading, Eyebrow, RivetDivider } from "@/components/barbershop/shared";
 import {
   BrandMark, MenuIcon, CloseIcon, PhoneIcon, ClockIcon, ArrowIcon, ArrowDownIcon, PinIcon, BulbIcon,
   RazorIcon, ScissorsIcon, ClipperIcon, CombIcon, MustacheIcon, BeardIcon,
-  InstagramIcon, TelegramIcon, VkIcon, StarIcon, ArrowUpIcon, WhatsappIcon,
+  InstagramIcon, TelegramIcon, VkIcon, StarIcon, ArrowUpIcon, CheckIcon,
 } from "@/components/barbershop/icons";
 
 /* ============ SCROLL PROGRESS ============ */
@@ -409,17 +409,26 @@ function Portfolio() {
 /* ============ BOOKING ============ */
 function Booking() {
   const { t } = useI18n();
-  const steps = [t.booking.steps.service, t.booking.steps.time, t.booking.steps.chair];
+  const steps = [t.booking.steps.service, t.booking.steps.time];
   return (
     <SectionShell id="booking" className="relative overflow-hidden bg-ink">
       <div className="absolute inset-0 -z-10"><div className="absolute inset-0 bg-brick opacity-40" /><div className="absolute inset-0 bg-gradient-to-b from-ink via-ink/80 to-ink" /></div>
-      <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12">
-        {/* Онлайн-запись — главный акцент секции */}
+      <div className="grid items-start gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
+        {/* Заголовок + преимущества онлайн-записи. Контакты — только в блоке «Контакты» */}
         <div className="reveal flex flex-col">
           <Eyebrow>{t.booking.eyebrow}</Eyebrow>
           <h2 className="heading-xl mt-5 text-4xl sm:text-5xl md:text-6xl text-cream">{t.booking.title1}<br /><span className="text-rust">{t.booking.title2}</span></h2>
           <p className="mt-6 max-w-md text-base leading-relaxed text-cream-dim sm:text-lg">{t.booking.desc}</p>
-          <div id="booking-card" className="relative mt-8 overflow-hidden border border-rust/40 bg-ink-2 p-6 sm:p-8">
+          <ul className="mt-9 flex flex-col gap-4 border-t border-ash/15 pt-7">
+            {t.booking.points.map((p, i) => (
+              <li key={i} className="flex items-start gap-3.5">
+                <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center border border-brass/40 bg-ink-2 text-brass"><CheckIcon className="h-3.5 w-3.5" /></span>
+                <span className="font-display text-sm uppercase tracking-[0.08em] text-cream-dim sm:text-base">{p}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div id="booking-card" className="reveal reveal-delay-1 relative overflow-hidden border border-rust/40 bg-ink-2 p-6 sm:p-8">
             <span className="pointer-events-none absolute left-2 top-2 z-20 h-3 w-3 border-l border-t border-brass/60" />
             <span className="pointer-events-none absolute right-2 top-2 z-20 h-3 w-3 border-r border-t border-brass/60" />
             <span className="pointer-events-none absolute bottom-2 left-2 z-20 h-3 w-3 border-b border-l border-brass/60" />
@@ -427,7 +436,7 @@ function Booking() {
             <div className="flex items-center gap-2 text-brass"><span className="bulb-dot" /><span className="font-display text-[0.6rem] uppercase tracking-[0.3em]">{t.booking.onlineLabel}</span></div>
             <h3 className="mt-4 font-anton text-3xl text-cream sm:text-4xl">{t.booking.widgetTitle}</h3>
             <p className="mt-3 max-w-md text-sm leading-relaxed text-cream-dim">{t.booking.widgetDesc}</p>
-            <div className="mt-7 grid grid-cols-3 gap-px border border-ash/20 bg-ash/15">
+            <div className="mt-7 grid grid-cols-2 gap-px border border-ash/20 bg-ash/15">
               {steps.map((s, i) => (
                 <div key={s} className="bg-ink-2/90 px-3 py-4 text-center">
                   <span className="font-anton text-xl text-rust/90">0{i + 1}</span>
@@ -438,33 +447,6 @@ function Booking() {
             <a href={site.bookingUrl} target="_blank" rel="noopener noreferrer" className="btn-rust mt-7 w-full text-sm sm:w-auto">{t.booking.widgetCta}<ArrowIcon className="h-4 w-4" /></a>
             <p className="mt-4 flex items-center gap-2 text-xs text-cream-dim"><ClockIcon className="h-3.5 w-3.5 shrink-0 text-brass" />{t.booking.widgetNote}</p>
           </div>
-        </div>
-        {/* Контакты — вторично: одна карточка телефона + единая контактная плита */}
-        <div className="reveal reveal-delay-1 flex flex-col gap-5">
-          <a href={site.phoneHref} className="group flex items-center gap-4 border border-ash/25 bg-ink-2 p-5 transition-colors hover:border-brass">
-            <span className="flex h-12 w-12 shrink-0 items-center justify-center bg-rust text-cream transition-colors group-hover:bg-brass group-hover:text-ink"><PhoneIcon className="h-5 w-5" /></span>
-            <span className="flex flex-col"><span className="font-display text-[0.6rem] uppercase tracking-[0.25em] text-brass">{t.booking.phoneLabel}</span><span className="font-anton text-2xl text-cream sm:text-3xl">{site.phone}</span></span>
-            <ArrowIcon className="ml-auto h-5 w-5 text-cream-dim transition-colors group-hover:text-brass" />
-          </a>
-          <div className="grid flex-1 gap-px overflow-hidden border border-ash/20 bg-ash/15 sm:grid-cols-2">
-            <div className="flex items-center gap-3 bg-ink-2 p-4 sm:col-span-2"><ClockIcon className="h-5 w-5 shrink-0 text-brass" /><span className="font-display text-xs uppercase tracking-[0.15em] text-cream-dim">{t.booking.hoursLabel}</span></div>
-            <div className="flex items-center gap-3 bg-ink-2 p-4 sm:col-span-2"><PinIcon className="h-5 w-5 shrink-0 text-brass" /><span className="font-display text-xs uppercase tracking-[0.15em] text-cream-dim">{t.booking.addressLabel}</span></div>
-            <div className="bg-ink-2 p-4 sm:col-span-2">
-              <div className="mb-3 flex items-center gap-2"><span className="h-px w-6 bg-brass/60" /><span className="font-display text-[0.6rem] uppercase tracking-[0.25em] text-brass">{t.booking.messengerLabel}</span></div>
-              <div className="flex flex-wrap gap-3">
-                {messengers.map((m) => {
-                  const Icon = m.label === "WhatsApp" ? WhatsappIcon : TelegramIcon;
-                  return (
-                    <a key={m.label} href={m.href} target="_blank" rel="noopener noreferrer" className="group flex items-center gap-2.5 border border-ash/30 px-4 py-2.5 transition-colors hover:border-brass">
-                      <Icon className="h-4 w-4 text-brass" />
-                      <span className="font-display text-xs uppercase tracking-[0.15em] text-cream-dim group-hover:text-brass">{m.label}</span>
-                    </a>
-                  );
-                })}
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </SectionShell>
   );
