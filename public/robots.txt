@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 Disallow: /api/
-Sitemap: https://ironandoak.barbershop/sitemap.xml
+Sitemap: https://stal-barbershop.vercel.app/sitemap.xml
