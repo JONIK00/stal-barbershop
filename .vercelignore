@@ -1,0 +1,13 @@
+# Heavy local-only artifacts — never upload to Vercel
+node_modules
+.next
+.git
+.vercel
+.env
+.env.*
+dev.log
+tool-results
+db
+skills
+mini-services
+*.db
