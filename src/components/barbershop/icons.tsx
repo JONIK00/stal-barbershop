@@ -24,4 +24,23 @@ export const ArrowUpIcon = (p: IconProps) => (<svg {...base} {...p} aria-hidden=
 export const ArrowDownIcon = (p: IconProps) => (<svg {...base} {...p} aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg>);
 export const CheckIcon = (p: IconProps) => (<svg {...base} {...p} aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>);
 export const WhatsappIcon = (p: IconProps) => (<svg {...base} {...p} aria-hidden="true"><path d="M3 21l1.6-4.5A8 8 0 1 1 8 19.5L3 21z"/><path d="M8.5 9c.2 2 1.5 3.8 3.3 4.8.6.3 1.2.3 1.6-.2l.4-.5c.2-.2.5-.2.7-.1l1.3.7c.2.1.3.4.2.7-.3.8-1.2 1.4-2.1 1.2-2.4-.5-4.5-2.5-5.2-4.9-.2-.6 0-1.3.6-1.7l1-.6c.2-.1.5 0 .6.2l.4.7c.1.2.1.4 0 .6z"/></svg>);
-export const BrandMark = (p: IconProps) => (<svg viewBox="0 0 48 48" fill="none" aria-hidden="true" {...p}><circle cx="24" cy="24" r="21.5" stroke="currentColor" strokeWidth="2" /><g transform="rotate(45 24 24)"><path d="M10 23V14M14.5 23V14M18.5 23V14M29.5 23V14M33.5 23V14M38 23V14" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" /><path d="M9 24h30" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" /><path d="M24 6l2.6 17.4h-5.2z" fill="currentColor" /><circle cx="24" cy="25.8" r="1.8" fill="currentColor" /><circle cx="19" cy="35" r="4" stroke="currentColor" strokeWidth="2.2" /><circle cx="29" cy="35" r="4" stroke="currentColor" strokeWidth="2.2" /></g></svg>);
+export const BrandMark = (p: IconProps) => {
+  const id = `bm${React.useId().replace(/[^a-zA-Z0-9]/g, "")}`;
+  return (
+    <svg viewBox="0 0 48 48" fill="none" aria-hidden="true" {...p}>
+      <mask id={id} maskUnits="userSpaceOnUse" x="0" y="0" width="48" height="48">
+        <rect width="48" height="48" fill="#fff" />
+        <g stroke="#000" fill="none" strokeLinecap="round" strokeWidth="3">
+          <path d="M20.9 8.4 24 21" />
+          <path d="M27.1 8.4 24 21" />
+          <path d="M24 21 17.45 31.78" />
+          <path d="M24 21 30.55 31.78" />
+          <circle cx="16.1" cy="34" r="3.3" strokeWidth="2.4" />
+          <circle cx="31.9" cy="34" r="3.3" strokeWidth="2.4" />
+        </g>
+        <circle cx="24" cy="21" r="1.7" fill="#fff" />
+      </mask>
+      <path d="M2 7.5H14.5V12.5H13V30H19.25V12.5H17.75V7.5H30.25V12.5H28.75V30H35V12.5H33.5V7.5H46V12.5H44.5V40.5H3.5V12.5H2Z" fill="currentColor" mask={`url(#${id})`} />
+    </svg>
+  );
+};

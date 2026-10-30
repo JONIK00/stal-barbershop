@@ -75,8 +75,12 @@ function Header() {
     <header className="fixed inset-x-0 top-0 z-50">
       <div className={`border-b transition-all duration-300 ${scrolled ? "border-ash/20 bg-ink/90 backdrop-blur-md" : "border-transparent bg-ink/40 backdrop-blur-sm"}`}>
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 sm:px-8 md:px-12 lg:px-20">
-          <a href="#top" className="group flex items-center" aria-label={`${t.brandName} — home`}>
-            <BrandMark className="h-9 w-9 text-rust transition-transform duration-300 group-hover:rotate-6" />
+          <a href="#top" className="group flex items-center gap-3" aria-label={`${t.brandName} — home`}>
+            <BrandMark className="h-10 w-10 shrink-0 text-rust transition-transform duration-300 group-hover:rotate-6" />
+            <span className="flex flex-col leading-none">
+              <span className="font-anton text-xl tracking-[0.06em] text-cream">{t.brandName}</span>
+              <span className="mt-1 font-display text-[0.6rem] uppercase tracking-[0.3em] text-brass/80">{t.footer.tagline}</span>
+            </span>
           </a>
           <nav className="hidden items-center gap-7 lg:flex" aria-label="Primary">
             {navItems.map((item) => (
@@ -647,7 +651,10 @@ function Footer({ onOpenPrivacy }: { onOpenPrivacy: () => void }) {
       <div className="px-5 py-12 sm:px-8 md:px-12 lg:px-20">
         <div className="mx-auto grid max-w-7xl gap-10 sm:grid-cols-2 lg:grid-cols-[1.3fr_1fr_1fr_1.2fr]">
           <div>
-            <BrandMark className="h-12 w-12 text-rust" />
+            <div className="flex items-center gap-4">
+              <BrandMark className="h-12 w-12 shrink-0 text-rust" />
+              <div className="leading-none"><div className="font-anton text-3xl tracking-[0.06em] text-cream sm:text-4xl">{t.brandName}</div><div className="mt-1.5 font-display text-[0.62rem] uppercase tracking-[0.3em] text-brass">{t.footer.tagline}</div></div>
+            </div>
             <div className="mt-6 flex flex-wrap gap-3">
               {site.socials.map((s) => {
                 const Icon = s.label === "Instagram" ? InstagramIcon : s.label === "Telegram" ? TelegramIcon : VkIcon;
