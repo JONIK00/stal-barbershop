@@ -10,6 +10,7 @@ export const CombIcon = (p: IconProps) => (<svg {...base} {...p} aria-hidden="tr
 export const MustacheIcon = (p: IconProps) => (<svg {...base} {...p} aria-hidden="true"><path d="M12 12c-1.5 0-2 1-3.5 1S5 12 4 13s0 3 2 3 2.5-1.5 4-2.5"/><path d="M12 12c1.5 0 2 1 3.5 1S19 12 20 13s0 3-2 3-2.5-1.5-4-2.5"/></svg>);
 export const BeardIcon = (p: IconProps) => (<svg {...base} {...p} aria-hidden="true"><path d="M6 4h12v5c0 5-2.5 9-6 11-3.5-2-6-6-6-11z"/><path d="M9 8h6"/></svg>);
 export const BulbIcon = (p: IconProps) => (<svg {...base} {...p} aria-hidden="true"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.4 1 1 1 1.7V16h5v-.4c0-.7.4-1.3 1-1.7A6 6 0 0 0 12 3z"/></svg>);
+export const MoonIcon = (p: IconProps) => (<svg {...base} {...p} aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>);
 export const ClockIcon = (p: IconProps) => (<svg {...base} {...p} aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>);
 export const PhoneIcon = (p: IconProps) => (<svg {...base} {...p} aria-hidden="true"><path d="M5 4h3l2 5-2 1a11 11 0 0 0 5 5l1-2 5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>);
 export const PinIcon = (p: IconProps) => (<svg {...base} {...p} aria-hidden="true"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>);

@@ -16,7 +16,7 @@ export type Dict = {
     ctaBook: string;
     ctaBoard: string;
     stats: { value: string; label: string }[];
-    strip: { address: string; hours: string; chair: string };
+    strip: { address: string; hours: string; daysOff: string; daysOffValue: string };
   };
   ticker: string[];
   about: {
@@ -177,9 +177,9 @@ export const translations: Record<Lang, Dict> = {
       ctaBook: "Записаться онлайн",
       ctaBoard: "Прайс",
       stats: [],
-      strip: { address: "Адрес", hours: "Часы работы", chair: "Первый стул" },
+      strip: { address: "Адрес", hours: "Часы работы", daysOff: "Выходные", daysOffValue: "Пн и Чт" },
     },
-    ticker: ["ВОЗЬМЁМ БЕЗ ЗАПИСИ","ВТ, СР, ПТ–ВС · 11:00–20:30","БРИТЬЁ ОПАСНОЙ БРИТВОЙ","ОНЛАЙН-ЗАПИСЬ — ПЕРВЫЙ СТУЛ 11:00","ВЫХОДНЫЕ — ПН И ЧТ","ГОРЯЧЕЕ ПОЛОТЕНЦЕ · КОЖА · ЛАТУНЬ","+7 925 038-75-74"],
+    ticker: ["ВОЗЬМЁМ БЕЗ ЗАПИСИ","ВТ, СР, ПТ–ВС · 11:00–20:30","БРИТЬЁ ОПАСНОЙ БРИТВОЙ","ОНЛАЙН-ЗАПИСЬ — ПЕРВЫЙ СТУЛ 11:00","ГОРЯЧЕЕ ПОЛОТЕНЦЕ · КОЖА · ЛАТУНЬ","+7 925 038-75-74"],
     about: {
       eyebrow: "О нас",
       title1: "Не тренд.",
@@ -197,7 +197,7 @@ export const translations: Record<Lang, Dict> = {
       title2: "на доске.",
       desc: "Честная работа, фиксированные цены, без сюрпризов на кассе.",
       firstChairLabel: "Первый стул",
-      firstChairValue: "11:00 · вт, ср, пт–вс",
+      firstChairValue: "11:00",
       footnote: "Цены фиксированные.",
       cta: "Записаться",
       popular: "Хит",
@@ -248,7 +248,7 @@ export const translations: Record<Lang, Dict> = {
       onlineLabel: "Онлайн-запись",
       steps: { service: "Услуга", time: "Время" },
       phoneLabel: "Можно и по телефону — позвони",
-      hoursLabel: "Вт, Ср, Пт — Вс · 11:00 — 20:30 · выходные Пн и Чт",
+      hoursLabel: "Вт, Ср, Пт — Вс · 11:00 — 20:30",
       addressLabel: "ул. Михайлова, 39",
       messengerLabel: "Или напиши нам",
       widgetTitle: "Запишись онлайн",
@@ -331,7 +331,7 @@ export const translations: Record<Lang, Dict> = {
       servicesCol: "Услуги",
       contactCol: "Контакты",
       bookCol: "Запись",
-      bookDesc: "Забронируй слот онлайн или позвони. Первый стул — в 11:00. Выходные — понедельник и четверг.",
+      bookDesc: "Забронируй слот онлайн или позвони.",
       bookCta: "Записаться",
       copyright: "Все стрижки защищены.",
       motto: "Бетон · Кожа · Латунь",
@@ -376,9 +376,9 @@ export const translations: Record<Lang, Dict> = {
       ctaBook: "Book online",
       ctaBoard: "See the board",
       stats: [],
-      strip: { address: "Address", hours: "Hours", chair: "First chair" },
+      strip: { address: "Address", hours: "Hours", daysOff: "Days off", daysOffValue: "Mon & Thu" },
     },
-    ticker: ["WALK-INS WELCOME","TUE, WED, FRI–SUN · 11:00–20:30","STRAIGHT-RAZOR SHAVES","BOOK ONLINE — FIRST CHAIR 11:00","CLOSED MON & THU","HOT TOWEL · LEATHER · BRASS","+7 925 038-75-74"],
+    ticker: ["WALK-INS WELCOME","TUE, WED, FRI–SUN · 11:00–20:30","STRAIGHT-RAZOR SHAVES","BOOK ONLINE — FIRST CHAIR 11:00","HOT TOWEL · LEATHER · BRASS","+7 925 038-75-74"],
     about: {
       eyebrow: "About us",
       title1: "Not a trend.",
@@ -396,7 +396,7 @@ export const translations: Record<Lang, Dict> = {
       title2: "on the board.",
       desc: "Honest work, fixed prices, no surprises at the till.",
       firstChairLabel: "First chair",
-      firstChairValue: "11:00 · closed Mon & Thu",
+      firstChairValue: "11:00",
       footnote: "Prices are fixed.",
       cta: "Book your chair",
       popular: "Most booked",
@@ -447,7 +447,7 @@ export const translations: Record<Lang, Dict> = {
       onlineLabel: "Online booking",
       steps: { service: "Service", time: "Time" },
       phoneLabel: "Or call us — we don't mind",
-      hoursLabel: "Tue, Wed, Fri — Sun · 11:00 — 20:30 · closed Mon & Thu",
+      hoursLabel: "Tue, Wed, Fri — Sun · 11:00 — 20:30",
       addressLabel: "Mikhailova St., 39",
       messengerLabel: "Or message us",
       widgetTitle: "Book online",
@@ -530,7 +530,7 @@ export const translations: Record<Lang, Dict> = {
       servicesCol: "Services",
       contactCol: "Contact",
       bookCol: "Book",
-      bookDesc: "Reserve a slot online or call ahead. First chair opens at 11:00. Closed Mondays and Thursdays.",
+      bookDesc: "Reserve a slot online or call ahead.",
       bookCta: "Book your chair",
       copyright: "All cuts reserved.",
       motto: "Concrete · Leather · Brass",

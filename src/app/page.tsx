@@ -6,7 +6,7 @@ import { useI18n } from "@/components/barbershop/i18n";
 import { site, services as serviceIcons, masters as masterData } from "@/components/barbershop/data";
 import { SectionShell, SectionHeading, Eyebrow, RivetDivider } from "@/components/barbershop/shared";
 import {
-  BrandMark, MenuIcon, CloseIcon, PhoneIcon, ClockIcon, ArrowIcon, ArrowDownIcon, PinIcon, BulbIcon,
+  BrandMark, MenuIcon, CloseIcon, PhoneIcon, ClockIcon, ArrowIcon, ArrowDownIcon, PinIcon, MoonIcon,
   RazorIcon, ScissorsIcon, ClipperIcon, CombIcon, MustacheIcon, BeardIcon,
   InstagramIcon, TelegramIcon, VkIcon, StarIcon, ArrowUpIcon,
 } from "@/components/barbershop/icons";
@@ -158,11 +158,11 @@ function Hero() {
           </div>
           <div className="flex items-center gap-3.5 bg-ink/75 px-5 py-4 backdrop-blur-sm">
             <ClockIcon className="h-5 w-5 shrink-0 text-brass" />
-            <span className="flex flex-col"><span className="font-display text-[0.55rem] uppercase tracking-[0.25em] text-brass">{t.hero.strip.hours}</span><span className="mt-0.5 font-display text-sm text-cream">{site.hours}</span></span>
+            <span className="flex flex-col"><span className="font-display text-[0.55rem] uppercase tracking-[0.25em] text-brass">{t.hero.strip.hours}</span><span className="mt-0.5 font-display text-sm text-cream">{site.hoursShort}</span></span>
           </div>
           <div className="flex items-center gap-3.5 bg-ink/75 px-5 py-4 backdrop-blur-sm">
-            <BulbIcon className="h-5 w-5 shrink-0 text-brass" />
-            <span className="flex flex-col"><span className="font-display text-[0.55rem] uppercase tracking-[0.25em] text-brass">{t.hero.strip.chair}</span><span className="mt-0.5 font-display text-sm text-cream">{t.services.firstChairValue}</span></span>
+            <MoonIcon className="h-5 w-5 shrink-0 text-brass" />
+            <span className="flex flex-col"><span className="font-display text-[0.55rem] uppercase tracking-[0.25em] text-brass">{t.hero.strip.daysOff}</span><span className="mt-0.5 font-display text-sm text-cream">{t.hero.strip.daysOffValue}</span></span>
           </div>
         </div>
       </div>
