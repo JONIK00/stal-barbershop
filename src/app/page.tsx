@@ -143,7 +143,7 @@ function Hero() {
             <h1 className="reveal reveal-delay-1 heading-xl mt-6 text-[3.2rem] leading-[0.9] sm:text-7xl md:text-8xl lg:text-[7.5rem]">
               {t.hero.title1}<br /><span className="text-rust">{t.hero.title2}</span>
             </h1>
-            <div className="reveal reveal-delay-2 mt-9 flex flex-col gap-4 sm:flex-row sm:items-center">
+            <div className="reveal reveal-delay-2 mt-16 flex flex-col gap-4 sm:mt-20 sm:flex-row sm:items-center">
               <a href={site.bookingUrl} target="_blank" rel="noopener noreferrer" className="btn-rust text-sm">{t.hero.ctaBook}<ArrowIcon className="h-4 w-4" /></a>
               <a href="#services" className="btn-outline text-sm">{t.hero.ctaBoard}</a>
             </div>
