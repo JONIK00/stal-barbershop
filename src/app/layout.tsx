@@ -11,23 +11,23 @@ const inter = Inter({ variable: "--font-inter", subsets: ["latin", "cyrillic"], 
 const SITE_URL = "https://jonik00-stal-barbershop-bf50.twc1.net";
 
 export const metadata: Metadata = {
-  title: "СТАЛЬ | Мужские стрижки — Бороды. Опасная бритва.",
-  description: "СТАЛЬ — мужские стрижки, оформление бороды, бритьё опасной бритвой. Москва, ул. Михайлова, 39. Запишись онлайн.",
-  keywords: ["мужская стрижка","стрижка бороды","оформление бороды","бритьё опасной бритвой","СТАЛЬ"],
+  title: "У Шаха | Мужские стрижки — Бороды. Опасная бритва.",
+  description: "У Шаха — мужские стрижки, оформление бороды, бритьё опасной бритвой. Москва, ул. Михайлова, 39. Запишись онлайн.",
+  keywords: ["мужская стрижка","стрижка бороды","оформление бороды","бритьё опасной бритвой","У Шаха","барбер Шах"],
   openGraph: {
-    title: "СТАЛЬ | Мужские стрижки",
+    title: "У Шаха | Мужские стрижки",
     description: "Стрижки с характером. Оформление бороды. Бритьё опасной бритвой.",
     url: SITE_URL,
-    siteName: "СТАЛЬ",
+    siteName: "У Шаха",
     type: "website",
     locale: "ru_RU",
   },
-  twitter: { card: "summary_large_image", title: "СТАЛЬ | Мужские стрижки", description: "Стрижки с характером. Бороды. Бритьё опасной бритвой." },
+  twitter: { card: "summary_large_image", title: "У Шаха | Мужские стрижки", description: "Стрижки с характером. Бороды. Бритьё опасной бритвой." },
 };
 
 const jsonLd = {
   "@context": "https://schema.org", "@type": "HairSalon",
-  name: "СТАЛЬ",
+  name: "У Шаха",
   description: "Мужские стрижки, оформление бороды, бритьё опасной бритвой.",
   url: SITE_URL, telephone: "+7-925-038-75-74", priceRange: "₽₽₽",
   address: { "@type": "PostalAddress", streetAddress: "улица Михайлова, 39", addressLocality: "Москва", addressCountry: "RU" },

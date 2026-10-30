@@ -636,7 +636,7 @@ function Footer({ onOpenPrivacy }: { onOpenPrivacy: () => void }) {
     <footer className="mt-auto border-t border-ash/25 bg-ink grain-overlay">
       {/* Statement — вордплей имени и слогана */}
       <div className="relative overflow-hidden border-b border-ash/15 px-5 py-12 sm:px-8 md:px-12 lg:px-20">
-        <div aria-hidden="true" className="pointer-events-none absolute -right-6 top-1/2 hidden -translate-y-1/2 select-none font-anton text-[11rem] leading-none text-ash/[0.05] lg:block">СТАЛЬ</div>
+        <div aria-hidden="true" className="pointer-events-none absolute -right-6 top-1/2 hidden -translate-y-1/2 select-none font-anton text-[9rem] leading-none text-ash/[0.05] lg:block">У ШАХА</div>
         <div className="mx-auto flex max-w-7xl flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div>
             <div className="flex items-center gap-3 font-display text-[0.62rem] uppercase tracking-[0.35em] text-brass"><span className="bulb-dot" />{t.footer.motto}</div>

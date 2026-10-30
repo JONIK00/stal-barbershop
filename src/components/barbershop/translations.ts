@@ -167,7 +167,7 @@ export type Dict = {
 
 export const translations: Record<Lang, Dict> = {
   ru: {
-    brandName: "СТАЛЬ",
+    brandName: "У Шаха",
     nav: { about: "О нас", services: "Услуги", masters: "Мастер", work: "Работы", reviews: "Отзывы", faq: "Вопросы", contacts: "Контакты" },
     hero: {
       badge: "Москва — Стрижем, бреем",
@@ -334,7 +334,7 @@ export const translations: Record<Lang, Dict> = {
       bookDesc: "Забронируй слот онлайн или позвони. Первый стул — в 10:00.",
       bookCta: "Записаться",
       copyright: "Все стрижки защищены.",
-      motto: "Бетон · Сталь · Латунь",
+      motto: "Бетон · Кожа · Латунь",
       statement: "Не барбершоп.",
       manifesto: "Ремесло, а не тренд. Кресло, а не конвейер. Один мастер — одна стрижка за раз.",
       privacy: "Политика конфиденциальности",
@@ -347,7 +347,7 @@ export const translations: Record<Lang, Dict> = {
         { h: "Что мы собираем", p: "Ничего. Сайт не запрашивает имя, телефон или почту — никаких форм с вашими данными здесь нет." },
         { h: "Онлайн-запись", p: "Запись идёт через отдельный сервис онлайн-записи. Данные, которые вы вводите там, обрабатываются по правилам этого сервиса." },
         { h: "Файлы cookie", p: "Встроенная Яндекс.Карта может устанавливать cookie для своей работы. Также сайт запоминает выбранный язык. Всё это можно отключить в настройках браузера — сайт продолжит работать." },
-        { h: "Вопросы", p: "Что-то непонятно — пишите: chair@stal.barbershop" },
+        { h: "Вопросы", p: "Что-то непонятно — пишите в Telegram или звоните: +7 925 038-75-74." },
       ],
       closeLabel: "Закрыть",
     },
@@ -366,7 +366,7 @@ export const translations: Record<Lang, Dict> = {
     },
   },
   en: {
-    brandName: "STEEL",
+    brandName: "SHAH'S",
     nav: { about: "About", services: "Services", masters: "Master", work: "Work", reviews: "Reviews", faq: "FAQ", contacts: "Contacts" },
     hero: {
       badge: "Moscow — We cut, we shave",
@@ -533,7 +533,7 @@ export const translations: Record<Lang, Dict> = {
       bookDesc: "Reserve a slot online or call ahead. First chair opens at 10:00.",
       bookCta: "Book your chair",
       copyright: "All cuts reserved.",
-      motto: "Concrete · Steel · Brass",
+      motto: "Concrete · Leather · Brass",
       statement: "Not a barbershop.",
       manifesto: "Craft, not trend. A chair, not a conveyor. One master — one cut at a time.",
       privacy: "Privacy policy",
@@ -546,7 +546,7 @@ export const translations: Record<Lang, Dict> = {
         { h: "What we collect", p: "Nothing. The site never asks for your name, phone or email — there are no forms with your data here." },
         { h: "Online booking", p: "Booking runs through a separate booking service. Data you enter there is handled under that service's policy." },
         { h: "Cookies", p: "The embedded Yandex Map may set cookies for its work. The site also remembers your chosen language. You can disable cookies in your browser — the site will keep working." },
-        { h: "Questions", p: "Anything unclear — write to chair@stal.barbershop" },
+        { h: "Questions", p: "Anything unclear — message us on Telegram or call: +7 925 038-75-74." },
       ],
       closeLabel: "Close",
     },

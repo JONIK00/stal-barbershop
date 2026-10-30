@@ -1,7 +1,7 @@
 import { ScissorsIcon, BeardIcon, ClipperIcon, CombIcon, RazorIcon, MustacheIcon, BulbIcon } from "./icons";
 
 export const site = {
-  name: "СТАЛЬ",
+  name: "У Шаха",
   tagline: "Стрижки с характером.",
   city: "Москва",
   address: "Москва, улица Михайлова, 39",
@@ -11,11 +11,11 @@ export const site = {
   bookingUrl: "https://xn--k1agajh.xn--p1ai/book.html?m=sah744",
   hours: "Пн — Вс · 10:00 — 22:00",
   hoursShort: "10:00 — 22:00",
-  email: "chair@stal.barbershop",
+  email: "chair@u-shaha.barbershop",
   socials: [
-    { label: "Instagram", href: "https://instagram.com", handle: "@stal.barber" },
+    { label: "Instagram", href: "https://instagram.com", handle: "@shah.barber" },
     { label: "Telegram", href: "https://t.me/+79250387574", handle: "+7 925 038-75-74" },
-    { label: "VK", href: "https://vk.com", handle: "vk.com/stal_barber" },
+    { label: "VK", href: "https://vk.com", handle: "vk.com/shah_barber" },
   ],
   mapHref: "https://yandex.ru/maps/?text=Москва%20улица%20Михайлова%2039",
 } as const;
