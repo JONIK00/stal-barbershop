@@ -6,6 +6,7 @@ const base = { fill: "none", stroke: "currentColor", strokeWidth: 1.4, strokeLin
 export const RazorIcon = (p: IconProps) => (<svg {...base} {...p} aria-hidden="true"><path d="M3 14l7-7 5 5-7 7z"/><path d="M15 12l5-5a2.5 2.5 0 0 0-3.5-3.5l-5 5"/><path d="M4 20l2-2"/><path d="M10 6l4 4"/></svg>);
 export const ScissorsIcon = (p: IconProps) => (<svg {...base} {...p} aria-hidden="true"><circle cx="6" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/><path d="M8 7.5L20 18"/><path d="M8 16.5L20 6"/></svg>);
 export const ClipperIcon = (p: IconProps) => (<svg {...base} {...p} aria-hidden="true"><rect x="4" y="8" width="16" height="9" rx="1"/><path d="M6 8V5h12v3"/><path d="M4 17v2h16v-2"/><path d="M8 11h2M12 11h2M16 11h.01"/></svg>);
+export const SmileIcon = (p: IconProps) => (<svg {...base} {...p} aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8.5 14a4.5 4.5 0 0 0 7 0"/><path d="M9 9h.01M15 9h.01"/></svg>);
 export const CombIcon = (p: IconProps) => (<svg {...base} {...p} aria-hidden="true"><path d="M3 7h18v3H3z"/><path d="M5 10v9M8 10v9M11 10v9M14 10v9M17 10v9M20 10v6"/></svg>);
 export const MustacheIcon = (p: IconProps) => (<svg {...base} {...p} aria-hidden="true"><path d="M12 12c-1.5 0-2 1-3.5 1S5 12 4 13s0 3 2 3 2.5-1.5 4-2.5"/><path d="M12 12c1.5 0 2 1 3.5 1S19 12 20 13s0 3-2 3-2.5-1.5-4-2.5"/></svg>);
 export const BeardIcon = (p: IconProps) => (<svg {...base} {...p} aria-hidden="true"><path d="M6 4h12v5c0 5-2.5 9-6 11-3.5-2-6-6-6-11z"/><path d="M9 8h6"/></svg>);

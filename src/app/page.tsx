@@ -7,7 +7,7 @@ import { site, services as serviceIcons, masters as masterData } from "@/compone
 import { SectionShell, SectionHeading, Eyebrow, RivetDivider } from "@/components/barbershop/shared";
 import {
   BrandMark, MenuIcon, CloseIcon, PhoneIcon, ClockIcon, ArrowIcon, ArrowDownIcon, PinIcon, MoonIcon,
-  RazorIcon, ScissorsIcon, ClipperIcon, CombIcon, MustacheIcon, BeardIcon,
+  RazorIcon, ScissorsIcon, ClipperIcon, CombIcon, MustacheIcon, BeardIcon, SmileIcon,
   InstagramIcon, TelegramIcon, VkIcon, StarIcon, ArrowUpIcon,
 } from "@/components/barbershop/icons";
 
@@ -193,7 +193,7 @@ function About() {
           <RivetDivider className="my-9 max-w-xs" />
           <div className="reveal reveal-delay-2 grid grid-cols-3 gap-4">
             {t.about.pillars.map((p, i) => {
-              const Icon = [RazorIcon, ScissorsIcon, ClipperIcon][i];
+              const Icon = [SmileIcon, ScissorsIcon, ClipperIcon][i];
               return (
                 <div key={p.label} className="border border-ash/20 bg-ink-2/60 px-3 py-5 text-center transition-colors hover:border-brass/50">
                   <Icon className="mx-auto h-7 w-7 text-brass" />
