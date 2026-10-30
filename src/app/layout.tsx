@@ -31,7 +31,7 @@ const jsonLd = {
   description: "Мужские стрижки, оформление бороды, бритьё опасной бритвой.",
   url: SITE_URL, telephone: "+7-925-038-75-74", priceRange: "₽₽₽",
   address: { "@type": "PostalAddress", streetAddress: "улица Михайлова, 39", addressLocality: "Москва", addressCountry: "RU" },
-  openingHoursSpecification: [{ "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], opens: "10:00", closes: "22:00" }],
+  openingHoursSpecification: [{ "@type": "OpeningHoursSpecification", dayOfWeek: ["Tuesday","Wednesday","Friday","Saturday","Sunday"], opens: "11:00", closes: "20:30" }],
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

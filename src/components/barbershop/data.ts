@@ -9,8 +9,8 @@ export const site = {
   phone: "+7 925 038-75-74",
   phoneHref: "tel:+79250387574",
   bookingUrl: "https://xn--k1agajh.xn--p1ai/book.html?m=sah744",
-  hours: "Пн — Вс · 10:00 — 22:00",
-  hoursShort: "10:00 — 22:00",
+  hours: "Вт, Ср, Пт — Вс · 11:00 — 20:30",
+  hoursShort: "11:00 — 20:30",
   email: "chair@u-shaha.barbershop",
   socials: [
     { label: "Instagram", href: "https://instagram.com", handle: "@shah.barber" },
