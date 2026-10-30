@@ -5,7 +5,8 @@
     <path d="M35.5 35.5 L25.2 25.2" stroke="#e8e4dc" stroke-width="3.4" stroke-linecap="round"/>
     <path d="M11.5 35.5 L36.5 10.5" stroke="#b5502e" stroke-width="2.9" stroke-linecap="round"/>
     <path d="M17 40.5 L32.5 7" stroke="#b5502e" stroke-width="2.9" stroke-linecap="round"/>
-    <circle cx="11.5" cy="35.5" r="3" fill="#b5502e"/>
-    <circle cx="17" cy="40.5" r="3" fill="#b5502e"/>
+    <circle cx="11.5" cy="35.5" r="5" fill="none" stroke="#b5502e" stroke-width="2.2"/>
+    <circle cx="17" cy="40.5" r="5" fill="none" stroke="#b5502e" stroke-width="2.2"/>
+    <circle cx="26" cy="21" r="1.6" fill="#b5502e"/>
   </g>
 </svg>
