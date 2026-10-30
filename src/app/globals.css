@@ -219,10 +219,6 @@
     color: transparent;
     -webkit-text-stroke: 1.5px rgba(232,228,220,0.22);
   }
-  .text-outline-rust {
-    color: transparent;
-    -webkit-text-stroke: 1.5px rgba(181,80,46,0.55);
-  }
 
   @media (prefers-reduced-motion: reduce) {
     .cta-float, .ken-burns, .marquee__track, .hint-nudge { animation: none; }

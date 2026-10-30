@@ -138,9 +138,6 @@ export type Dict = {
     bookDesc: string;
     bookCta: string;
     copyright: string;
-    motto: string;
-    statement: string;
-    manifesto: string;
     privacy: string;
     cookieNote: string;
     cookieText: string;
@@ -334,9 +331,6 @@ export const translations: Record<Lang, Dict> = {
       bookDesc: "Забронируй слот онлайн или позвони.",
       bookCta: "Записаться",
       copyright: "Все стрижки защищены.",
-      motto: "Бетон · Кожа · Латунь",
-      statement: "Не барбершоп.",
-      manifesto: "Ремесло, а не тренд. Кресло, а не конвейер. Один мастер — одна стрижка за раз.",
       privacy: "Политика конфиденциальности",
       cookieNote: "Мы не собираем ваши данные",
       cookieText: "Сайт использует файлы cookie — с ними карта и язык интерфейса работают как надо.",
@@ -533,9 +527,6 @@ export const translations: Record<Lang, Dict> = {
       bookDesc: "Reserve a slot online or call ahead.",
       bookCta: "Book your chair",
       copyright: "All cuts reserved.",
-      motto: "Concrete · Leather · Brass",
-      statement: "Not a barbershop.",
-      manifesto: "Craft, not trend. A chair, not a conveyor. One master — one cut at a time.",
       privacy: "Privacy policy",
       cookieNote: "We don't collect your data",
       cookieText: "This site uses cookies — they keep the map and the interface language working.",
