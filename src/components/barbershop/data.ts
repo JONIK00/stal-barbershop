@@ -48,7 +48,7 @@ export const services: Service[] = [
 export type Master = { name: string; nickname: string; specialty: string; experience: string; image: string; alt: string; social: { label: string; href: string; handle: string }; bio: string; quote: string; signatureCuts: string[]; stats: { label: string; value: string }[] };
 
 export const masters: Master[] = [
-  { name: "Шах", nickname: "Шах", specialty: "Мастер-барбер", experience: "", image: "", alt: "Портрет мастера-барбера Шаха", social: { label: "Instagram", href: "https://instagram.com", handle: "@shah.barber" }, bio: "", quote: "", signatureCuts: [], stats: [] },
+  { name: "Шах", nickname: "Шах", specialty: "Мастер", experience: "", image: "", alt: "Портрет мастера Шаха", social: { label: "Instagram", href: "https://instagram.com", handle: "@shah.barber" }, bio: "", quote: "", signatureCuts: [], stats: [] },
 ];
 
 

@@ -246,7 +246,7 @@ function Services() {
   return (
     <SectionShell id="services" className="bg-brick" watermark="01">
       <div className="flex flex-col gap-6">
-        <SectionHeading eyebrow={t.services.eyebrow} title={<>{t.services.title1}<br />{t.services.title2}.</>} desc={t.services.desc} />
+        <SectionHeading eyebrow={t.services.eyebrow} title={<>{t.services.title1}<br />{t.services.title2}</>} desc={t.services.desc} />
       </div>
       <RivetDivider className="my-12" />
       {/* Подсказка «Листайте» — только мобильные, исчезает после первого свайпа */}
@@ -329,7 +329,7 @@ function Masters() {
   const { t } = useI18n();
   return (
     <SectionShell id="masters" className="bg-concrete" watermark="03">
-      <SectionHeading eyebrow={t.masters.eyebrow} title={<>{t.masters.title1}<br />{t.masters.title2}.</>} desc={t.masters.desc} />
+      <SectionHeading eyebrow={t.masters.eyebrow} title={<>{t.masters.title1}<br />{t.masters.title2}</>} desc={t.masters.desc} />
       <RivetDivider className="my-12" />
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {t.masters.items.map((m, i) => {
@@ -375,7 +375,7 @@ function Portfolio() {
   return (
     <SectionShell id="work" className="bg-brick" watermark="04">
       <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
-        <SectionHeading eyebrow={t.portfolio.eyebrow} title={<>{t.portfolio.title1}<br />{t.portfolio.title2}.</>} desc={t.portfolio.desc} />
+        <SectionHeading eyebrow={t.portfolio.eyebrow} title={<>{t.portfolio.title1}<br />{t.portfolio.title2}</>} desc={t.portfolio.desc} />
         <div className="reveal reveal-delay-2 flex flex-wrap gap-2">
           {filterLabels.map((f, i) => {
             const active = i === filterIdx;
@@ -526,7 +526,7 @@ function Reviews() {
   return (
     <SectionShell id="reviews" className="bg-concrete">
       <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
-        <SectionHeading eyebrow={t.reviews.eyebrow} title={<>{t.reviews.title1}<br />{t.reviews.title2}.</>} />
+        <SectionHeading eyebrow={t.reviews.eyebrow} title={<>{t.reviews.title1}<br />{t.reviews.title2}</>} />
 
       </div>
       <RivetDivider className="my-12" />
@@ -554,7 +554,7 @@ function Faq() {
     <SectionShell id="faq" className="bg-brick">
       <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
         <div className="lg:sticky lg:top-32 lg:self-start">
-          <SectionHeading eyebrow={t.faq.eyebrow} title={<>{t.faq.title1}<br />{t.faq.title2}.</>} desc={t.faq.desc} />
+          <SectionHeading eyebrow={t.faq.eyebrow} title={<>{t.faq.title1}<br />{t.faq.title2}</>} desc={t.faq.desc} />
         </div>
         <div>
           <RivetDivider className="mb-8 lg:hidden" />
@@ -584,7 +584,7 @@ function Contacts() {
   const { t } = useI18n();
   return (
     <SectionShell id="contacts" className="bg-brick">
-      <SectionHeading eyebrow={t.contacts.eyebrow} title={<>{t.contacts.title1}<br />{t.contacts.title2}.</>} />
+      <SectionHeading eyebrow={t.contacts.eyebrow} title={<>{t.contacts.title1}<br />{t.contacts.title2}</>} />
       <RivetDivider className="my-12" />
       <div className="grid gap-8 lg:grid-cols-2">
         <div className="reveal flex flex-col gap-px overflow-hidden border border-ash/20 bg-ash/15">

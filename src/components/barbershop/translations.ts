@@ -219,7 +219,7 @@ export const translations: Record<Lang, Dict> = {
       desc: "Единственный мастер и хозяин кресла. Стрижёт, бреёт, оформляет — всё лично.",
       photoSoon: "Фото скоро будет",
       items: [
-        { name: "Шах", nickname: "Шах", specialty: "Мастер-барбер", experience: "", bio: "", quote: "", signatureCuts: [], stats: [] },
+        { name: "Шах", nickname: "Шах", specialty: "Мастер", experience: "", bio: "", quote: "", signatureCuts: [], stats: [] },
       ],
     },
     portfolio: {
@@ -415,7 +415,7 @@ export const translations: Record<Lang, Dict> = {
       desc: "The sole master and owner of the chair. Cuts, shaves, sculpts — all personally.",
       photoSoon: "Photo coming soon",
       items: [
-        { name: "Shah", nickname: "Shah", specialty: "Master Barber", experience: "", bio: "", quote: "", signatureCuts: [], stats: [] },
+        { name: "Shah", nickname: "Shah", specialty: "Master", experience: "", bio: "", quote: "", signatureCuts: [], stats: [] },
       ],
     },
     portfolio: {
